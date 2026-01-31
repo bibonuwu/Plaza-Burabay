@@ -1,0 +1,156 @@
+/* ===========================
+   ROOM (single room page) — page only
+   =========================== */
+
+.page-room .section {
+    padding: 64px 0;
+}
+
+    .page-room .section.section-compact {
+        padding: 44px 0;
+    }
+
+/* Compact-ish hero for room pages (optional) */
+.page-room .hero {
+    min-height: 74svh;
+}
+
+/* Room hero bar */
+.room-hero-bar {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, rgba(240,235,223,.14), rgba(240,235,223,.06));
+    border: 1px solid rgba(255,255,255,.14);
+    color: rgba(240,235,223,.92);
+}
+
+.room-hero-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.room-hero-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(240,235,223,.10);
+    border: 1px solid rgba(240,235,223,.14);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--brand), #0b7d77);
+    box-shadow: 0 10px 20px rgba(0,100,95,.18);
+}
+
+.room-hero-price {
+    text-align: right;
+    line-height: 1.05;
+    display: grid;
+}
+
+.room-hero-price-val {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.7rem, 3.0vw, 2.2rem);
+}
+
+.room-hero-price-sub {
+    font-size: .95rem;
+    color: rgba(240,235,223,.84);
+}
+
+/* segmented (reuse) */
+.segmented {
+    display: inline-flex;
+    border-radius: 999px;
+    padding: 4px;
+    background: rgba(240,235,223,.14);
+    border: 1px solid rgba(240,235,223,.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.seg-btn {
+    border: 0;
+    background: transparent;
+    padding: 10px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: rgba(240,235,223,.82);
+    transition: background .18s var(--ease), transform .18s var(--ease), color .18s var(--ease);
+}
+
+    .seg-btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .seg-btn.is-active {
+        background: rgba(0,0,0,.24);
+        color: rgba(240,235,223,.96);
+        border: 1px solid rgba(255,255,255,.14);
+    }
+
+/* Room details */
+.specs {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: grid;
+    gap: 10px;
+}
+
+    .specs li {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 18px;
+        background: rgba(240,235,223,.58);
+        border: 1px solid rgba(0,0,0,.06);
+    }
+
+        .specs li span {
+            color: var(--muted2);
+        }
+
+        .specs li strong {
+            color: rgba(17,19,19,.90);
+            font-weight: 700;
+        }
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.a-tag {
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(240,235,223,.58);
+    border: 1px solid rgba(0,0,0,.06);
+    font-size: .92rem;
+    color: rgba(17,19,19,.84);
+}
+
+/* Optional: tighten collage on room pages if you use it */
+.page-room .editorial-collage {
+    margin-top: 8px;
+}
