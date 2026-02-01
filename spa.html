@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00645f" />
-    <title>SULTAN PLAZA BOROVOE — Конференц-зал</title>
-    <meta name="description" content="Конференц-зал на 30 человек: рассадки класс/П-форма, проектор, микрофон, Wi-Fi. Цена 50 000 тг до 18:00." />
+    <title>SULTAN PLAZA BOROVOE — SPA & Wellness</title>
+    <meta name="description" content="SPA & Wellness: бассейн, хаммам, ингаляция, магнитотерапия. Время работы 09:00–22:00. Прайс по запросу." />
 
     <!-- Montserrat only -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/conference.css" />
+    <link rel="stylesheet" href="./css/spa.css" />
 
     <script defer src="./js/main.js"></script>
 </head>
 
-<body class="page" data-page="conference">
+<body class="page" data-page="spa">
     <a class="skip-link" href="#content">Перейти к контенту</a>
 
     <header class="site-header" data-header>
@@ -34,8 +34,8 @@
             <nav class="nav nav--desktop" aria-label="Основная навигация">
                 <a class="nav__link" href="./index.html">Hotel</a>
                 <a class="nav__link" href="./rooms.html">Rooms</a>
-                <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                <a class="nav__link is-active" href="./conference.html" aria-current="page">Конференц-зал</a>
+                <a class="nav__link is-active" href="./spa.html" aria-current="page">SPA &amp; Wellness</a>
+                <a class="nav__link" href="./conference.html">Конференц-зал</a>
                 <a class="nav__link" href="./rules.html">Правила</a>
                 <a class="nav__link" href="./contacts.html">Контакты</a>
             </nav>
@@ -58,14 +58,14 @@
                 <nav class="nav nav--mobile" aria-label="Мобильная навигация">
                     <a class="nav__link" href="./index.html">Hotel</a>
                     <a class="nav__link" href="./rooms.html">Rooms</a>
-                    <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                    <a class="nav__link is-active" href="./conference.html" aria-current="page">Конференц-зал</a>
+                    <a class="nav__link is-active" href="./spa.html" aria-current="page">SPA &amp; Wellness</a>
+                    <a class="nav__link" href="./conference.html">Конференц-зал</a>
                     <a class="nav__link" href="./rules.html">Правила</a>
                     <a class="nav__link" href="./contacts.html">Контакты</a>
                 </nav>
 
                 <div class="drawer__cta">
-                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить бронь зала</a>
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить прайс</a>
                     <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
                 </div>
             </div>
@@ -74,80 +74,103 @@
     </header>
 
     <main id="content">
-        <section class="page-hero page-hero--conference" aria-label="Конференц-зал">
-            <!-- Фото: /assets/conference/hall.jpg -->
-            <div class="page-hero__media" role="img" aria-label="Конференц-зал — фото"></div>
+        <section class="page-hero page-hero--spa" aria-label="SPA & Wellness">
+            <!-- Фото: /assets/spa/pool.jpg (или другое) -->
+            <div class="page-hero__media" role="img" aria-label="SPA & Wellness — фото"></div>
             <div class="container page-hero__content" data-reveal>
-                <p class="kicker">Events</p>
-                <h1 class="h1">Конференц-зал</h1>
-                <p class="p p--muted">
-                    Вместимость — <strong>30 человек</strong>. Рассадки: <strong>класс / П-форма</strong>.
-                    Техника: <strong>проектор, микрофон, Wi-Fi</strong>.
-                </p>
+                <p class="kicker">SPA &amp; Wellness</p>
+                <h1 class="h1">Тишина, вода, тепло</h1>
+                <p class="p p--muted">Входит в стоимость: бассейн, хаммам, ингаляция, магнитотерапия.</p>
 
                 <div class="chips">
-                    <span class="chip">50 000 тг до 18:00</span>
-                    <span class="chip">Кейтеринг: да</span>
+                    <span class="chip">09:00–22:00</span>
+                    <span class="chip">Полотенца</span>
+                    <span class="chip">Раздевалка</span>
                 </div>
 
                 <div class="hero__cta">
-                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить бронь зала</a>
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить прайс в WhatsApp</a>
                     <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
                 </div>
             </div>
             <div class="page-hero__veil" aria-hidden="true"></div>
         </section>
 
-        <section class="section" aria-label="Параметры зала">
+        <section class="section" aria-label="Информация">
             <div class="container">
                 <div class="section__header" data-reveal>
-                    <h2 class="h2">Параметры</h2>
+                    <h2 class="h2">Что включено</h2>
                     <div class="rule"></div>
                 </div>
 
-                <div class="details-grid" data-reveal>
+                <div class="cards-3" data-reveal>
                     <article class="glass card">
-                        <h3 class="h3">Вместимость</h3>
-                        <p class="p p--muted">До 30 человек.</p>
+                        <h3 class="h3">Бассейн</h3>
+                        <p class="p p--muted">Доступ в часы работы SPA.</p>
                     </article>
                     <article class="glass card">
-                        <h3 class="h3">Рассадки</h3>
-                        <p class="p p--muted">Класс · П-форма.</p>
+                        <h3 class="h3">Хаммам</h3>
+                        <p class="p p--muted">Тёплая зона для мягкого восстановления.</p>
                     </article>
                     <article class="glass card">
-                        <h3 class="h3">Техника</h3>
-                        <p class="p p--muted">Проектор · микрофон · Wi-Fi.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Стоимость</h3>
-                        <p class="p p--muted">50 000 тг до 18:00.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Кофе-брейк</h3>
-                        <p class="p p--muted">Кейтеринг: да.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Запрос</h3>
-                        <p class="p p--muted">Детали и доступность — в WhatsApp.</p>
+                        <h3 class="h3">Процедуры</h3>
+                        <p class="p p--muted">Ингаляция и магнитотерапия входят в стоимость.</p>
                     </article>
                 </div>
 
-                <div class="media-band" data-reveal>
-                    <!-- Замените фото: /assets/conference/hall.jpg, /assets/conference/setup.jpg -->
-                    <div class="media-tile" style="background-image:url('./assets/conference/hall.jpg')" aria-label="Зал — фото 1"></div>
-                    <div class="media-tile" style="background-image:url('./assets/conference/setup.jpg')" aria-label="Зал — фото 2"></div>
-                    <div class="media-tile media-tile--muted" aria-label="Плейсхолдер визуала">
-                        <div class="media-tile__label">Добавьте ещё фото/схему рассадки</div>
+                <div class="section__header" data-reveal style="margin-top: var(--space-6);">
+                    <h2 class="h2">Услуги</h2>
+                    <p class="p p--muted">Детали и прайс — фото/изображением в WhatsApp.</p>
+                </div>
+
+                <div class="services-grid" data-reveal>
+                    <div class="service glass">
+                        <div class="service__head">
+                            <span class="service__dot" aria-hidden="true"></span>
+                            <h3 class="h3">Массаж</h3>
+                        </div>
+                        <p class="p p--muted">По запросу.</p>
                     </div>
+
+                    <div class="service glass">
+                        <div class="service__head">
+                            <span class="service__dot" aria-hidden="true"></span>
+                            <h3 class="h3">Сауна</h3>
+                        </div>
+                        <p class="p p--muted">По запросу.</p>
+                    </div>
+
+                    <div class="service glass">
+                        <div class="service__head">
+                            <span class="service__dot" aria-hidden="true"></span>
+                            <h3 class="h3">Хаммам</h3>
+                        </div>
+                        <p class="p p--muted">Входит в стоимость.</p>
+                    </div>
+
+                    <div class="service glass">
+                        <div class="service__head">
+                            <span class="service__dot" aria-hidden="true"></span>
+                            <h3 class="h3">Бассейн</h3>
+                        </div>
+                        <p class="p p--muted">Входит в стоимость.</p>
+                    </div>
+                </div>
+
+                <div class="media-band" data-reveal>
+                    <!-- Плейсхолдер-галерея (заменить фото): -->
+                    <div class="media-tile" style="background-image:url('./assets/spa/pool.jpg')" aria-label="SPA — фото 1"></div>
+                    <div class="media-tile" style="background-image:url('./assets/spa/hammam.jpg')" aria-label="SPA — фото 2"></div>
+                    <div class="media-tile" style="background-image:url('./assets/spa/sauna.jpg')" aria-label="SPA — фото 3"></div>
                 </div>
 
                 <div class="cta-bar glass" data-reveal>
                     <div class="cta-bar__text">
-                        <div class="cta-bar__title">Бронирование</div>
-                        <div class="cta-bar__desc">Напишите — подтвердим дату, формат и условия.</div>
+                        <div class="cta-bar__title">Прайс-лист</div>
+                        <div class="cta-bar__desc">Отправим фото прайса в WhatsApp.</div>
                     </div>
                     <div class="cta-bar__actions">
-                        <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                        <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить прайс</a>
                         <a class="btn btn--ghost" href="tel:+77074614707">Call</a>
                     </div>
                 </div>
@@ -169,7 +192,7 @@
                     <div class="footer__head">Навигация</div>
                     <a class="footer__link" href="./index.html">Hotel</a>
                     <a class="footer__link" href="./rooms.html">Rooms</a>
-                    <a class="footer__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="footer__link" href="./conference.html">Конференц-зал</a>
                     <a class="footer__link" href="./rules.html">Правила</a>
                     <a class="footer__link" href="./contacts.html">Контакты</a>
                 </div>
@@ -191,7 +214,7 @@
 
         <div class="container footer__bottom">
             <span class="footer__copy">© <span data-year></span> SULTAN PLAZA BOROVOE</span>
-            <span class="footer__note">Capacity: 30</span>
+            <span class="footer__note">SPA hours: 09:00–22:00</span>
         </div>
     </footer>
 </body>

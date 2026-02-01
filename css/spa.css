@@ -1,0 +1,35 @@
+/* SPA page only */
+
+.page-hero--spa .page-hero__media {
+    /* Replace: /assets/spa/pool.jpg */
+    background-image: url("../assets/spa/pool.jpg");
+}
+
+.services-grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.service {
+    padding: var(--space-5);
+}
+
+.service__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.service__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,100,95,.40);
+    background: rgba(0,100,95,.08);
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

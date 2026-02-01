@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00645f" />
-    <title>SULTAN PLAZA BOROVOE — Конференц-зал</title>
-    <meta name="description" content="Конференц-зал на 30 человек: рассадки класс/П-форма, проектор, микрофон, Wi-Fi. Цена 50 000 тг до 18:00." />
+    <title>SULTAN PLAZA BOROVOE — Контакты</title>
+    <meta name="description" content="Контакты SULTAN PLAZA BOROVOE: адрес, телефон, email, WhatsApp, 2GIS, Instagram." />
 
     <!-- Montserrat only -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/conference.css" />
+    <link rel="stylesheet" href="./css/contacts.css" />
 
     <script defer src="./js/main.js"></script>
 </head>
 
-<body class="page" data-page="conference">
+<body class="page" data-page="contacts">
     <a class="skip-link" href="#content">Перейти к контенту</a>
 
     <header class="site-header" data-header>
@@ -35,9 +35,9 @@
                 <a class="nav__link" href="./index.html">Hotel</a>
                 <a class="nav__link" href="./rooms.html">Rooms</a>
                 <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                <a class="nav__link is-active" href="./conference.html" aria-current="page">Конференц-зал</a>
+                <a class="nav__link" href="./conference.html">Конференц-зал</a>
                 <a class="nav__link" href="./rules.html">Правила</a>
-                <a class="nav__link" href="./contacts.html">Контакты</a>
+                <a class="nav__link is-active" href="./contacts.html" aria-current="page">Контакты</a>
             </nav>
 
             <div class="header__actions">
@@ -59,13 +59,13 @@
                     <a class="nav__link" href="./index.html">Hotel</a>
                     <a class="nav__link" href="./rooms.html">Rooms</a>
                     <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                    <a class="nav__link is-active" href="./conference.html" aria-current="page">Конференц-зал</a>
+                    <a class="nav__link" href="./conference.html">Конференц-зал</a>
                     <a class="nav__link" href="./rules.html">Правила</a>
-                    <a class="nav__link" href="./contacts.html">Контакты</a>
+                    <a class="nav__link is-active" href="./contacts.html" aria-current="page">Контакты</a>
                 </nav>
 
                 <div class="drawer__cta">
-                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить бронь зала</a>
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Написать в WhatsApp</a>
                     <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
                 </div>
             </div>
@@ -74,81 +74,92 @@
     </header>
 
     <main id="content">
-        <section class="page-hero page-hero--conference" aria-label="Конференц-зал">
-            <!-- Фото: /assets/conference/hall.jpg -->
-            <div class="page-hero__media" role="img" aria-label="Конференц-зал — фото"></div>
+        <section class="page-hero page-hero--contacts" aria-label="Контакты">
+            <div class="page-hero__media page-hero__media--pattern" role="img" aria-label="Контакты — минималистичный фон"></div>
             <div class="container page-hero__content" data-reveal>
-                <p class="kicker">Events</p>
-                <h1 class="h1">Конференц-зал</h1>
-                <p class="p p--muted">
-                    Вместимость — <strong>30 человек</strong>. Рассадки: <strong>класс / П-форма</strong>.
-                    Техника: <strong>проектор, микрофон, Wi-Fi</strong>.
-                </p>
-
-                <div class="chips">
-                    <span class="chip">50 000 тг до 18:00</span>
-                    <span class="chip">Кейтеринг: да</span>
-                </div>
+                <p class="kicker">Contacts</p>
+                <h1 class="h1">Связаться</h1>
+                <p class="p p--muted">Самый быстрый способ — WhatsApp. Также доступны звонок, email и 2GIS.</p>
 
                 <div class="hero__cta">
-                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Запросить бронь зала</a>
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Написать в WhatsApp</a>
                     <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
                 </div>
             </div>
             <div class="page-hero__veil" aria-hidden="true"></div>
         </section>
 
-        <section class="section" aria-label="Параметры зала">
+        <section class="section" aria-label="Данные">
             <div class="container">
-                <div class="section__header" data-reveal>
-                    <h2 class="h2">Параметры</h2>
-                    <div class="rule"></div>
-                </div>
+                <div class="contact-grid" data-reveal>
+                    <div class="glass contact-card">
+                        <div class="contact-card__head">
+                            <h2 class="h3">Основное</h2>
+                            <div class="rule"></div>
+                        </div>
 
-                <div class="details-grid" data-reveal>
-                    <article class="glass card">
-                        <h3 class="h3">Вместимость</h3>
-                        <p class="p p--muted">До 30 человек.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Рассадки</h3>
-                        <p class="p p--muted">Класс · П-форма.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Техника</h3>
-                        <p class="p p--muted">Проектор · микрофон · Wi-Fi.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Стоимость</h3>
-                        <p class="p p--muted">50 000 тг до 18:00.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Кофе-брейк</h3>
-                        <p class="p p--muted">Кейтеринг: да.</p>
-                    </article>
-                    <article class="glass card">
-                        <h3 class="h3">Запрос</h3>
-                        <p class="p p--muted">Детали и доступность — в WhatsApp.</p>
-                    </article>
-                </div>
+                        <div class="kv">
+                            <div class="kv__item">
+                                <div class="kv__k">Адрес</div>
+                                <div class="kv__v">Санаторий Светлый 39Б</div>
+                            </div>
 
-                <div class="media-band" data-reveal>
-                    <!-- Замените фото: /assets/conference/hall.jpg, /assets/conference/setup.jpg -->
-                    <div class="media-tile" style="background-image:url('./assets/conference/hall.jpg')" aria-label="Зал — фото 1"></div>
-                    <div class="media-tile" style="background-image:url('./assets/conference/setup.jpg')" aria-label="Зал — фото 2"></div>
-                    <div class="media-tile media-tile--muted" aria-label="Плейсхолдер визуала">
-                        <div class="media-tile__label">Добавьте ещё фото/схему рассадки</div>
+                            <div class="kv__item">
+                                <div class="kv__k">Телефон</div>
+                                <div class="kv__v"><a class="link" href="tel:+77074614707">8-707-461-47-07</a></div>
+                            </div>
+
+                            <div class="kv__item">
+                                <div class="kv__k">Email</div>
+                                <div class="kv__v"><a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></div>
+                            </div>
+
+                            <div class="kv__item">
+                                <div class="kv__k">WhatsApp</div>
+                                <div class="kv__v">
+                                    <div>87074614707</div>
+                                    <a class="link" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">wa.me/message/OLSP5EE7YBBVB1</a>
+                                </div>
+                            </div>
+
+                            <div class="kv__item">
+                                <div class="kv__k">Instagram</div>
+                                <div class="kv__v"><a class="link" href="https://instagram.com/sultan_plaza_borovoe" target="_blank" rel="noopener">@sultan_plaza_borovoe</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-card__actions">
+                            <a class="btn btn--primary" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">Открыть в 2GIS</a>
+                            <a class="btn btn--ghost" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                            <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                        </div>
+                    </div>
+
+                    <div class="glass map-card" data-reveal>
+                        <div class="map-card__head">
+                            <h2 class="h3">Карта</h2>
+                            <p class="p p--muted">Статичная заглушка без API. Можно заменить на изображение карты.</p>
+                        </div>
+
+                        <!-- Опционально: положите картинку карты в /assets/ (например /assets/map.jpg) и замените фон ниже -->
+                        <div class="map-placeholder" aria-label="Карта — плейсхолдер"></div>
+
+                        <div class="map-card__footer">
+                            <a class="link" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">
+                                Открыть локацию в 2GIS →
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="cta-bar glass" data-reveal>
                     <div class="cta-bar__text">
-                        <div class="cta-bar__title">Бронирование</div>
-                        <div class="cta-bar__desc">Напишите — подтвердим дату, формат и условия.</div>
+                        <div class="cta-bar__title">Запрос по проживанию</div>
+                        <div class="cta-bar__desc">Напишите, и мы уточним наличие и условия.</div>
                     </div>
                     <div class="cta-bar__actions">
                         <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                        <a class="btn btn--ghost" href="tel:+77074614707">Call</a>
+                        <a class="btn btn--ghost" href="mailto:sultanplazaburabay@gmail.com">Email</a>
                     </div>
                 </div>
             </div>
@@ -170,8 +181,8 @@
                     <a class="footer__link" href="./index.html">Hotel</a>
                     <a class="footer__link" href="./rooms.html">Rooms</a>
                     <a class="footer__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="footer__link" href="./conference.html">Конференц-зал</a>
                     <a class="footer__link" href="./rules.html">Правила</a>
-                    <a class="footer__link" href="./contacts.html">Контакты</a>
                 </div>
 
                 <div class="footer__col">
@@ -191,7 +202,7 @@
 
         <div class="container footer__bottom">
             <span class="footer__copy">© <span data-year></span> SULTAN PLAZA BOROVOE</span>
-            <span class="footer__note">Capacity: 30</span>
+            <span class="footer__note">Contacts</span>
         </div>
     </footer>
 </body>

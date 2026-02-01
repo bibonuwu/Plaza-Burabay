@@ -2,515 +2,302 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00645f" />
-    <title>SULTAN PLAZA BOROVOE — Премиальный отдых в Бурабае</title>
-    <meta name="description" content="SULTAN PLAZA BOROVOE — премиальный отдых в Бурабае. Номера, SPA 09:00–22:00, ресторан 13:00–00:00, конференц-зал." />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="index.css" />
+    <title>SULTAN PLAZA BOROVOE — Hotel</title>
+    <meta name="description" content="SULTAN PLAZA BOROVOE — премиальный отдых в Бурабае. Номера, SPA & Wellness, конференц-зал, контакты." />
+
+    <!-- Google Fonts: Montserrat only (display=swap ensures font-display: swap) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/hotel.css" />
+
+    <script defer src="./js/main.js"></script>
 </head>
 
-<body>
-    <a class="skip-link" href="#main">Перейти к содержимому</a>
+<body class="page" data-page="hotel">
+    <a class="skip-link" href="#content">Перейти к контенту</a>
 
+    <!-- Header -->
     <header class="site-header" data-header>
-        <div class="container header-inner">
-            <a class="brand" href="index.html" aria-label="На главную">
-                <span class="brand-mark" aria-hidden="true"></span>
-                <span class="brand-text">
-                    <strong>SULTAN PLAZA</strong>
-                    <span>BOROVOE</span>
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE — главная">
+                <span class="brand__mark" aria-hidden="true"></span>
+                <span class="brand__text">
+                    <span class="brand__name">SULTAN PLAZA</span>
+                    <span class="brand__sub">BOROVOE</span>
                 </span>
             </a>
 
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
-                <span class="nav-toggle-lines" aria-hidden="true"></span>
-            </button>
+            <nav class="nav nav--desktop" aria-label="Основная навигация">
+                <a class="nav__link is-active" href="./index.html" aria-current="page">Hotel</a>
+                <a class="nav__link" href="./rooms.html">Rooms</a>
+                <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
+                <a class="nav__link" href="./conference.html">Конференц-зал</a>
+                <a class="nav__link" href="./rules.html">Правила</a>
+                <a class="nav__link" href="./contacts.html">Контакты</a>
+            </nav>
 
-            <nav class="site-nav" data-nav aria-label="Навигация">
-                <a href="#about" data-navlink>Об отеле</a>
-                <a href="#spa" data-navlink>SPA</a>
-                <a href="#restaurant" data-navlink>Ресторан</a>
-                <a href="#additional" data-navlink>Возможности</a>
-                <a href="#rules" data-navlink>Правила</a>
-                <a href="#contacts" data-navlink>Контакты</a>
-
-                <a class="nav-divider" aria-hidden="true">•</a>
-
-                <a href="rooms.html">Номера</a>
-                <a href="conference.html">Конференц-зал</a>
-
-                <a class="btn btn-primary btn-sm nav-cta"
-                   href="https://wa.me/message/OLSP5EE7YBBVB1"
-                   target="_blank" rel="noopener"
-                   aria-label="Забронировать в WhatsApp">
+            <div class="header__actions">
+                <a class="btn btn--sm btn--ghost" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
                     WhatsApp
                 </a>
-            </nav>
+
+                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-burger>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile drawer -->
+        <div class="drawer" data-drawer aria-hidden="true">
+            <div class="drawer__panel">
+                <div class="drawer__top">
+                    <span class="drawer__title">Навигация</span>
+                    <button class="drawer__close" type="button" aria-label="Закрыть меню" data-drawer-close>✕</button>
+                </div>
+
+                <nav class="nav nav--mobile" aria-label="Мобильная навигация">
+                    <a class="nav__link is-active" href="./index.html" aria-current="page">Hotel</a>
+                    <a class="nav__link" href="./rooms.html">Rooms</a>
+                    <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="nav__link" href="./conference.html">Конференц-зал</a>
+                    <a class="nav__link" href="./rules.html">Правила</a>
+                    <a class="nav__link" href="./contacts.html">Контакты</a>
+                </nav>
+
+                <div class="drawer__cta">
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Забронировать в WhatsApp</a>
+                    <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                </div>
+
+                <div class="drawer__meta">
+                    <span class="meta-line">Ресепшн 24/7</span>
+                    <span class="meta-line">Check-in 14:00 · Check-out 12:00</span>
+                </div>
+            </div>
+            <button class="drawer__backdrop" type="button" aria-label="Закрыть меню" data-drawer-close></button>
         </div>
     </header>
 
-    <main id="main">
-        <!-- HERO -->
-        <section class="hero hero--editorial" style="--hero:url('assets/hero.jpg');" aria-label="Первый экран">
-            <!-- assets/hero.jpg -->
-            <div class="hero-bg" aria-hidden="true"></div>
-            <div class="hero-vignette" aria-hidden="true"></div>
+    <!-- Main -->
+    <main id="content">
+        <!-- Hero -->
+        <section class="hero hero--hotel" aria-label="Главный блок">
+            <!-- Замените изображение: /assets/hero.jpg -->
+            <div class="hero__media" role="img" aria-label="SULTAN PLAZA BOROVOE — фото отеля"></div>
 
-            <div class="container hero-inner">
-                <div class="hero-editorial reveal">
-                    <p class="kicker">SULTAN PLAZA BOROVOE</p>
-                    <h1 class="hero-title">Премиальный отдых в Бурабае</h1>
-                    <p class="hero-subtitle">Тишина, воздух и сервис — в одном ритме. Без лишнего.</p>
+            <div class="container hero__content" data-reveal>
+                <p class="kicker">SULTAN PLAZA BOROVOE</p>
+                <h1 class="hero__title">Премиальный отдых в Бурабае</h1>
+                <p class="hero__lead">
+                    Тихая, аккуратная атмосфера и продуманная инфраструктура — всё, чтобы отдых ощущался спокойно и «дорого».
+                    Детали и условия — по запросу.
+                </p>
 
-                    <div class="hero-actions">
-                        <a class="btn btn-primary"
-                           href="https://wa.me/message/OLSP5EE7YBBVB1"
-                           target="_blank" rel="noopener"
-                           aria-label="Забронировать в WhatsApp">
-                            Забронировать в WhatsApp
-                        </a>
-                        <a class="btn btn-ghost" href="tel:+77074614707" aria-label="Позвонить">Позвонить</a>
-                    </div>
+                <div class="hero__cta">
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+                        Забронировать в WhatsApp
+                    </a>
+                    <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                </div>
 
-                    <div class="chips" aria-label="Быстрые факты">
-                        <span class="chip">Ресепшн 24/7</span>
-                        <span class="chip">Check-in 14:00</span>
-                        <span class="chip">Check-out 12:00</span>
-                        <span class="chip">Wi-Fi free</span>
-                    </div>
+                <div class="chips" aria-label="Быстрые факты">
+                    <span class="chip">Ресепшн 24/7</span>
+                    <span class="chip">Check-in 14:00</span>
+                    <span class="chip">Check-out 12:00</span>
+                    <span class="chip">Wi-Fi free</span>
                 </div>
             </div>
 
-            <div class="hero-scroll" aria-hidden="true">
-                <span class="hero-scroll-line"></span>
-                <span>листай ниже</span>
-                <span class="hero-scroll-line"></span>
-            </div>
+            <div class="hero__veil" aria-hidden="true"></div>
         </section>
 
-        <!-- EDITORIAL COLLAGE -->
-        <section class="section section-tight" aria-label="Фотоколлаж">
+        <!-- About -->
+        <section class="section" aria-label="Об отеле">
             <div class="container">
-                <div class="editorial-collage reveal">
-                    <!-- Заменить фото:
-                         assets/gallery/01.jpg, 02.jpg, 03.jpg -->
-                    <a class="ec-big" href="assets/gallery/01.jpg" aria-label="Фото отеля 1">
-                        <img src="assets/gallery/01.jpg" alt="SULTAN PLAZA — фото 1" loading="lazy">
-                    </a>
-                    <a class="ec-small" href="assets/gallery/02.jpg" aria-label="Фото отеля 2">
-                        <img src="assets/gallery/02.jpg" alt="SULTAN PLAZA — фото 2" loading="lazy">
-                    </a>
-                    <a class="ec-small" href="assets/gallery/03.jpg" aria-label="Фото отеля 3">
-                        <img src="assets/gallery/03.jpg" alt="SULTAN PLAZA — фото 3" loading="lazy">
-                    </a>
-
-                    <div class="ec-copy glass">
-                        <h2 class="h2">Лаконичный комфорт</h2>
-                        <p class="muted">Номера, SPA и ресторан — всё в одном месте. Детали — по запросу, без перегруза.</p>
-                        <div class="ec-actions">
-                            <a class="btn btn-ghost btn-sm" href="rooms.html" aria-label="Открыть страницу номеров">Смотреть номера</a>
-                            <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">Написать в WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURE TILES (with photos) -->
-        <section class="section" aria-label="Ключевые блоки">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Основное</h2>
-                    <p>Самое важное — в 4 карточках.</p>
+                <div class="section__header" data-reveal>
+                    <h2 class="h2">Об отеле</h2>
+                    <div class="rule"></div>
                 </div>
 
-                <div class="tiles reveal">
-                    <a class="tile" href="rooms.html" aria-label="Номера">
-                        <!-- assets/rooms/standard-01.jpg -->
-                        <img src="assets/rooms/standard-01.jpg" alt="Номера" loading="lazy">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="tile-body">
-                            <div class="tile-top">
-                                <span class="tile-k">Номера</span>
-                                <span class="tile-tag">каталог</span>
-                            </div>
-                            <div class="tile-v">От 31 м² · king/twin · балкон</div>
-                        </div>
-                    </a>
-
-                    <a class="tile" href="#spa" aria-label="SPA">
-                        <!-- assets/gallery/04.jpg -->
-                        <img src="assets/gallery/04.jpg" alt="SPA" loading="lazy">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="tile-body">
-                            <div class="tile-top">
-                                <span class="tile-k">SPA</span>
-                                <span class="tile-tag">09:00–22:00</span>
-                            </div>
-                            <div class="tile-v">бассейн • хаммам • процедуры</div>
-                        </div>
-                    </a>
-
-                    <a class="tile" href="#restaurant" aria-label="Ресторан">
-                        <!-- assets/gallery/05.jpg -->
-                        <img src="assets/gallery/05.jpg" alt="Ресторан" loading="lazy">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="tile-body">
-                            <div class="tile-top">
-                                <span class="tile-k">Ресторан</span>
-                                <span class="tile-tag">13:00–00:00</span>
-                            </div>
-                            <div class="tile-v">меню — по запросу</div>
-                        </div>
-                    </a>
-
-                    <a class="tile" href="conference.html" aria-label="Конференц-зал">
-                        <!-- assets/conference/hall-01.jpg -->
-                        <img src="assets/conference/hall-01.jpg" alt="Конференц-зал" loading="lazy">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="tile-body">
-                            <div class="tile-top">
-                                <span class="tile-k">Конференц-зал</span>
-                                <span class="tile-tag">30 мест</span>
-                            </div>
-                            <div class="tile-v">проектор • микрофон • Wi-Fi</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="section" id="about" aria-label="Об отеле">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Об отеле</h2>
-                    <p>Коротко. По делу. Без лишних обещаний.</p>
-                </div>
-
-                <div class="grid-2">
-                    <div class="card glass reveal">
-                        <p class="muted">
-                            SULTAN PLAZA BOROVOE — формат спокойного отдыха: номера, SPA-зона и ресторан в одном месте.
+                <div class="two-col" data-reveal>
+                    <div class="glass">
+                        <p class="p">
+                            <strong>SULTAN PLAZA BOROVOE</strong> — пространство для спокойного отдыха: чистая навигация,
+                            много воздуха в подаче, аккуратные сервисные сценарии.
                         </p>
-                        <p class="muted" style="margin:0;">
-                            Для быстрых вопросов — WhatsApp. Для точных деталей — “по запросу”.
+                        <p class="p">
+                            Здесь важны детали: комфортный режим заезда/выезда, понятные правила проживания,
+                            и возможность быстро уточнить всё в WhatsApp.
                         </p>
                     </div>
 
-                    <div class="card glass reveal">
-                        <h3>Контакты</h3>
-                        <ul class="contact-list">
-                            <li><span class="contact-key">Адрес</span><span class="contact-val">Санаторий Светлый 39Б</span></li>
-                            <li><span class="contact-key">Телефон</span><span class="contact-val"><a class="link" href="tel:+77074614707">8-707-461-47-07</a></span></li>
-                            <li><span class="contact-key">Email</span><span class="contact-val"><a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></span></li>
-                            <li>
-                                <span class="contact-key">2GIS</span>
-                                <span class="contact-val">
-                                    <a class="link" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">Открыть</a>
-                                </span>
-                            </li>
-                        </ul>
+                    <div class="glass">
+                        <p class="p p--muted">
+                            Основное: ресепшн 24/7 · check-in 14:00 · check-out 12:00 · Wi-Fi (открытая сеть; для 5 этажа — «Султан Плаза 5»).
+                        </p>
 
-                        <div class="card-actions">
-                            <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-                            <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/sultan_plaza_borovoe" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SPA -->
-        <section class="section" id="spa" aria-label="SPA & Wellness">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>SPA</h2>
-                    <p>Включено в стоимость и услуги по запросу.</p>
-                </div>
-
-                <div class="info-cards">
-                    <article class="info-card reveal" aria-label="SPA информация">
-                        <div class="info-head">
-                            <div class="info-ico" aria-hidden="true">💧</div>
-                            <div>
-                                <div class="info-title">SPA & Wellness</div>
-                                <div class="info-sub">09:00–22:00</div>
+                        <div class="mini-list">
+                            <div class="mini-list__item">
+                                <span class="dot" aria-hidden="true"></span>
+                                <span>Ресторан/меню: 13:00–00:00 (меню — по запросу, фото/PDF)</span>
                             </div>
-                        </div>
-
-                        <div class="info-line">
-                            <span class="info-chip">включено</span>
-                            <span class="muted">бассейн · хаммам · ингаляция · магнитотерапия</span>
-                        </div>
-
-                        <div class="info-line">
-                            <span class="info-chip">услуги</span>
-                            <span class="muted">массаж · хаммам · сауна · бассейн</span>
-                        </div>
-
-                        <div class="info-line">
-                            <span class="info-chip">доп</span>
-                            <span class="muted">полотенца · раздевалка</span>
-                        </div>
-
-                        <div class="card-actions" style="margin-top:12px;">
-                            <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="Запросить прайс в WhatsApp">
-                                Запросить прайс в WhatsApp
-                            </a>
-                        </div>
-                    </article>
-
-                    <div class="info-photo reveal" aria-label="SPA фото">
-                        <!-- assets/gallery/06.jpg -->
-                        <img src="assets/gallery/06.jpg" alt="SPA зона — фото" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESTAURANT -->
-        <section class="section" id="restaurant" aria-label="Ресторан">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Ресторан</h2>
-                    <p>Меню — по запросу (PDF/фото).</p>
-                </div>
-
-                <div class="info-cards info-cards--reverse">
-                    <article class="info-card reveal" aria-label="Ресторан информация">
-                        <div class="info-head">
-                            <div class="info-ico" aria-hidden="true">🍽️</div>
-                            <div>
-                                <div class="info-title">Ресторан</div>
-                                <div class="info-sub">13:00–00:00</div>
+                            <div class="mini-list__item">
+                                <span class="dot" aria-hidden="true"></span>
+                                <span>SPA: бассейн/хаммам 09:00–22:00, входит в стоимость + ингаляция + магнитотерапия</span>
                             </div>
-                        </div>
-
-                        <div class="info-line">
-                            <span class="info-chip">меню</span>
-                            <span class="muted">по запросу (PDF/фото)</span>
-                        </div>
-
-                        <div class="card-actions" style="margin-top:12px;">
-                            <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="Запросить меню в WhatsApp">
-                                Запросить меню в WhatsApp
-                            </a>
-                        </div>
-                    </article>
-
-                    <div class="info-photo reveal" aria-label="Ресторан фото">
-                        <!-- assets/gallery/07.jpg -->
-                        <img src="assets/gallery/07.jpg" alt="Ресторан — фото" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ADDITIONAL -->
-        <section class="section" id="additional" aria-label="Дополнительные возможности">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Возможности</h2>
-                    <p>Коротко — что есть на территории.</p>
-                </div>
-
-                <div class="feature-grid reveal" aria-label="Список возможностей">
-                    <article class="feature-card">
-                        <div class="feature-ico" aria-hidden="true">🌿</div>
-                        <div class="feature-title">Прогулочная зона</div>
-                        <div class="feature-sub">За отелем.</div>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-ico" aria-hidden="true">🏊</div>
-                        <div class="feature-title">Внутренний бассейн</div>
-                        <div class="feature-sub">Доступен в SPA-зоне.</div>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-ico" aria-hidden="true">🧸</div>
-                        <div class="feature-title">Детская комната</div>
-                        <div class="feature-sub">6 этаж + детская площадка.</div>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-ico" aria-hidden="true">🔥</div>
-                        <div class="feature-title">Летняя терраса / BBQ</div>
-                        <div class="feature-sub">По сезону и по запросу.</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- RULES -->
-        <section class="section" id="rules" aria-label="Правила проживания">
-            <div class="container">
-                <div class="section-head reveal">
-                    <h2>Правила</h2>
-                    <p>Основное — сразу видно. Остальное — раскрывается.</p>
-                </div>
-
-                <div class="rules-grid2 reveal" aria-label="Ключевые правила">
-                    <article class="rule2">
-                        <div class="rule2-ico" aria-hidden="true">24/7</div>
-                        <div class="rule2-title">Ресепшн</div>
-                        <div class="rule2-sub">Круглосуточно.</div>
-                    </article>
-
-                    <article class="rule2">
-                        <div class="rule2-ico" aria-hidden="true">🚭</div>
-                        <div class="rule2-title">Курение</div>
-                        <div class="rule2-sub">Запрещено.</div>
-                    </article>
-
-                    <article class="rule2">
-                        <div class="rule2-ico" aria-hidden="true">🌙</div>
-                        <div class="rule2-title">Тишина</div>
-                        <div class="rule2-sub">С 23:00.</div>
-                    </article>
-
-                    <article class="rule2">
-                        <div class="rule2-ico" aria-hidden="true">₸</div>
-                        <div class="rule2-title">Предоплата</div>
-                        <div class="rule2-sub">30 000 тг.</div>
-                    </article>
-
-                    <article class="rule2">
-                        <div class="rule2-ico" aria-hidden="true">💳</div>
-                        <div class="rule2-title">Оплата</div>
-                        <div class="rule2-sub">Наличные / карта / QR.</div>
-                    </article>
-                </div>
-
-                <div class="card glass reveal" style="margin-top:14px;">
-                    <div class="acc" data-accordion>
-                        <div class="acc-item" data-acc-item>
-                            <button class="acc-btn" type="button" data-acc-btn aria-expanded="false">
-                                Остальные правила
-                                <span class="acc-chevron" aria-hidden="true">▾</span>
-                            </button>
-                            <div class="acc-panel" data-acc-panel hidden>
-                                <ul class="checklist">
-                                    <li>pet-friendly: нет</li>
-                                    <li>уборка ежедневно после 15:00–16:00</li>
-                                    <li>отмена: возврата нет, перенос даты возможен</li>
-                                    <li>ранний заезд/поздний выезд: +50% от цены номера</li>
-                                    <li>Wi-Fi: открытая сеть; если 5 этаж — «Султан Плаза 5»</li>
-                                    <li>прачечная: через ресепшен (цены фото)</li>
-                                    <li>трансфер: нет</li>
-                                </ul>
+                            <div class="mini-list__item">
+                                <span class="dot" aria-hidden="true"></span>
+                                <span>Детская комната: 6 этаж</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- CONTACTS -->
-        <section class="section" id="contacts" aria-label="Контакты">
+        <!-- Preview sections -->
+        <section class="section section--flush" aria-label="Разделы">
             <div class="container">
-                <div class="section-head reveal">
-                    <h2>Контакты</h2>
-                    <p>Быстро связаться или открыть карту.</p>
+                <div class="section__header" data-reveal>
+                    <h2 class="h2">Hotel · Wellness · Events</h2>
+                    <p class="p p--muted">Три ключевых направления — лаконично и по делу.</p>
                 </div>
 
-                <div class="grid-2">
-                    <div class="card glass reveal">
-                        <ul class="contact-list">
-                            <li><span class="contact-key">Адрес</span><span class="contact-val">Санаторий Светлый 39Б</span></li>
-                            <li><span class="contact-key">Телефон</span><span class="contact-val"><a class="link" href="tel:+77074614707">8-707-461-47-07</a></span></li>
-                            <li><span class="contact-key">Email</span><span class="contact-val"><a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></span></li>
-                            <li><span class="contact-key">WhatsApp</span><span class="contact-val"><a class="link" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">87074614707</a></span></li>
-                        </ul>
+                <div class="feature-grid" data-reveal>
+                    <article class="feature-card">
+                        <!-- Фото: /assets/rooms/standard.jpg (или другое) -->
+                        <div class="feature-card__media" style="background-image:url('./assets/rooms/standard.jpg')" aria-hidden="true"></div>
+                        <div class="feature-card__body">
+                            <h3 class="h3">Rooms</h3>
+                            <p class="p p--muted">Категории и цены — с переключением «Завтрак / Полный пансион».</p>
+                            <a class="link" href="./rooms.html">Открыть номера</a>
+                        </div>
+                    </article>
 
-                        <div class="card-actions">
-                            <a class="btn btn-ghost btn-sm"
-                               href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075"
-                               target="_blank" rel="noopener" aria-label="Открыть в 2GIS">
-                                Открыть в 2GIS
-                            </a>
+                    <article class="feature-card">
+                        <!-- Фото: /assets/spa/pool.jpg -->
+                        <div class="feature-card__media" style="background-image:url('./assets/spa/pool.jpg')" aria-hidden="true"></div>
+                        <div class="feature-card__body">
+                            <h3 class="h3">SPA &amp; Wellness</h3>
+                            <p class="p p--muted">Бассейн, хаммам и процедуры — детали и прайс по запросу.</p>
+                            <a class="link" href="./spa.html">Открыть SPA</a>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <!-- Фото: /assets/conference/hall.jpg -->
+                        <div class="feature-card__media" style="background-image:url('./assets/conference/hall.jpg')" aria-hidden="true"></div>
+                        <div class="feature-card__body">
+                            <h3 class="h3">Конференц-зал</h3>
+                            <p class="p p--muted">До 30 человек · проектор · микрофон · Wi-Fi.</p>
+                            <a class="link" href="./conference.html">Открыть зал</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional -->
+        <section class="section" aria-label="Дополнительно">
+            <div class="container">
+                <div class="section__header" data-reveal>
+                    <h2 class="h2">Дополнительно</h2>
+                    <div class="rule"></div>
+                </div>
+
+                <div class="amenities" data-reveal>
+                    <div class="amenity">
+                        <span class="amenity__icon" aria-hidden="true">⟡</span>
+                        <div class="amenity__text">
+                            <div class="amenity__title">Прогулочная зона</div>
+                            <div class="amenity__desc">За отелем — для спокойных маршрутов и воздуха.</div>
                         </div>
                     </div>
 
-                    <div class="card glass reveal">
-                        <h3>Соцсети</h3>
-                        <p class="muted">Instagram — основной канал.</p>
-                        <div class="social">
-                            <a class="social-pill"
-                               href="https://www.instagram.com/sultan_plaza_borovoe"
-                               target="_blank" rel="noopener"
-                               aria-label="Instagram sultan_plaza_borovoe">
-                                Instagram: @sultan_plaza_borovoe
-                            </a>
+                    <div class="amenity">
+                        <span class="amenity__icon" aria-hidden="true">⟡</span>
+                        <div class="amenity__text">
+                            <div class="amenity__title">Внутренний бассейн</div>
+                            <div class="amenity__desc">Доступ — в рамках SPA &amp; Wellness.</div>
                         </div>
+                    </div>
 
-                        <div class="fineprint-card glass" style="margin-top:14px;">
-                            <p class="small muted" style="margin:0;">
-                                Check-in 14:00 · Check-out 12:00 · Ресепшн 24/7
-                            </p>
+                    <div class="amenity">
+                        <span class="amenity__icon" aria-hidden="true">⟡</span>
+                        <div class="amenity__text">
+                            <div class="amenity__title">Детская комната / площадка</div>
+                            <div class="amenity__desc">Детская комната — 6 этаж.</div>
+                        </div>
+                    </div>
+
+                    <div class="amenity">
+                        <span class="amenity__icon" aria-hidden="true">⟡</span>
+                        <div class="amenity__text">
+                            <div class="amenity__title">Терраса / BBQ</div>
+                            <div class="amenity__desc">Формат и условия — по запросу.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="cta-line reveal">
-                    <div class="cta-panel2" role="region" aria-label="Быстрый контакт">
-                        <div class="cta-copy">
-                            <h3>Нужно уточнить детали?</h3>
-                            <p>Напишите — ответим быстро.</p>
-                        </div>
-
-                        <div class="cta-actions">
-                            <a class="btn btn-primary"
-                               href="https://wa.me/message/OLSP5EE7YBBVB1"
-                               target="_blank" rel="noopener"
-                               aria-label="WhatsApp">
-                                WhatsApp
-                            </a>
-                            <a class="btn btn-ghost" href="tel:+77074614707" aria-label="Позвонить">
-                                Позвонить
-                            </a>
-                        </div>
+                <div class="cta-bar glass" data-reveal>
+                    <div class="cta-bar__text">
+                        <div class="cta-bar__title">Быстрый запрос</div>
+                        <div class="cta-bar__desc">Напишите — ответим по наличию, условиям и деталям размещения.</div>
+                    </div>
+                    <div class="cta-bar__actions">
+                        <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                        <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div>
-                <div class="brand-footer">
-                    <span class="brand-mark" aria-hidden="true"></span>
-                    <div>
-                        <strong>SULTAN PLAZA BOROVOE</strong>
-                        <div class="muted small">Санаторий Светлый 39Б</div>
-                    </div>
-                </div>
-                <div class="muted small">© <span id="year"></span> Все права защищены.</div>
+    <!-- Footer -->
+    <footer class="site-footer" aria-label="Подвал сайта">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__title">SULTAN PLAZA BOROVOE</div>
+                <div class="footer__meta">Адрес: Санаторий Светлый 39Б</div>
+                <div class="footer__meta">Телефон: <a class="link" href="tel:+77074614707">8-707-461-47-07</a></div>
+                <div class="footer__meta">Email: <a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></div>
             </div>
 
-            <div class="footer-right">
-                <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-                <a class="btn btn-ghost btn-sm" href="tel:+77074614707" aria-label="Позвонить">Позвонить</a>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <div class="footer__head">Навигация</div>
+                    <a class="footer__link" href="./rooms.html">Rooms</a>
+                    <a class="footer__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="footer__link" href="./conference.html">Конференц-зал</a>
+                    <a class="footer__link" href="./rules.html">Правила</a>
+                    <a class="footer__link" href="./contacts.html">Контакты</a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head">CTA</div>
+                    <a class="btn btn--sm btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="btn btn--sm btn--ghost" href="tel:+77074614707">Call</a>
+                    <a class="btn btn--sm btn--ghost" href="mailto:sultanplazaburabay@gmail.com">Email</a>
+                    <a class="btn btn--sm btn--ghost" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">2GIS</a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head">Соцсети</div>
+                    <a class="footer__link" href="https://instagram.com/sultan_plaza_borovoe" target="_blank" rel="noopener">Instagram: @sultan_plaza_borovoe</a>
+                </div>
             </div>
         </div>
+
+        <div class="container footer__bottom">
+            <span class="footer__copy">© <span data-year></span> SULTAN PLAZA BOROVOE</span>
+            <span class="footer__note">Minimal · Quiet luxury UI</span>
+        </div>
     </footer>
-
-    <!-- Mobile CTA -->
-    <div class="mobile-cta" aria-label="Быстрые действия">
-        <a class="mobile-cta-btn is-primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <span class="ico" aria-hidden="true">💬</span> WhatsApp
-        </a>
-        <a class="mobile-cta-btn" href="tel:+77074614707" aria-label="Позвонить">
-            <span class="ico" aria-hidden="true">☎️</span> Звонок
-        </a>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

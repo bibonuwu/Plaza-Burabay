@@ -1,0 +1,6 @@
+/* Conference page only */
+
+.page-hero--conference .page-hero__media {
+    /* Replace: /assets/conference/hall.jpg */
+    background-image: url("../assets/conference/hall.jpg");
+}

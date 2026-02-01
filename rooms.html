@@ -2,325 +2,343 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#00645f" />
-    <title>Номера — SULTAN PLAZA BOROVOE</title>
-    <meta name="description" content="Номера SULTAN PLAZA BOROVOE — цены и быстрый запрос в WhatsApp." />
+    <title>SULTAN PLAZA BOROVOE — Rooms</title>
+    <meta name="description" content="Номера SULTAN PLAZA BOROVOE — категории и цены (завтрак / полный пансион), комплектация, доп. кровать." />
 
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="rooms.css" />
+    <!-- Montserrat only -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/rooms.css" />
+
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/rooms.js"></script>
 </head>
 
-<body class="page page-rooms">
-    <a class="skip-link" href="#main">Перейти к содержимому</a>
+<body class="page" data-page="rooms">
+    <a class="skip-link" href="#content">Перейти к контенту</a>
 
     <header class="site-header" data-header>
-        <div class="container header-inner">
-            <a class="brand" href="index.html" aria-label="На главную">
-                <span class="brand-mark" aria-hidden="true"></span>
-                <span class="brand-text">
-                    <strong>SULTAN PLAZA</strong>
-                    <span>BOROVOE</span>
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE — главная">
+                <span class="brand__mark" aria-hidden="true"></span>
+                <span class="brand__text">
+                    <span class="brand__name">SULTAN PLAZA</span>
+                    <span class="brand__sub">BOROVOE</span>
                 </span>
             </a>
 
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
-                <span class="nav-toggle-lines" aria-hidden="true"></span>
-            </button>
-
-            <nav class="site-nav" data-nav aria-label="Навигация">
-                <a href="index.html">Главная</a>
-                <a href="index.html#about">Об отеле</a>
-                <a href="index.html#spa">SPA</a>
-                <a href="index.html#restaurant">Ресторан</a>
-                <a href="index.html#additional">Возможности</a>
-                <a href="index.html#rules">Правила</a>
-                <a href="index.html#contacts">Контакты</a>
-
-                <span class="nav-divider" aria-hidden="true">•</span>
-
-                <a class="is-active" href="rooms.html">Номера</a>
-                <a href="conference.html">Конференц-зал</a>
-
-                <a class="btn btn-primary btn-sm nav-cta"
-                   href="https://wa.me/message/OLSP5EE7YBBVB1"
-                   target="_blank" rel="noopener"
-                   aria-label="WhatsApp">
-                    WhatsApp
-                </a>
+            <nav class="nav nav--desktop" aria-label="Основная навигация">
+                <a class="nav__link" href="./index.html">Hotel</a>
+                <a class="nav__link is-active" href="./rooms.html" aria-current="page">Rooms</a>
+                <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
+                <a class="nav__link" href="./conference.html">Конференц-зал</a>
+                <a class="nav__link" href="./rules.html">Правила</a>
+                <a class="nav__link" href="./contacts.html">Контакты</a>
             </nav>
+
+            <div class="header__actions">
+                <a class="btn btn--sm btn--ghost" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-burger>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="drawer" data-drawer aria-hidden="true">
+            <div class="drawer__panel">
+                <div class="drawer__top">
+                    <span class="drawer__title">Навигация</span>
+                    <button class="drawer__close" type="button" aria-label="Закрыть меню" data-drawer-close>✕</button>
+                </div>
+                <nav class="nav nav--mobile" aria-label="Мобильная навигация">
+                    <a class="nav__link" href="./index.html">Hotel</a>
+                    <a class="nav__link is-active" href="./rooms.html" aria-current="page">Rooms</a>
+                    <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="nav__link" href="./conference.html">Конференц-зал</a>
+                    <a class="nav__link" href="./rules.html">Правила</a>
+                    <a class="nav__link" href="./contacts.html">Контакты</a>
+                </nav>
+
+                <div class="drawer__cta">
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить наличие</a>
+                    <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                </div>
+            </div>
+            <button class="drawer__backdrop" type="button" aria-label="Закрыть меню" data-drawer-close></button>
         </div>
     </header>
 
-    <main id="main">
-        <!-- HERO (compact, без пустоты) -->
-        <section class="hero hero--editorial hero--compact"
-                 style="--hero:url('assets/rooms/standard-01.jpg');"
-                 aria-label="Номера">
-            <div class="hero-bg" aria-hidden="true"></div>
-            <div class="hero-vignette" aria-hidden="true"></div>
+    <main id="content">
+        <section class="page-hero page-hero--rooms" aria-label="Rooms">
+            <!-- Фото: замените на реальный визуал /assets/rooms/standard.jpg -->
+            <div class="page-hero__media" role="img" aria-label="Номера — фото"></div>
+            <div class="container page-hero__content" data-reveal>
+                <p class="kicker">Rooms</p>
+                <h1 class="h1">Номера</h1>
+                <p class="p p--muted">
+                    Цены и категории — как есть. Для коттеджа — «по запросу».
+                    Комплектация указана общими пунктами.
+                </p>
 
-            <div class="container hero-inner">
-                <div class="hero-editorial reveal">
-                    <p class="kicker">Номера</p>
-                    <h1 class="hero-title">Каталог</h1>
-                    <p class="hero-subtitle">Площадь, формат и цена. Детали — по запросу.</p>
-
-                    <div class="hero-actions">
-                        <a class="btn btn-primary"
-                           href="https://wa.me/message/OLSP5EE7YBBVB1"
-                           target="_blank" rel="noopener"
-                           aria-label="Уточнить наличие в WhatsApp">
-                            Уточнить наличие
-                        </a>
-                        <a class="btn btn-ghost" href="tel:+77074614707" aria-label="Позвонить">Позвонить</a>
+                <div class="pricing-toggle glass" data-reveal>
+                    <span class="pricing-toggle__label">Питание:</span>
+                    <div class="segmented" role="tablist" aria-label="Переключатель цен">
+                        <button class="segmented__btn is-active" type="button" data-plan-btn data-plan="breakfast" role="tab" aria-selected="true">
+                            Завтрак
+                        </button>
+                        <button class="segmented__btn" type="button" data-plan-btn data-plan="fullboard" role="tab" aria-selected="false">
+                            Полный пансион
+                        </button>
                     </div>
-
-                    <div class="chips" aria-label="Факты">
-                        <span class="chip">Check-in 14:00</span>
-                        <span class="chip">Check-out 12:00</span>
-                        <span class="chip">Ресепшн 24/7</span>
-                        <span class="chip">Wi-Fi free</span>
-                    </div>
+                    <span class="pricing-toggle__hint">Переключатель меняет цены на карточках.</span>
                 </div>
             </div>
+            <div class="page-hero__veil" aria-hidden="true"></div>
         </section>
 
-        <!-- Toolbar (sticky) -->
-        <section class="section section-compact" aria-label="Тариф">
-            <div class="container">
-                <div class="rooms-toolbar glass reveal">
-                    <div class="rooms-toolbar-left">
-                        <div class="segmented" data-price-toggle aria-label="Переключатель тарифа">
-                            <button class="seg-btn" type="button" data-plan="breakfast" aria-pressed="true">Завтрак</button>
-                            <button class="seg-btn" type="button" data-plan="full" aria-pressed="false">Полный пансион</button>
-                        </div>
-
-                        <div class="rooms-toolbar-note">
-                            <span class="dot" aria-hidden="true"></span>
-                            <span class="small">Доп. кровать (до 16 лет): 15 000 тг/ночь</span>
-                        </div>
-                    </div>
-
-                    <div class="rooms-toolbar-right">
-                        <a class="btn btn-ghost btn-sm" href="index.html#spa">SPA 09:00–22:00</a>
-                        <a class="btn btn-ghost btn-sm" href="index.html#restaurant">Ресторан 13:00–00:00</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Intro (чтобы не было пусто) -->
-        <section class="section section-compact" aria-label="Вступление">
-            <div class="container">
-                <div class="rooms-intro reveal">
-                    <div class="rooms-intro-copy glass">
-                        <h2 class="h2">Выберите формат</h2>
-                        <p class="muted">Коротко и удобно. Для уточнений — WhatsApp.</p>
-
-                        <div class="rooms-mini">
-                            <div class="mini">
-                                <div class="mini-k">Wi-Fi</div>
-                                <div class="mini-v">открытая сеть (5 этаж: «Султан Плаза 5»)</div>
-                            </div>
-                            <div class="mini">
-                                <div class="mini-k">Предоплата</div>
-                                <div class="mini-v">30 000 тг</div>
-                            </div>
-                            <div class="mini">
-                                <div class="mini-k">Оплата</div>
-                                <div class="mini-v">наличные / карта / QR</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rooms-intro-photos">
-                        <div class="photo-card">
-                            <img src="assets/rooms/standard-01.jpg" alt="Номер — фото" loading="lazy" decoding="async">
-                        </div>
-                        <div class="photo-card">
-                            <img src="assets/rooms/luxe-01.jpg" alt="Люкс — фото" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rooms grid -->
         <section class="section" aria-label="Список номеров">
             <div class="container">
-                <div class="section-head reveal">
-                    <h2>Номера</h2>
-                    <p>Цены переключаются сверху.</p>
+                <div class="rooms-grid" data-reveal>
+                    <!-- Room 1 -->
+                    <article class="room-card glass"
+                             data-breakfast="61 000"
+                             data-fullboard="99 000">
+                        <!-- Фото: /assets/rooms/standard.jpg -->
+                        <div class="room-card__media" style="background-image:url('./assets/rooms/standard.jpg')" aria-label="Стандарт — фото"></div>
+
+                        <div class="room-card__body">
+                            <div class="room-card__top">
+                                <h2 class="h3">Стандарт</h2>
+                                <span class="badge">Завтрак включён</span>
+                            </div>
+
+                            <div class="room-card__specs">
+                                <span class="spec">31м²</span>
+                                <span class="spec">2 взрослых + дети до 6</span>
+                                <span class="spec">King</span>
+                                <span class="spec">Балкон</span>
+                            </div>
+
+                            <div class="room-card__price">
+                                <span class="price__value js-price-value">61 000</span>
+                                <span class="price__currency">тг / ночь</span>
+                            </div>
+
+                            <ul class="checklist">
+                                <li>Косметика</li>
+                                <li>ТВ</li>
+                                <li>Фен</li>
+                                <li>Чайник</li>
+                                <li>Сейф и т.д.</li>
+                            </ul>
+
+                            <div class="room-card__actions">
+                                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить наличие</a>
+                                <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 2 -->
+                    <article class="room-card glass"
+                             data-breakfast="69 000"
+                             data-fullboard="107 000">
+                        <!-- Фото: /assets/rooms/deluxe-twin.jpg -->
+                        <div class="room-card__media" style="background-image:url('./assets/rooms/deluxe-twin.jpg')" aria-label="Де-люкс твин — фото"></div>
+
+                        <div class="room-card__body">
+                            <div class="room-card__top">
+                                <h2 class="h3">Де-люкс твин</h2>
+                                <span class="badge">Завтрак включён</span>
+                            </div>
+
+                            <div class="room-card__specs">
+                                <span class="spec">31м²</span>
+                                <span class="spec">2 взрослых + дети до 6</span>
+                                <span class="spec">Twin</span>
+                                <span class="spec">Балкон</span>
+                            </div>
+
+                            <div class="room-card__price">
+                                <span class="price__value js-price-value">69 000</span>
+                                <span class="price__currency">тг / ночь</span>
+                            </div>
+
+                            <ul class="checklist">
+                                <li>Косметика</li>
+                                <li>ТВ</li>
+                                <li>Фен</li>
+                                <li>Чайник</li>
+                                <li>Сейф и т.д.</li>
+                            </ul>
+
+                            <div class="room-card__actions">
+                                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить наличие</a>
+                                <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 3 -->
+                    <article class="room-card glass"
+                             data-breakfast="90 000"
+                             data-fullboard="128 000">
+                        <!-- Фото: /assets/rooms/family.jpg -->
+                        <div class="room-card__media" style="background-image:url('./assets/rooms/family.jpg')" aria-label="Семейный — фото"></div>
+
+                        <div class="room-card__body">
+                            <div class="room-card__top">
+                                <h2 class="h3">Семейный</h2>
+                                <span class="badge">Завтрак включён</span>
+                            </div>
+
+                            <div class="room-card__specs">
+                                <span class="spec">41м²</span>
+                                <span class="spec">3 взрослых или 2+1 подросток</span>
+                            </div>
+
+                            <div class="room-card__price">
+                                <span class="price__value js-price-value">90 000</span>
+                                <span class="price__currency">тг / ночь</span>
+                            </div>
+
+                            <ul class="checklist">
+                                <li>Косметика</li>
+                                <li>ТВ</li>
+                                <li>Фен</li>
+                                <li>Чайник</li>
+                                <li>Сейф и т.д.</li>
+                            </ul>
+
+                            <div class="room-card__actions">
+                                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить наличие</a>
+                                <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 4 -->
+                    <article class="room-card glass"
+                             data-breakfast="130 000"
+                             data-fullboard="168 000">
+                        <!-- Фото: /assets/rooms/suite.jpg -->
+                        <div class="room-card__media" style="background-image:url('./assets/rooms/suite.jpg')" aria-label="Люкс — фото"></div>
+
+                        <div class="room-card__body">
+                            <div class="room-card__top">
+                                <h2 class="h3">Люкс</h2>
+                                <span class="badge">Завтрак включён</span>
+                            </div>
+
+                            <div class="room-card__specs">
+                                <span class="spec">71м²</span>
+                                <span class="spec">Спальня + гостиная (диван, стол)</span>
+                                <span class="spec">Балкон</span>
+                                <span class="spec">Мини-бар</span>
+                            </div>
+
+                            <div class="room-card__price">
+                                <span class="price__value js-price-value">130 000</span>
+                                <span class="price__currency">тг / ночь</span>
+                            </div>
+
+                            <ul class="checklist">
+                                <li>Косметика</li>
+                                <li>ТВ</li>
+                                <li>Фен</li>
+                                <li>Чайник</li>
+                                <li>Сейф и т.д.</li>
+                            </ul>
+
+                            <div class="room-card__actions">
+                                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить наличие</a>
+                                <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 5 -->
+                    <article class="room-card glass room-card--request"
+                             data-breakfast=""
+                             data-fullboard="">
+                        <!-- Фото: /assets/rooms/cottage.jpg -->
+                        <div class="room-card__media" style="background-image:url('./assets/rooms/cottage.jpg')" aria-label="Коттедж — фото"></div>
+
+                        <div class="room-card__body">
+                            <div class="room-card__top">
+                                <h2 class="h3">Коттедж</h2>
+                                <span class="badge badge--soft">По запросу</span>
+                            </div>
+
+                            <p class="p p--muted">
+                                Данные по площади/вместимости/условиям — по запросу.
+                            </p>
+
+                            <div class="room-card__price">
+                                <span class="price__value js-price-value">по запросу</span>
+                                <span class="price__currency"></span>
+                            </div>
+
+                            <div class="room-card__actions">
+                                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Уточнить детали</a>
+                                <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="rooms-tiles reveal" aria-label="Карточки номеров">
-                    <!-- Standard -->
-                    <a class="room-tile" href="room-standard.html" aria-label="Стандарт — открыть">
-                        <img src="assets/rooms/standard-01.jpg" alt="Стандарт" loading="lazy" decoding="async">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="room-tile-body">
-                            <div class="room-tile-top">
-                                <div class="room-tile-title">
-                                    <span class="room-tile-k">Стандарт</span>
-                                    <span class="room-tile-badge">Завтрак включён</span>
-                                </div>
-                                <div class="room-tile-price" aria-label="Цена">
-                                    <span class="room-tile-price-val" data-price data-breakfast="61000" data-full="99000">61 000</span>
-                                    <span class="room-tile-price-sub">тг / ночь</span>
-                                </div>
-                            </div>
-                            <div class="room-tile-specs">
-                                <span class="tag">31 м²</span>
-                                <span class="tag">king</span>
-                                <span class="tag">балкон</span>
-                                <span class="tag">2 + дети до 6</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Deluxe Twin -->
-                    <a class="room-tile" href="room-deluxe-twin.html" aria-label="Де-люкс твин — открыть">
-                        <img src="assets/rooms/deluxe-01.jpg" alt="Де-люкс твин" loading="lazy" decoding="async">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="room-tile-body">
-                            <div class="room-tile-top">
-                                <div class="room-tile-title">
-                                    <span class="room-tile-k">Де-люкс твин</span>
-                                    <span class="room-tile-badge">Завтрак включён</span>
-                                </div>
-                                <div class="room-tile-price" aria-label="Цена">
-                                    <span class="room-tile-price-val" data-price data-breakfast="69000" data-full="107000">69 000</span>
-                                    <span class="room-tile-price-sub">тг / ночь</span>
-                                </div>
-                            </div>
-                            <div class="room-tile-specs">
-                                <span class="tag">31 м²</span>
-                                <span class="tag">twin</span>
-                                <span class="tag">балкон</span>
-                                <span class="tag">2 + дети до 6</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Family -->
-                    <a class="room-tile" href="room-family.html" aria-label="Семейный — открыть">
-                        <img src="assets/rooms/family-01.jpg" alt="Семейный" loading="lazy" decoding="async">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="room-tile-body">
-                            <div class="room-tile-top">
-                                <div class="room-tile-title">
-                                    <span class="room-tile-k">Семейный</span>
-                                    <span class="room-tile-badge">Завтрак включён</span>
-                                </div>
-                                <div class="room-tile-price" aria-label="Цена">
-                                    <span class="room-tile-price-val" data-price data-breakfast="90000" data-full="128000">90 000</span>
-                                    <span class="room-tile-price-sub">тг / ночь</span>
-                                </div>
-                            </div>
-                            <div class="room-tile-specs">
-                                <span class="tag">41 м²</span>
-                                <span class="tag">3 взрослых</span>
-                                <span class="tag">или 2+1</span>
-                                <span class="tag">и т.д.</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Luxe -->
-                    <a class="room-tile" href="room-luxe.html" aria-label="Люкс — открыть">
-                        <img src="assets/rooms/luxe-01.jpg" alt="Люкс" loading="lazy" decoding="async">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="room-tile-body">
-                            <div class="room-tile-top">
-                                <div class="room-tile-title">
-                                    <span class="room-tile-k">Люкс</span>
-                                    <span class="room-tile-badge">Завтрак включён</span>
-                                </div>
-                                <div class="room-tile-price" aria-label="Цена">
-                                    <span class="room-tile-price-val" data-price data-breakfast="130000" data-full="168000">130 000</span>
-                                    <span class="room-tile-price-sub">тг / ночь</span>
-                                </div>
-                            </div>
-                            <div class="room-tile-specs">
-                                <span class="tag">71 м²</span>
-                                <span class="tag">гостиная</span>
-                                <span class="tag">балкон</span>
-                                <span class="tag">мини-бар</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Cottage -->
-                    <a class="room-tile room-tile--request" href="room-cottage.html" aria-label="Коттедж — открыть">
-                        <img src="assets/rooms/cottage-01.jpg" alt="Коттедж" loading="lazy" decoding="async">
-                        <span class="tile-grad" aria-hidden="true"></span>
-                        <div class="room-tile-body">
-                            <div class="room-tile-top">
-                                <div class="room-tile-title">
-                                    <span class="room-tile-k">Коттедж</span>
-                                    <span class="room-tile-badge">по запросу</span>
-                                </div>
-                                <div class="room-tile-price">
-                                    <span class="room-tile-price-val">по запросу</span>
-                                    <span class="room-tile-price-sub">WhatsApp</span>
-                                </div>
-                            </div>
-                            <div class="room-tile-specs">
-                                <span class="tag">данных нет</span>
-                                <span class="tag">уточнить</span>
-                                <span class="tag">в WhatsApp</span>
-                            </div>
-                        </div>
-                    </a>
+                <div class="info-note glass" data-reveal>
+                    <div class="info-note__title">Доп. кровать</div>
+                    <div class="info-note__text">До 16 лет — <strong>15 000 тг/ночь</strong>.</div>
                 </div>
-
-                <div class="cta-line reveal">
-                    <div class="cta-panel2" role="region" aria-label="Контакт">
-                        <div class="cta-copy">
-                            <h3>Уточнить наличие?</h3>
-                            <p>Напишите — ответим быстро.</p>
-                        </div>
-                        <div class="cta-actions">
-                            <a class="btn btn-primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                            <a class="btn btn-ghost" href="tel:+77074614707">Позвонить</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div>
-                <div class="brand-footer">
-                    <span class="brand-mark" aria-hidden="true"></span>
-                    <div>
-                        <strong>SULTAN PLAZA BOROVOE</strong>
-                        <div class="muted small">Санаторий Светлый 39Б</div>
-                    </div>
-                </div>
-                <div class="muted small">© <span id="year"></span></div>
+    <footer class="site-footer" aria-label="Подвал сайта">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__title">SULTAN PLAZA BOROVOE</div>
+                <div class="footer__meta">Адрес: Санаторий Светлый 39Б</div>
+                <div class="footer__meta">Телефон: <a class="link" href="tel:+77074614707">8-707-461-47-07</a></div>
+                <div class="footer__meta">Email: <a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></div>
             </div>
 
-            <div class="footer-right">
-                <a class="btn btn-primary btn-sm" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                <a class="btn btn-ghost btn-sm" href="tel:+77074614707">Позвонить</a>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <div class="footer__head">Навигация</div>
+                    <a class="footer__link" href="./index.html">Hotel</a>
+                    <a class="footer__link" href="./spa.html">SPA &amp; Wellness</a>
+                    <a class="footer__link" href="./conference.html">Конференц-зал</a>
+                    <a class="footer__link" href="./rules.html">Правила</a>
+                    <a class="footer__link" href="./contacts.html">Контакты</a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head">CTA</div>
+                    <a class="btn btn--sm btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="btn btn--sm btn--ghost" href="tel:+77074614707">Call</a>
+                    <a class="btn btn--sm btn--ghost" href="mailto:sultanplazaburabay@gmail.com">Email</a>
+                    <a class="btn btn--sm btn--ghost" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">2GIS</a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head">Соцсети</div>
+                    <a class="footer__link" href="https://instagram.com/sultan_plaza_borovoe" target="_blank" rel="noopener">Instagram: @sultan_plaza_borovoe</a>
+                </div>
             </div>
         </div>
+
+        <div class="container footer__bottom">
+            <span class="footer__copy">© <span data-year></span> SULTAN PLAZA BOROVOE</span>
+            <span class="footer__note">Prices toggle: Breakfast / Full board</span>
+        </div>
     </footer>
-
-    <div class="mobile-cta" aria-label="Быстрые действия">
-        <a class="mobile-cta-btn is-primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
-            <span class="ico" aria-hidden="true">💬</span> WhatsApp
-        </a>
-        <a class="mobile-cta-btn" href="tel:+77074614707">
-            <span class="ico" aria-hidden="true">☎️</span> Звонок
-        </a>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

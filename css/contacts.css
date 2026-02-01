@@ -1,0 +1,96 @@
+/* Contacts page only */
+
+.page-hero--contacts {
+    min-height: 46vh;
+}
+
+.contact-grid {
+    display: grid;
+    gap: var(--space-5);
+}
+
+.contact-card {
+    padding: var(--space-6);
+}
+
+.contact-card__head {
+    display: grid;
+    gap: 10px;
+    margin-bottom: var(--space-5);
+}
+
+.kv {
+    display: grid;
+    gap: 14px;
+}
+
+.kv__item {
+    display: grid;
+    gap: 4px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(29,35,33,.10);
+}
+
+    .kv__item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+.kv__k {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(29,35,33,.66);
+}
+
+.kv__v {
+    color: rgba(29,35,33,.85);
+}
+
+.contact-card__actions {
+    margin-top: var(--space-6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Map placeholder */
+.map-card {
+    padding: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+}
+
+.map-placeholder {
+    height: 320px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(29,35,33,.10);
+    background: linear-gradient(135deg, rgba(0,100,95,.10), rgba(246,241,230,.35)), radial-gradient(circle at 20% 30%, rgba(29,35,33,.10), transparent 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+    .map-placeholder::after {
+        content: "Карта (плейсхолдер)";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: rgba(29,35,33,.62);
+    }
+
+.map-card__footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (min-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: start;
+    }
+}

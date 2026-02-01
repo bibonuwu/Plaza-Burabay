@@ -1,0 +1,38 @@
+/* Rules page only */
+
+.page-hero--rules {
+    min-height: 46vh;
+}
+
+.rules-grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.rule-card {
+    padding: var(--space-5);
+}
+
+.rule-card__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,100,95,.28);
+    background: rgba(0,100,95,.06);
+    display: grid;
+    place-items: center;
+    color: rgba(0,100,95,.95);
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .rules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .rules-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
