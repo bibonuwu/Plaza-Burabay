@@ -1,49 +1,60 @@
-/* =========================================================
-   rooms.js — Rooms only
-   Price toggle: Breakfast / Full board
-   ========================================================= */
-
+/* rooms.js â€” meal plan toggle (Breakfast / Full board) */
 (function () {
-    const qs = (s, el = document) => el.querySelector(s);
-    const qsa = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const qs = (s, el=document) => el.querySelector(s);
+  const qsa = (s, el=document) => Array.from(el.querySelectorAll(s));
 
-    function initPriceToggle() {
-        const buttons = qsa("[data-plan-btn]");
-        const cards = qsa(".room-card");
+  function getLang(){
+    const saved = localStorage.getItem("lang");
+    return saved || "ru";
+  }
 
-        if (!buttons.length || !cards.length) return;
+  function onRequestLabel(){
+    const lang = getLang();
+    if (lang === "en") return "On request";
+    if (lang === "kk") return "Ð¡Ò±Ñ€Ð°Ñƒ Ð±Ð¾Ð¹Ñ‹Ð½ÑˆÐ°";
+    return "ÐŸÐ¾ Ð·Ð°Ð¿Ñ€Ð¾ÑÑƒ";
+  }
 
-        const setActive = (plan) => {
-            buttons.forEach((btn) => {
-                const isActive = btn.dataset.plan === plan;
-                btn.classList.toggle("is-active", isActive);
-                btn.setAttribute("aria-selected", String(isActive));
-            });
+  function setPlan(plan){
+    qsa("[data-plan-btn]").forEach(btn=>{
+      const active = btn.getAttribute("data-plan") === plan;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
 
-            cards.forEach((card) => {
-                const priceEl = qs(".js-price-value", card);
-                if (!priceEl) return;
+    qsa(".room-card").forEach(card=>{
+      const b = card.getAttribute("data-breakfast") || "";
+      const f = card.getAttribute("data-fullboard") || "";
+      const out = qs(".js-price-value", card);
+      if (!out) return;
 
-                // Cottage or missing values => "ïî çàïðîñó"
-                const breakfast = card.dataset.breakfast?.trim();
-                const fullboard = card.dataset.fullboard?.trim();
+      if (!b && !f){
+        out.textContent = onRequestLabel();
+        return;
+      }
 
-                if (!breakfast || !fullboard) {
-                    priceEl.textContent = "ïî çàïðîñó";
-                    return;
-                }
+      const val = (plan === "fullboard") ? f : b;
+      out.textContent = val;
+    });
+  }
 
-                priceEl.textContent = plan === "fullboard" ? fullboard : breakfast;
-            });
-        };
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const buttons = qsa("[data-plan-btn]");
+    if (!buttons.length) return;
 
-        buttons.forEach((btn) => {
-            btn.addEventListener("click", () => setActive(btn.dataset.plan));
-        });
+    let plan = "breakfast";
+    setPlan(plan);
 
-        // Default
-        setActive("breakfast");
-    }
+    buttons.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        plan = btn.getAttribute("data-plan");
+        setPlan(plan);
+      });
+    });
 
-    document.addEventListener("DOMContentLoaded", initPriceToggle);
+    // If language changes, update "on request" label without breaking prices
+    window.addEventListener("storage", (e)=>{
+      if (e.key === "lang") setPlan(plan);
+    });
+  });
 })();

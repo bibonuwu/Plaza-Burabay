@@ -1,6 +1,45 @@
-/* Conference page only */
+/* conference.css — Conference page only */
+.page-hero--conf .page-hero__media{
+  /* Replace with real photo: /assets/conference/hall.jpg */
+  background-image:url("../assets/conference/hall.jpg");
+}
 
-.page-hero--conference .page-hero__media {
-    /* Replace: /assets/conference/hall.jpg */
-    background-image: url("../assets/conference/hall.jpg");
+.facts{
+  display:grid;
+  gap: var(--space-5);
+}
+.fact-card{
+  padding: var(--space-5);
+}
+.fact-row{
+  display:flex;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0,0,0,.10);
+}
+.fact-row:first-child{ border-top: 0; padding-top:0; }
+.fact-key{ color: rgba(0,0,0,.70); }
+.fact-val{ color: rgba(0,0,0,.92); font-weight: 500; text-align:right; }
+
+@media (min-width: 768px){
+  .facts{ grid-template-columns: 1fr 1fr; }
+}
+
+
+.media-card{
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.25);
+}
+.media-card__img{
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+.media-card__cap{
+  padding:12px 14px;
+  color: rgba(0,0,0,.70);
+  font-size:.92rem;
 }

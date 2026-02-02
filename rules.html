@@ -1,230 +1,420 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#00645f" />
-    <title>SULTAN PLAZA BOROVOE — Правила</title>
-    <meta name="description" content="Правила проживания: ресепшн 24/7, курение запрещено, тишина с 23:00, предоплата 30 000 тг, чек-ин/чек-аут и прочее." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="SULTAN PLAZA BOROVOE" />
 
-    <!-- Montserrat only -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>SULTAN PLAZA BOROVOE — Rules</title>
 
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/rules.css" />
+  <!-- Montserrat only -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script defer src="./js/main.js"></script>
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/rules.css" />
 </head>
+<body>
+<a class="skip-link" href="#main">Skip</a>
+<div class="page">
 
-<body class="page" data-page="rules">
-    <a class="skip-link" href="#content">Перейти к контенту</a>
+<header class="site-header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">
+        <span class="brand__name">SULTAN PLAZA</span>
+        <span class="brand__sub">BOROVOE</span>
+      </span>
+    </a>
 
-    <header class="site-header" data-header>
-        <div class="container header__inner">
-            <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE — главная">
-                <span class="brand__mark" aria-hidden="true"></span>
-                <span class="brand__text">
-                    <span class="brand__name">SULTAN PLAZA</span>
-                    <span class="brand__sub">BOROVOE</span>
-                </span>
-            </a>
+    <nav class="nav nav--desktop" aria-label="Primary">
+      <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
+          <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
+          <a class="nav__link" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
+          <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
+          <a class="nav__link is-active" href="./rules.html" data-i18n="nav.rules">Правила</a>
+          <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
 
-            <nav class="nav nav--desktop" aria-label="Основная навигация">
-                <a class="nav__link" href="./index.html">Hotel</a>
-                <a class="nav__link" href="./rooms.html">Rooms</a>
-                <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                <a class="nav__link" href="./conference.html">Конференц-зал</a>
-                <a class="nav__link is-active" href="./rules.html" aria-current="page">Правила</a>
-                <a class="nav__link" href="./contacts.html">Контакты</a>
-            </nav>
-
-            <div class="header__actions">
-                <a class="btn btn--sm btn--ghost" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-burger>
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
-                </button>
-            </div>
+    <div class="header__actions">
+      <a class="btn btn--primary btn--sm header__book" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+        <span data-i18n="cta.whatsapp">WhatsApp</span>
+      </a>
+      <div class="lang" aria-label="Language">
+        <button class="lang__btn" type="button" data-lang-toggle aria-expanded="false">
+          <span class="lang__code" data-lang-current>RU</span>
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"></use></svg>
+        </button>
+        <div class="lang__menu" data-lang-menu aria-hidden="true">
+          <button class="lang__item" type="button" data-lang="ru">Русский</button>
+          <button class="lang__item" type="button" data-lang="kk">Қазақша</button>
+          <button class="lang__item" type="button" data-lang="en">English</button>
         </div>
+      </div>
 
-        <div class="drawer" data-drawer aria-hidden="true">
-            <div class="drawer__panel">
-                <div class="drawer__top">
-                    <span class="drawer__title">Навигация</span>
-                    <button class="drawer__close" type="button" aria-label="Закрыть меню" data-drawer-close>✕</button>
-                </div>
-                <nav class="nav nav--mobile" aria-label="Мобильная навигация">
-                    <a class="nav__link" href="./index.html">Hotel</a>
-                    <a class="nav__link" href="./rooms.html">Rooms</a>
-                    <a class="nav__link" href="./spa.html">SPA &amp; Wellness</a>
-                    <a class="nav__link" href="./conference.html">Конференц-зал</a>
-                    <a class="nav__link is-active" href="./rules.html" aria-current="page">Правила</a>
-                    <a class="nav__link" href="./contacts.html">Контакты</a>
-                </nav>
+      <button class="burger" type="button" data-burger aria-label="Menu" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-                <div class="drawer__cta">
-                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">Задать вопрос</a>
-                    <a class="btn btn--ghost" href="tel:+77074614707">Позвонить</a>
-                </div>
-            </div>
-            <button class="drawer__backdrop" type="button" aria-label="Закрыть меню" data-drawer-close></button>
-        </div>
-    </header>
+<!-- Drawer (mobile) -->
+<div class="drawer" data-drawer aria-hidden="true">
+  <button class="drawer__backdrop" type="button" data-drawer-close aria-label="Close"></button>
+  <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__top">
+      <div class="drawer__title" data-i18n="nav.menu">Меню</div>
+      <button class="drawer__close" type="button" data-drawer-close aria-label="Close">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
 
-    <main id="content">
-        <section class="page-hero page-hero--rules" aria-label="Правила">
-            <div class="page-hero__media page-hero__media--pattern" role="img" aria-label="Правила — минималистичный фон"></div>
-            <div class="container page-hero__content" data-reveal>
-                <p class="kicker">House rules</p>
-                <h1 class="h1">Правила проживания</h1>
-                <p class="p p--muted">Коротко, чисто, без лишнего — чтобы всё было понятно с первого взгляда.</p>
+    <nav class="nav nav--mobile" aria-label="Mobile">
+      <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
+            <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
+            <a class="nav__link" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
+            <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
+            <a class="nav__link is-active" href="./rules.html" data-i18n="nav.rules">Правила</a>
+            <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
 
-                <div class="chips">
-                    <span class="chip">Ресепшн 24/7</span>
-                    <span class="chip">Check-in 14:00</span>
-                    <span class="chip">Check-out 12:00</span>
-                    <span class="chip">Тишина с 23:00</span>
-                </div>
-            </div>
-            <div class="page-hero__veil" aria-hidden="true"></div>
-        </section>
+    <div class="drawer__row">
+      <div class="drawer__label" data-i18n="nav.language">Язык</div>
+      <div class="drawer__langs">
+        <button class="chip chip--btn" type="button" data-lang="ru">RU</button>
+        <button class="chip chip--btn" type="button" data-lang="kk">KZ</button>
+        <button class="chip chip--btn" type="button" data-lang="en">EN</button>
+      </div>
+    </div>
 
-        <section class="section" aria-label="Список правил">
-            <div class="container">
-                <div class="rules-grid" data-reveal>
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Ресепшн</h2>
-                        <p class="p p--muted">Работает 24/7.</p>
-                    </article>
+    <div class="drawer__meta">
+      <div class="meta-line" data-i18n="meta.times">Check-in 14:00 · Check-out 12:00</div>
+      <div class="meta-line" data-i18n="meta.wifiDetail">Wi‑Fi: open · 5 этаж — “Султан Плаза 5”</div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Курение</h2>
-                        <p class="p p--muted">Запрещено.</p>
-                    </article>
+    <div class="drawer__cta">
+      <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+        <span data-i18n="cta.whatsapp">WhatsApp</span>
+      </a>
+      <a class="btn btn--ghost" href="tel:+77074614707">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+        <span data-i18n="cta.call">Позвонить</span>
+      </a>
+      <a class="btn btn--ghost" href="mailto:sultanplazaburabay@gmail.com">
+        <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+        <span data-i18n="cta.email">Email</span>
+      </a>
+    </div>
+  </aside>
+</div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Pet-friendly</h2>
-                        <p class="p p--muted">Нет.</p>
-                    </article>
+<main id="main">
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Тишина</h2>
-                        <p class="p p--muted">С 23:00.</p>
-                    </article>
+<section class="page-hero page-hero--rules" aria-label="Rules hero">
+  <div class="page-hero__media" aria-hidden="true"></div>
+  <div class="page-hero__veil" aria-hidden="true"></div>
+  <div class="container page-hero__content">
+    <p class="kicker" data-reveal>— SULTAN PLAZA BOROVOE</p>
+    <h1 class="h1" data-reveal data-i18n="rules.title">Правила</h1>
+    <p class="p p--muted" data-reveal data-i18n="rules.lead">Коротко и по делу.</p>
+  </div>
+</section>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Wi-Fi</h2>
-                        <p class="p p--muted">Открытый; для 5 этажа — сеть «Султан Плаза 5».</p>
-                    </article>
+<section class="section section--flush">
+  <div class="container rules-grid">
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r1.t">Ресепшн</p>
+        <p class="rule-text" data-i18n="rules.r1.v">24/7</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Уборка</h2>
-                        <p class="p p--muted">Ежедневно после 15:00–16:00.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-ban"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r2.t">Курение</p>
+        <p class="rule-text" data-i18n="rules.r2.v">запрещено</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Предоплата</h2>
-                        <p class="p p--muted">30 000 тг.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-paw"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r3.t">Pet-friendly</p>
+        <p class="rule-text" data-i18n="rules.r3.v">нет</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Оплата</h2>
-                        <p class="p p--muted">Наличные / карта / QR.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r4.t">Тишина</p>
+        <p class="rule-text" data-i18n="rules.r4.v">с 23:00</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Отмена</h2>
-                        <p class="p p--muted">Возврата нет, только перенос даты.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-wifi"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r5.t">Wi‑Fi</p>
+        <p class="rule-text" data-i18n="rules.r5.v">открытый; 5 этаж — «Султан Плаза 5»</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Check-in / Check-out</h2>
-                        <p class="p p--muted">14:00 / 12:00.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-broom"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r6.t">Уборка</p>
+        <p class="rule-text" data-i18n="rules.r6.v">ежедневно после 15:00–16:00</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Ранний/поздний</h2>
-                        <p class="p p--muted">+50% от цены номера.</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r7.t">Предоплата</p>
+        <p class="rule-text" data-i18n="rules.r7.v">30 000 тг</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Прачечная</h2>
-                        <p class="p p--muted">Через ресепшен (цены — фото).</p>
-                    </article>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r8.t">Оплата</p>
+        <p class="rule-text" data-i18n="rules.r8.v">наличные / карта / QR</p>
+      </div>
+    </div>
 
-                    <article class="rule-card glass">
-                        <div class="rule-card__icon" aria-hidden="true">◦</div>
-                        <h2 class="h3">Трансфер</h2>
-                        <p class="p p--muted">Нет.</p>
-                    </article>
-                </div>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-repeat"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r9.t">Отмена</p>
+        <p class="rule-text" data-i18n="rules.r9.v">возврата нет, только перенос даты</p>
+      </div>
+    </div>
 
-                <div class="cta-bar glass" data-reveal>
-                    <div class="cta-bar__text">
-                        <div class="cta-bar__title">Нужны уточнения?</div>
-                        <div class="cta-bar__desc">Напишите — ответим по правилам и условиям.</div>
-                    </div>
-                    <div class="cta-bar__actions">
-                        <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                        <a class="btn btn--ghost" href="tel:+77074614707">Call</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r10.t">Check‑in / Check‑out</p>
+        <p class="rule-text" data-i18n="rules.r10.v">14:00 / 12:00</p>
+      </div>
+    </div>
 
-    <footer class="site-footer" aria-label="Подвал сайта">
-        <div class="container footer__inner">
-            <div class="footer__brand">
-                <div class="footer__title">SULTAN PLAZA BOROVOE</div>
-                <div class="footer__meta">Адрес: Санаторий Светлый 39Б</div>
-                <div class="footer__meta">Телефон: <a class="link" href="tel:+77074614707">8-707-461-47-07</a></div>
-                <div class="footer__meta">Email: <a class="link" href="mailto:sultanplazaburabay@gmail.com">sultanplazaburabay@gmail.com</a></div>
-            </div>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r11.t">Ранний/поздний выезд</p>
+        <p class="rule-text" data-i18n="rules.r11.v">+50% от цены номера</p>
+      </div>
+    </div>
 
-            <div class="footer__links">
-                <div class="footer__col">
-                    <div class="footer__head">Навигация</div>
-                    <a class="footer__link" href="./index.html">Hotel</a>
-                    <a class="footer__link" href="./rooms.html">Rooms</a>
-                    <a class="footer__link" href="./spa.html">SPA &amp; Wellness</a>
-                    <a class="footer__link" href="./conference.html">Конференц-зал</a>
-                    <a class="footer__link" href="./contacts.html">Контакты</a>
-                </div>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-shirt"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r12.t">Прачечная</p>
+        <p class="rule-text" data-i18n="rules.r12.v">через ресепшен (цены фото)</p>
+      </div>
+    </div>
 
-                <div class="footer__col">
-                    <div class="footer__head">CTA</div>
-                    <a class="btn btn--sm btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">WhatsApp</a>
-                    <a class="btn btn--sm btn--ghost" href="tel:+77074614707">Call</a>
-                    <a class="btn btn--sm btn--ghost" href="mailto:sultanplazaburabay@gmail.com">Email</a>
-                    <a class="btn btn--sm btn--ghost" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">2GIS</a>
-                </div>
+    <div class="glass rule-card" data-reveal>
+      <div class="rule-ico"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></div>
+      <div class="rule-body">
+        <p class="rule-title" data-i18n="rules.r13.t">Трансфер</p>
+        <p class="rule-text" data-i18n="rules.r13.v">нет</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="footer__col">
-                    <div class="footer__head">Соцсети</div>
-                    <a class="footer__link" href="https://instagram.com/sultan_plaza_borovoe" target="_blank" rel="noopener">Instagram: @sultan_plaza_borovoe</a>
-                </div>
-            </div>
-        </div>
+</main>
 
-        <div class="container footer__bottom">
-            <span class="footer__copy">© <span data-year></span> SULTAN PLAZA BOROVOE</span>
-            <span class="footer__note">House rules</span>
-        </div>
-    </footer>
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="footer__title">SULTAN PLAZA BOROVOE</div>
+      <div class="footer__meta">Санаторий Светлый 39Б</div>
+      <div class="footer__meta">8-707-461-47-07 · sultanplazaburabay@gmail.com</div>
+    </div>
+
+    <div class="footer__links">
+      <div class="footer__col">
+        <div class="footer__head" data-i18n="footer.nav">Навигация</div>
+        <a class="footer__link" href="./index.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.hotel">Hotel</span></a>
+        <a class="footer__link" href="./rooms.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.rooms">Rooms</span></a>
+        <a class="footer__link" href="./spa.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.spa">SPA & Wellness</span></a>
+        <a class="footer__link" href="./conference.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.conf">Конференц-зал</span></a>
+        <a class="footer__link" href="./rules.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.rules">Правила</span></a>
+        <a class="footer__link" href="./contacts.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"></use></svg><span data-i18n="nav.contacts">Контакты</span></a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__head" data-i18n="footer.cta">CTA</div>
+        <a class="footer__link" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+          <span data-i18n="cta.whatsapp">WhatsApp</span>
+        </a>
+        <a class="footer__link" href="tel:+77074614707">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"></use></svg>
+          <span data-i18n="cta.call">Позвонить</span>
+        </a>
+        <a class="footer__link" href="mailto:sultanplazaburabay@gmail.com">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"></use></svg>
+          <span data-i18n="cta.email">Email</span>
+        </a>
+        <a class="footer__link" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-map"></use></svg>
+          <span data-i18n="cta.map">2GIS</span>
+        </a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__head" data-i18n="footer.social">Соцсети</div>
+        <a class="footer__link" href="https://www.instagram.com/sultan_plaza_borovoe/" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"></use></svg>
+          <span>@sultan_plaza_borovoe</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div>© <span data-year></span> SULTAN PLAZA BOROVOE</div>
+      <div>Quiet luxury · minimal</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile quick actions -->
+<div class="mobile-actions" aria-label="Quick actions">
+  <a class="mobile-actions__btn" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+    <span data-i18n="cta.whatsapp">WhatsApp</span>
+  </a>
+  <a class="mobile-actions__btn" href="tel:+77074614707" aria-label="Call">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+    <span data-i18n="cta.call">Позвонить</span>
+  </a>
+  <a class="mobile-actions__btn" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener" aria-label="2GIS">
+    <svg class="icon" aria-hidden="true"><use href="#i-map"></use></svg>
+    <span data-i18n="cta.map">2GIS</span>
+  </a>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24">
+    <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M7 4h2l1 5-2 1c1 3 4 6 7 7l1-2 5 1v2c0 1-1 2-2 2-9 0-16-7-16-16 0-1 1-2 2-2z"
+      fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-map" viewBox="0 0 24 24">
+    <path d="M12 21s6-4.2 6-10a6 6 0 10-12 0c0 5.8 6 10 6 10z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M12 11.2a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24">
+    <path d="M7 4h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M12 16a4 4 0 100-8 4 4 0 000 8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M17.5 6.7h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24">
+    <path d="M12 3a9 9 0 00-7.7 13.6L4 21l4.6-1.2A9 9 0 1012 3z"
+      fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M8.8 9.2c.3 3.2 3.7 6.6 6.9 6.9.5 0 1.2-.3 1.7-.8l.7-.7-1.7-1-.6.5c-.2.2-.6.3-.9.2-1.1-.3-2.6-1.8-2.9-2.9-.1-.3 0-.7.2-.9l.5-.6-1-1.7-.7.7c-.5.5-.8 1.2-.8 1.7z"
+      fill="currentColor" opacity=".9"/>
+  </symbol>
+
+  <symbol id="i-wifi" viewBox="0 0 24 24">
+    <path d="M5 10a11 11 0 0114 0M7.5 13a7.5 7.5 0 019 0M10 16a4 4 0 014 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M12 19.2h.01" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 21a9 9 0 110-18 9 9 0 010 18z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="i-in" viewBox="0 0 24 24">
+    <path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M8 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-out" viewBox="0 0 24 24">
+    <path d="M12 21V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M8 17l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 3h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="i-spa" viewBox="0 0 24 24">
+    <path d="M7 18c2-4 8-4 10 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M9 10c.5 1.8-.5 3.2-2 4M12 9c.8 2 .2 3.6-1 5M15 10c.5 1.8-.5 3.2-2 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-kids" viewBox="0 0 24 24">
+    <path d="M8 20v-6l4-2 4 2v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M12 9.2a2.2 2.2 0 110-4.4 2.2 2.2 0 010 4.4z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24">
+    <path d="M13 5.5a1.6 1.6 0 110-3.2 1.6 1.6 0 010 3.2z" fill="currentColor"/>
+    <path d="M10 21l2-6 3 2 1 4M9 12l3-2 2 1 3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 14l-2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Rules / utilities -->
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24">
+    <path d="M12 21a9 9 0 110-18 9 9 0 010 18z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M7.5 7.5l9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24">
+    <path d="M8 12c-1.2 0-2-1-2-2.2C6 8.6 6.8 8 7.8 8c1 0 1.7.8 1.7 1.8S9.1 12 8 12zm8 0c-1.1 0-1.9-1-1.9-2.2S14.8 8 15.8 8c1 0 1.8.6 1.8 1.8 0 1.2-.8 2.2-1.6 2.2z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M10.5 8.5c-1 0-1.7-.9-1.7-2 0-1.1.8-1.8 1.7-1.8 1 0 1.7.8 1.7 1.8 0 1.1-.7 2-1.7 2zM13.5 8.5c-1 0-1.7-.9-1.7-2 0-1.1.8-1.8 1.7-1.8 1 0 1.7.8 1.7 1.8 0 1.1-.7 2-1.7 2z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M12 21c-3.5 0-6-2.1-6-4.3 0-2 2.2-3.2 6-3.2s6 1.2 6 3.2C18 18.9 15.5 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+  </symbol>
+  <symbol id="i-broom" viewBox="0 0 24 24">
+    <path d="M4 20h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M10 18l9-9 2 2-9 9H10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M15 7l2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-card" viewBox="0 0 24 24">
+    <path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M4 10h16" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24">
+    <path d="M20 12a8 8 0 10-2.3 5.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M20 14v4h-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24">
+    <path d="M8 6l4-2 4 2 3 3-2 2-2-2v11H9V9L7 11 5 9l3-3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24">
+    <path d="M8 12a3 3 0 110-6 3 3 0 010 6zM16 12a3 3 0 110-6 3 3 0 010 6z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M4 20c0-3 2-5 4-5s4 2 4 5M12 20c0-3 2-5 4-5s4 2 4 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+</svg>
+<script src="./js/main.js"></script>
+
+</div>
 </body>
 </html>
