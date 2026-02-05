@@ -1,58 +1,174 @@
 /* contacts.css — Contacts page only */
-.page-hero--contacts .page-hero__media{
-  background-image:url("../assets/hero.jpg");
+
+/* HERO */
+.page-hero--contacts .page-hero__media {
+    background-image: url("../assets/hero.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.contact-grid{
-  display:grid;
-  gap: var(--space-5);
-}
-.contact-card{
-  padding: var(--space-5);
-}
-.contact-row{
-  display:flex;
-  align-items:flex-start;
-  gap: 12px;
-  padding: 10px 0;
-  border-top: 1px solid rgba(0,0,0,.10);
-}
-.contact-row:first-child{ border-top:0; padding-top:0; }
-.contact-row__label{ color: rgba(0,0,0,.70); font-size: .95rem; }
-.contact-row__value{ color: rgba(0,0,0,.92); font-weight: 500; }
-.contact-actions{
-  display:flex;
-  gap: 10px;
-  flex-wrap:wrap;
-  margin-top: 14px;
-}
-.map-card{
-  overflow:hidden;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(0,0,0,.12);
-  background: rgba(255,255,255,.25);
-}
-.map-card__img{
-  height: 320px;
-  background-size:cover;
-  background-position:center;
-}
-.map-card__cap{
-  padding: 12px 14px;
-  color: rgba(0,0,0,.70);
-  font-size: .92rem;
+/* Layout */
+.contact-grid {
+    display: grid;
+    gap: var(--space-5);
 }
 
-@media (max-width: 640px){
-  .contact-grid{ gap: var(--space-4); }
-  .contact-card{ padding: var(--space-4); }
-  .contact-row{ flex-direction:column; gap:6px; }
-  .contact-actions{ display:grid; }
-  .contact-actions .btn{ width:100%; }
-
-  .map-card__img{ height: 220px; }
-  .map-card__cap{ padding:10px 12px; }
+/* Cards */
+.contact-card {
+    padding: var(--space-5);
 }
-@media (min-width: 900px){
-  .contact-grid{ grid-template-columns: 1fr 1fr; align-items:start; }
+
+/* Rows */
+.contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0,0,0,.10);
+}
+
+    .contact-row:first-child {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    .contact-row .icon {
+        flex: 0 0 auto;
+        margin-top: 2px;
+    }
+
+.contact-row__label {
+    color: rgba(0,0,0,.70);
+    font-size: .95rem;
+    line-height: 1.25;
+}
+
+.contact-row__value {
+    color: rgba(0,0,0,.92);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-top: 3px;
+    word-break: break-word;
+}
+
+/* Actions */
+.contact-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+    .contact-actions .btn {
+        white-space: nowrap;
+    }
+
+/* Map card */
+.map-card {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0,0,0,.12);
+    background: rgba(255,255,255,.25);
+}
+
+.map-card__img {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    /* if your JS sets data-bg as inline background-image */
+}
+
+.map-card__cap {
+    padding: 12px 14px;
+    color: rgba(0,0,0,.70);
+    font-size: .92rem;
+}
+
+/* ---------------------------
+   Mobile first improvements
+---------------------------- */
+@media (max-width: 640px) {
+
+    /* Hero: smaller and cleaner on mobile */
+    .page-hero--contacts {
+        min-height: 52vh;
+    }
+
+        .page-hero--contacts .page-hero__content {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        .page-hero--contacts .kicker {
+            font-size: .92rem;
+            letter-spacing: .02em;
+        }
+
+        .page-hero--contacts .h1 {
+            font-size: clamp(1.6rem, 6vw, 2.1rem);
+            line-height: 1.1;
+        }
+
+        .page-hero--contacts .p {
+            font-size: 1rem;
+            line-height: 1.45;
+        }
+
+    .contact-grid {
+        gap: var(--space-4);
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: var(--space-4);
+    }
+
+    .contact-row {
+        flex-direction: row;
+        gap: 10px;
+        padding: 12px 0;
+    }
+
+        .contact-row .icon {
+            margin-top: 1px;
+        }
+
+    /* Make actions easy to tap */
+    .contact-actions {
+        display: grid;
+        gap: 10px;
+    }
+
+        .contact-actions .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+    .map-card__img {
+        height: 220px;
+    }
+
+    .map-card__cap {
+        padding: 10px 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 899px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Desktop: two columns */
+@media (min-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .map-card {
+        position: sticky;
+        top: 96px; /* header height-ish */
+    }
 }

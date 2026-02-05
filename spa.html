@@ -22,257 +22,305 @@
 <a class="skip-link" href="#main">Skip</a>
 <div class="page">
 
-<header class="site-header" data-header>
-  <div class="container header__inner">
-    <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__text">
-        <span class="brand__name">SULTAN PLAZA</span>
-        <span class="brand__sub">BOROVOE</span>
-      </span>
-    </a>
+    <header class="site-header" data-header>
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE">
+                <span class="brand__mark" aria-hidden="true"></span>
+                <span class="brand__text">
+                    <span class="brand__name">SULTAN PLAZA</span>
+                    <span class="brand__sub">BOROVOE</span>
+                </span>
+            </a>
 
-    <nav class="nav nav--desktop" aria-label="Primary">
-      <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
-          <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
-          <a class="nav__link is-active" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
-          <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
-          <a class="nav__link" href="./rules.html" data-i18n="nav.rules">Правила</a>
-          <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
-    </nav>
+            <nav class="nav nav--desktop" aria-label="Primary">
+                <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
+                <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
+                <a class="nav__link is-active" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
+                <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
+                <a class="nav__link" href="./rules.html" data-i18n="nav.rules">Правила</a>
+                <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
+            </nav>
 
-    <div class="header__actions">
-      <a class="btn btn--primary btn--sm header__book" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
-        <span data-i18n="cta.whatsapp">WhatsApp</span>
-      </a>
-      <div class="lang" aria-label="Language">
-        <button class="lang__btn" type="button" data-lang-toggle aria-expanded="false">
-          <span class="lang__code" data-lang-current>RU</span>
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-chevron"></use></svg>
-        </button>
-        <div class="lang__menu" data-lang-menu aria-hidden="true">
-          <button class="lang__item" type="button" data-lang="ru">Русский</button>
-          <button class="lang__item" type="button" data-lang="kk">Қазақша</button>
-          <button class="lang__item" type="button" data-lang="en">English</button>
+            <div class="header__actions">
+                <a class="btn btn--primary btn--sm header__book" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
+                    <span data-i18n="cta.whatsapp">WhatsApp</span>
+                </a>
+                <div class="lang" aria-label="Language">
+                    <button class="lang__btn" type="button" data-lang-toggle aria-expanded="false">
+                        <span class="lang__code" data-lang-current>RU</span>
+                        <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-chevron"></use></svg>
+                    </button>
+                    <div class="lang__menu" data-lang-menu aria-hidden="true">
+                        <button class="lang__item" type="button" data-lang="ru">Русский</button>
+                        <button class="lang__item" type="button" data-lang="kk">Қазақша</button>
+                        <button class="lang__item" type="button" data-lang="en">English</button>
+                    </div>
+                </div>
+
+                <button class="burger" type="button" data-burger aria-label="Menu" aria-expanded="false">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-menu"></use></svg>
+                </button>
+            </div>
         </div>
-      </div>
+    </header>
 
-      <button class="burger" type="button" data-burger aria-label="Menu" aria-expanded="false">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-menu"></use></svg>
-      </button>
-    </div>
-  </div>
-</header>
+    <!-- Drawer (mobile) -->
+    <div class="drawer" data-drawer aria-hidden="true">
+        <button class="drawer__backdrop" type="button" data-drawer-close aria-label="Close"></button>
+        <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+            <div class="drawer__top">
+                <div class="drawer__title" data-i18n="nav.menu">Меню</div>
+                <button class="drawer__close" type="button" data-drawer-close aria-label="Close">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-close"></use></svg>
+                </button>
+            </div>
 
-<!-- Drawer (mobile) -->
-<div class="drawer" data-drawer aria-hidden="true">
-  <button class="drawer__backdrop" type="button" data-drawer-close aria-label="Close"></button>
-  <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawer__top">
-      <div class="drawer__title" data-i18n="nav.menu">Меню</div>
-      <button class="drawer__close" type="button" data-drawer-close aria-label="Close">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-close"></use></svg>
-      </button>
-    </div>
+            <nav class="nav nav--mobile" aria-label="Mobile">
+                <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
+                <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
+                <a class="nav__link is-active" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
+                <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
+                <a class="nav__link" href="./rules.html" data-i18n="nav.rules">Правила</a>
+                <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
+            </nav>
 
-    <nav class="nav nav--mobile" aria-label="Mobile">
-      <a class="nav__link" href="./index.html" data-i18n="nav.hotel">Hotel</a>
-            <a class="nav__link" href="./rooms.html" data-i18n="nav.rooms">Rooms</a>
-            <a class="nav__link is-active" href="./spa.html" data-i18n="nav.spa">SPA & Wellness</a>
-            <a class="nav__link" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
-            <a class="nav__link" href="./rules.html" data-i18n="nav.rules">Правила</a>
-            <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
-    </nav>
-
-    <div class="drawer__row">
-      <div class="drawer__label" data-i18n="nav.language">Язык</div>
-      <div class="drawer__langs">
-        <button class="chip chip--btn" type="button" data-lang="ru">RU</button>
-        <button class="chip chip--btn" type="button" data-lang="kk">KZ</button>
-        <button class="chip chip--btn" type="button" data-lang="en">EN</button>
-      </div>
-    </div>
+            <div class="drawer__row">
+                <div class="drawer__label" data-i18n="nav.language">Язык</div>
+                <div class="drawer__langs">
+                    <button class="chip chip--btn" type="button" data-lang="ru">RU</button>
+                    <button class="chip chip--btn" type="button" data-lang="kk">KZ</button>
+                    <button class="chip chip--btn" type="button" data-lang="en">EN</button>
+                </div>
+            </div>
 
 
 
-    <div class="drawer__cta">
-      <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
-        <span data-i18n="cta.whatsapp">WhatsApp</span>
-      </a>
-      <a class="btn btn--ghost" href="tel:+77074614707">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-phone"></use></svg>
-        <span data-i18n="cta.call">Позвонить</span>
-      </a>
-      <a class="btn btn--ghost" href="mailto:sultanplazaburabay@gmail.com">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-mail"></use></svg>
-        <span data-i18n="cta.email">Email</span>
-      </a>
-    </div>
-  </aside>
-</div>
-
-<main id="main">
-
-<section class="page-hero page-hero--spa" aria-label="SPA hero">
-  <div class="page-hero__media" aria-hidden="true"></div>
-  <div class="page-hero__veil" aria-hidden="true"></div>
-  <div class="container page-hero__content">
-    <p class="kicker">— SULTAN PLAZA BOROVOE</p>
-    <h1 class="h1" data-i18n="spa.title">SPA & Wellness</h1>
-    <p class="p p--muted" data-i18n="spa.lead">Входит в стоимость — уточняйте детали в WhatsApp.</p>
-  </div>
-</section>
-
-<section class="section section--flush">
-  <div class="container info-grid">
-    <div class="glass info-card" data-reveal>
-      <div class="info-card__head">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg>
-        <h2 class="h3" data-i18n="spa.included">Включено</h2>
-      </div>
-      <ul class="list">
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.pool">Бассейн</span></li>
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.hammam">Хаммам</span></li>
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.inhalation">Ингаляция</span></li>
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.magneto">Магнитотерапия</span></li>
-      </ul>
-      <div class="rule"></div>
-      <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" style="margin-top:14px">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
-        <span data-i18n="spa.cta.price">Запросить прайс в WhatsApp</span>
-      </a>
+            <div class="drawer__cta">
+                <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
+                    <span data-i18n="cta.whatsapp">WhatsApp</span>
+                </a>
+                <a class="btn btn--ghost" href="tel:+77074614707">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-phone"></use></svg>
+                    <span data-i18n="cta.call">Позвонить</span>
+                </a>
+                <a class="btn btn--ghost" href="mailto:sultanplazaburabay@gmail.com">
+                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-mail"></use></svg>
+                    <span data-i18n="cta.email">Email</span>
+                </a>
+            </div>
+        </aside>
     </div>
 
-    <div class="glass info-card" data-reveal>
-      <div class="info-card__head">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-spa"></use></svg>
-        <h2 class="h3" data-i18n="spa.services">Услуги</h2>
-      </div>
-      <div class="chips" style="margin-top:10px">
-        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.massage">Массаж</span></span>
-        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.hammam">Хаммам</span></span>
-        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.sauna">Сауна</span></span>
-        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.pool">Бассейн</span></span>
-      </div>
+    <main id="main">
 
-      <div class="rule"></div>
+        <section class="page-hero page-hero--spa" aria-label="SPA hero">
+            <div class="page-hero__media" aria-hidden="true"></div>
+            <div class="page-hero__veil" aria-hidden="true"></div>
+            <div class="container page-hero__content">
+                <p class="kicker">— SULTAN PLAZA BOROVOE</p>
+                <h1 class="h1" data-i18n="spa.title">SPA & Wellness</h1>
+                <p class="p p--muted" data-i18n="spa.lead">Входит в стоимость — уточняйте детали в WhatsApp.</p>
+            </div>
+        </section>
 
-      <div class="info-card__head" style="margin-top:14px">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-clock"></use></svg>
-        <h2 class="h3" data-i18n="spa.hours">Время работы</h2>
-      </div>
-      <div class="pill" style="margin-top:10px">
-        <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-clock"></use></svg>
-        <span data-i18n="spa.time">09:00–22:00</span>
-      </div>
+        <section class="section section--flush">
+            <div class="container info-grid">
+                <div class="glass info-card" data-reveal>
+                    <div class="info-card__head">
+                        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg>
+                        <h2 class="h3" data-i18n="spa.included">Включено</h2>
+                    </div>
+                    <ul class="list">
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.pool">Бассейн</span></li>
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.hammam">Хаммам</span></li>
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.inhalation">Ингаляция</span></li>
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.magneto">Магнитотерапия</span></li>
+                    </ul>
+                    <div class="rule"></div>
+                    <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" style="margin-top:14px">
+                        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
+                        <span data-i18n="spa.cta.price">Запросить прайс в WhatsApp</span>
+                    </a>
+                </div>
 
-      <div class="rule"></div>
+                <div class="glass info-card" data-reveal>
+                    <div class="info-card__head">
+                        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-spa"></use></svg>
+                        <h2 class="h3" data-i18n="spa.services">Услуги</h2>
+                    </div>
+                    <div class="chips" style="margin-top:10px">
+                        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.massage">Массаж</span></span>
+                        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.inc.hammam">Хаммам</span></span>
+                        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.sauna">Сауна</span></span>
+                        <span class="chip"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.srv.pool">Бассейн</span></span>
+                    </div>
 
-      <div class="info-card__head" style="margin-top:14px">
-        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg>
-        <h2 class="h3" data-i18n="spa.extra">Дополнительно</h2>
-      </div>
-      <ul class="list" style="margin-top:10px">
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.extra.towels">Полотенца</span></li>
-        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.extra.changing">Раздевалка</span></li>
-      </ul>
-    </div>
-  </div>
+                    <div class="rule"></div>
 
-  <div class="container" style="margin-top: var(--space-6);">
-    <div class="media-strip" data-reveal>
-      <div class="media-tile">
-        <div class="media-tile__img" data-bg="./assets/spa/pool.jpg"></div>
-        <div class="media-tile__cap" data-i18n="spa.gallery.pool">Бассейн</div>
-      </div>
-      <div class="media-tile">
-        <div class="media-tile__img" data-bg="./assets/spa/hammam.jpg"></div>
-        <div class="media-tile__cap" data-i18n="spa.gallery.hammam">Хаммам</div>
-      </div>
-      <div class="media-tile">
-        <div class="media-tile__img" data-bg="./assets/spa/massage.jpg"></div>
-        <div class="media-tile__cap" data-i18n="spa.gallery.massage">Массаж</div>
-      </div>
-    </div>
-  </div>
-</section>
+                    <div class="info-card__head" style="margin-top:14px">
+                        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-clock"></use></svg>
+                        <h2 class="h3" data-i18n="spa.hours">Время работы</h2>
+                    </div>
+                    <div class="pill" style="margin-top:10px">
+                        <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-clock"></use></svg>
+                        <span data-i18n="spa.time">09:00–22:00</span>
+                    </div>
 
-</main>
+                    <div class="rule"></div>
 
-<footer class="site-footer">
-  <div class="container footer__inner">
-    <div>
-      <div class="footer__title" style="color: #fff;">SULTAN PLAZA BOROVOE</div>
-      <div class="footer__meta" style="color: #fff;">Санаторий Светлый 39Б</div>
-      <div class="footer__meta" style="color: #fff;">8-707-461-47-07 · sultanplazaburabay@gmail.com</div>
-    </div>
+                    <div class="info-card__head" style="margin-top:14px">
+                        <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg>
+                        <h2 class="h3" data-i18n="spa.extra">Дополнительно</h2>
+                    </div>
+                    <ul class="list" style="margin-top:10px">
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.extra.towels">Полотенца</span></li>
+                        <li><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-check"></use></svg><span data-i18n="spa.extra.changing">Раздевалка</span></li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="footer__links">
-      <div class="footer__col">
-        <div class="footer__head" data-i18n="footer.nav">Навигация</div>
-        <a class="footer__link" href="./index.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.hotel">Hotel</span></a>
-        <a class="footer__link" href="./rooms.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.rooms">Rooms</span></a>
-        <a class="footer__link" href="./spa.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.spa">SPA & Wellness</span></a>
-        <a class="footer__link" href="./conference.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.conf">Конференц-зал</span></a>
-        <a class="footer__link" href="./rules.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.rules">Правила</span></a>
-        <a class="footer__link" href="./contacts.html"><svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-arrow"></use></svg><span data-i18n="nav.contacts">Контакты</span></a>
-      </div>
+            <div class="container" style="margin-top: var(--space-6);">
+                <div class="media-strip" data-reveal>
+                    <div class="media-tile">
+                        <div class="media-tile__img" data-bg="./assets/spa/pool.jpg"></div>
+                        <div class="media-tile__cap" data-i18n="spa.gallery.pool">Бассейн</div>
+                    </div>
+                    <div class="media-tile">
+                        <div class="media-tile__img" data-bg="./assets/spa/hammam.jpg"></div>
+                        <div class="media-tile__cap" data-i18n="spa.gallery.hammam">Хаммам</div>
+                    </div>
+                    <div class="media-tile">
+                        <div class="media-tile__img" data-bg="./assets/spa/massage.jpg"></div>
+                        <div class="media-tile__cap" data-i18n="spa.gallery.massage">Массаж</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="footer__col">
-        <div class="footer__head" data-i18n="footer.cta">CTA</div>
-        <a class="footer__link" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
-          <span data-i18n="cta.whatsapp">WhatsApp</span>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <div>
+                <div class="footer__title" style="color: #fff;">SULTAN PLAZA BOROVOE</div>
+                <div class="footer__meta" style="color: #fff;">Санаторий Светлый 39Б</div>
+                <div class="footer__meta" style="color: #fff;">8-707-461-47-07 · sultanplazaburabay@gmail.com</div>
+            </div>
+
+            <div class="footer__links">
+                <div class="footer__col">
+                    <div class="footer__head" data-i18n="footer.nav" style="color: #fff;">Навигация</div>
+
+                    <a class="footer__link" href="./index.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.hotel" style="color: #fff;">Hotel</span>
+                    </a>
+
+                    <a class="footer__link" href="./rooms.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.rooms" style="color: #fff;">Rooms</span>
+                    </a>
+
+                    <a class="footer__link" href="./spa.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.spa" style="color: #fff;">SPA &amp; Wellness</span>
+                    </a>
+
+                    <a class="footer__link" href="./conference.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.conf" style="color: #fff;">Конференц-зал</span>
+                    </a>
+
+                    <a class="footer__link" href="./rules.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.rules" style="color: #fff;">Правила</span>
+                    </a>
+
+                    <a class="footer__link" href="./contacts.html" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-arrow"></use>
+                        </svg>
+                        <span data-i18n="nav.contacts" style="color: #fff;">Контакты</span>
+                    </a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head" data-i18n="footer.cta" style="color: #fff;">CTA</div>
+
+                    <a class="footer__link" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-whatsapp"></use>
+                        </svg>
+                        <span data-i18n="cta.whatsapp" style="color: #fff;">WhatsApp</span>
+                    </a>
+
+                    <a class="footer__link" href="tel:+77074614707" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-phone"></use>
+                        </svg>
+                        <span data-i18n="cta.call" style="color: #fff;">Позвонить</span>
+                    </a>
+
+                    <a class="footer__link" href="mailto:sultanplazaburabay@gmail.com" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-mail"></use>
+                        </svg>
+                        <span data-i18n="cta.email" style="color: #fff;">Email</span>
+                    </a>
+
+                    <a class="footer__link" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-map"></use>
+                        </svg>
+                        <span data-i18n="cta.map" style="color: #fff;">2GIS</span>
+                    </a>
+                </div>
+
+                <div class="footer__col">
+                    <div class="footer__head" data-i18n="footer.social" style="color: #fff;">Соцсети</div>
+
+                    <a class="footer__link" href="https://www.instagram.com/sultan_plaza_borovoe/" target="_blank" rel="noopener" style="color: #fff;">
+                        <svg class="icon icon--sm" aria-hidden="true" style="color: #fff; fill: currentColor;">
+                            <use href="./assets/icons/sprite.svg#i-instagram"></use>
+                        </svg>
+                        <span style="color: #fff;">@sultan_plaza_borovoe</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div style="color: #fff;">© <span data-year style="color: #fff;"></span> SULTAN PLAZA BOROVOE</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Mobile quick actions -->
+    <div class="mobile-actions" aria-label="Quick actions">
+        <a class="mobile-actions__btn" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="BOOK">
+            <span data-i18n="BOOK">BOOK</span>
         </a>
-        <a class="footer__link" href="tel:+77074614707">
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-phone"></use></svg>
-          <span data-i18n="cta.call">Позвонить</span>
-        </a>
-        <a class="footer__link" href="mailto:sultanplazaburabay@gmail.com">
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-mail"></use></svg>
-          <span data-i18n="cta.email">Email</span>
-        </a>
-        <a class="footer__link" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener">
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-map"></use></svg>
-          <span data-i18n="cta.map">2GIS</span>
-        </a>
-      </div>
 
-      <div class="footer__col">
-        <div class="footer__head" data-i18n="footer.social">Соцсети</div>
-        <a class="footer__link" href="https://www.instagram.com/sultan_plaza_borovoe/" target="_blank" rel="noopener">
-          <svg class="icon icon--sm" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-instagram"></use></svg>
-          <span>@sultan_plaza_borovoe</span>
+
+
+        <a class="mobile-actions__btn" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener" aria-label="2GIS">
+            <span data-i18n="cta.map">2GIS</span>
         </a>
-      </div>
     </div>
 
-    <div class="footer__bottom">
-      <div>© <span data-year></span> SULTAN PLAZA BOROVOE</div>
-      <div>Quiet luxury · minimal</div>
-    </div>
-  </div>
-</footer>
-
-<!-- Mobile quick actions -->
-<div class="mobile-actions" aria-label="Quick actions">
-  <a class="mobile-actions__btn" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
-    <span data-i18n="cta.whatsapp">WhatsApp</span>
-  </a>
-  <a class="mobile-actions__btn" href="tel:+77074614707" aria-label="Call">
-    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-phone"></use></svg>
-    <span data-i18n="cta.call">Позвонить</span>
-  </a>
-  <a class="mobile-actions__btn" href="https://2gis.kz/kokshetau/geo/70000001047201313/70.259054470807314,52.977457366435075" target="_blank" rel="noopener" aria-label="2GIS">
-    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-map"></use></svg>
-    <span data-i18n="cta.map">2GIS</span>
-  </a>
-</div>
-
-<script src="./js/main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 
 </div>
 </body>
