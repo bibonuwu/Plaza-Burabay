@@ -209,7 +209,7 @@
 @media (max-width: 640px){
   .pricing-toggle{ padding:12px; align-items:flex-start; }
   .segmented{ width:100%; justify-content:space-between; }
-  .segmented__btn{ flex:1; text-align:center; padding:10px 10px; }
+  .segmented__btn{ flex:1; text-align:center; padding:10px 10px; min-height:44px; }
 
   .rooms-grid{ gap: var(--space-4); }
   .room-card__media{ height: 200px; }

@@ -1,7 +1,7 @@
 /* conference.css — Conference page only */
 .page-hero--conf .page-hero__media{
-  /* Replace with real photo: /assets/conference/hall.jpg */
-  background-image:url("../assets/conference/hall.jpg");
+  /* Replace with real photo: /assets/conference/hall.avif */
+  background-image:url("../assets/conference/hall.avif");
 }
 
 .facts{
@@ -21,6 +21,10 @@
 .fact-row:first-child{ border-top: 0; padding-top:0; }
 .fact-key{ color: rgba(0,0,0,.70); }
 .fact-val{ color: rgba(0,0,0,.92); font-weight: 500; text-align:right; }
+.fact-val{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
 
 @media (min-width: 768px){
   .facts{ grid-template-columns: 1fr 1fr; }

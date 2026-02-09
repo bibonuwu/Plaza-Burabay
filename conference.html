@@ -1,35 +1,33 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./assets/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="description" content="SULTAN PLAZA BOROVOE" />
 
-  <title>SULTAN PLAZA BOROVOE — Conference</title>
+  <title>SULTAN PLAZA BOROVOE - Conference</title>
 
   <!-- Montserrat only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="./assets/conference/hall.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="./assets/conference/hall.avif" fetchpriority="high" />
 
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/conference.css" />
+  <link rel="stylesheet" href="./css/base.css?v=20260208" />
+  <link rel="stylesheet" href="./css/conference.css?v=20260208" />
 </head>
 <body>
-<a class="skip-link" href="#main">Skip</a>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 <div class="page">
 
     <header class="site-header" data-header>
         <div class="container header__inner">
-            <a class="brand" href="./index.html" aria-label="SULTAN PLAZA BOROVOE">
-                <span class="brand__mark" aria-hidden="true"></span>
-                <span class="brand__text">
-                    <span class="brand__name">SULTAN PLAZA</span>
-                    <span class="brand__sub">BOROVOE</span>
-                </span>
+            <a class="brand brand--logo-only" href="./index.html" aria-label="SULTAN PLAZA BOROVOE">
+                <img class="brand__img" src="./assets/logo.png" alt="SULTAN PLAZA BOROVOE logo" />
             </a>
 
             <nav class="nav nav--desktop" aria-label="Primary">
@@ -83,20 +81,16 @@
                 <a class="nav__link is-active" href="./conference.html" data-i18n="nav.conf">Конференц-зал</a>
                 <a class="nav__link" href="./rules.html" data-i18n="nav.rules">Правила</a>
                 <a class="nav__link" href="./contacts.html" data-i18n="nav.contacts">Контакты</a>
-            </nav>
-
-            <div class="drawer__row">
+                        <div class="drawer__lang" aria-label="Language">
                 <div class="drawer__label" data-i18n="nav.language">Язык</div>
-                <div class="drawer__langs">
-                    <button class="chip chip--btn" type="button" data-lang="ru">RU</button>
-                    <button class="chip chip--btn" type="button" data-lang="kk">KZ</button>
-                    <button class="chip chip--btn" type="button" data-lang="en">EN</button>
+                <div class="drawer__langs" role="group" aria-label="Language switcher">
+                    <button class="lang__item" type="button" data-lang="ru">Русский</button>
+                    <button class="lang__item" type="button" data-lang="kk">Қазақша</button>
+                    <button class="lang__item" type="button" data-lang="en">English</button>
                 </div>
             </div>
 
-
-
-            <div class="drawer__cta">
+                <div class="drawer__cta">
                 <a class="btn btn--primary" href="https://wa.me/message/OLSP5EE7YBBVB1" target="_blank" rel="noopener">
                     <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-whatsapp"></use></svg>
                     <span data-i18n="cta.whatsapp">WhatsApp</span>
@@ -104,10 +98,6 @@
                 <a class="btn btn--ghost" href="tel:+77074614707">
                     <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-phone"></use></svg>
                     <span data-i18n="cta.call">Позвонить</span>
-                </a>
-                <a class="btn btn--ghost" href="mailto:sultanplazaburabay@gmail.com">
-                    <svg class="icon" aria-hidden="true"><use href="./assets/icons/sprite.svg#i-mail"></use></svg>
-                    <span data-i18n="cta.email">Email</span>
                 </a>
             </div>
         </aside>
@@ -119,7 +109,6 @@
             <div class="page-hero__media" aria-hidden="true"></div>
             <div class="page-hero__veil" aria-hidden="true"></div>
             <div class="container page-hero__content">
-                <p class="kicker">— SULTAN PLAZA BOROVOE</p>
                 <h1 class="h1" data-i18n="conf.title">Конференц-зал</h1>
                 <p class="p p--muted" data-i18n="conf.lead">Удобно для встреч и презентаций.</p>
             </div>
@@ -149,7 +138,7 @@
                     </div>
                     <div class="fact-row">
                         <div class="fact-key" data-i18n="conf.catering.k">Кофе-брейк/кейтеринг</div>
-                        <div class="fact-val" data-i18n="conf.catering.v">да</div>
+                        <div class="fact-val" data-i18n="conf.catering.v">РґР°</div>
                     </div>
 
                     <div style="margin-top: 14px;">
@@ -164,8 +153,8 @@
                     <h2 class="h3" style="margin-bottom: 8px;">Media</h2>
                     <div class="rule"></div>
                     <div class="media-card">
-                        <div class="media-card__img" data-bg="./assets/conference/hall.jpg">
-                            <!-- Replace with real photo: /assets/conference/hall.jpg -->
+                        <div class="media-card__img" data-bg="./assets/conference/hall.avif">
+                            <!-- Replace with real photo: /assets/conference/hall.avif -->
                         </div>
                         <div class="media-card__cap" data-i18n="conf.gallery.cap">30 · projector · mic · Wi‑Fi</div>
                     </div>
@@ -294,12 +283,10 @@
         </a>
     </div>
 
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js?v=20260208" defer></script>
 
 </div>
 </body>
 </html>
-
-
 
 
