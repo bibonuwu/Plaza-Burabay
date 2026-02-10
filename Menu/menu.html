@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Sultan Plaza Menu</title>
+    <style>
+        :root {
+            /* Palette */
+            --bg-color: #f0ebdf;
+            --accent-color: rgba(0, 100, 95, 1); /* Dark Teal/Green */
+            --text-color: #1a1a1a;
+            --glass-bg: rgba(240, 235, 223, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --white: #ffffff;
+            --card-radius: 16px;
+            --btn-radius: 12px;
+            --safe-area-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-bottom: calc(80px + var(--safe-area-bottom)); /* Space for fixed bottom bar */
+        }
+
+        /* --- Header & Lang Switcher --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 16px 16px 0px 16px;
+        }
+        .site-logo {
+            height: 32px; /* маленький размер: попробуй 24–32px */
+            width: auto;
+            object-fit: contain;
+            margin: 0px 0px 5px 0px;
+        }
+
+        .logo-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin-bottom: 12px;
+            flex-direction: column;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand p {
+            margin: 2px 0 0 0;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* Segmented Control for Language */
+        .lang-switch {
+            display: flex;
+            background: rgba(0,0,0,0.05);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        .lang-btn {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 6px 0;
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+            .lang-btn.active {
+                background: var(--white);
+                color: var(--accent-color);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+        /* --- Search & Filter --- */
+        .search-container {
+            padding: 0px 16px 8px 16px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: var(--btn-radius);
+            background: var(--white);
+            font-size: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 12px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none; /* Firefox */
+        }
+
+            .categories::-webkit-scrollbar {
+                display: none;
+            }
+
+        .chip {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--white);
+            font-size: 13px;
+            white-space: nowrap;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+            .chip.active {
+                background: var(--accent-color);
+                color: var(--white);
+            }
+
+        /* --- Menu Grid --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+            .card:active {
+                transform: scale(0.98);
+            }
+
+        .card-img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .card-desc {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-price {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Add / Counter Button */
+        .btn-add {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .counter-wrapper {
+            display: flex;
+            align-items: center;
+            background: var(--accent-color);
+            border-radius: 16px;
+            padding: 2px;
+        }
+
+        .counter-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counter-val {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* --- Bottom Bar --- */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid var(--glass-border);
+            padding: 12px 16px;
+            padding-bottom: calc(12px + var(--safe-area-bottom));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+        }
+
+        .btn-order-main {
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: var(--btn-radius);
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 100, 95, 0.3);
+            cursor: pointer;
+            transition: transform 0.1s;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+            .btn-order-main:active {
+                transform: scale(0.98);
+            }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        /* --- Modals (Glassmorphism) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-end; /* Sheet style on mobile */
+        }
+
+            .modal-overlay.open {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        .modal-content {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85); /* Glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            padding: 24px;
+            padding-bottom: calc(24px + var(--safe-area-bottom));
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        /* Cart Items */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .cart-item-info h4 {
+            margin: 0 0 4px 0;
+            font-size: 15px;
+        }
+
+        .cart-item-info p {
+            margin: 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 800;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .btn-action-full {
+            width: 100%;
+            padding: 16px;
+            border-radius: var(--btn-radius);
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="Sultan Plaza logo" class="site-logo" />
+
+
+           
+            <!-- Language Switcher -->
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+                <button class="lang-btn" onclick="setLang('kz')">KZ</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Filter -->
+    <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Поиск по меню..." oninput="filterMenu()">
+        <div class="categories" id="category-filters">
+            <!-- Injected via JS -->
+        </div>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid" id="menu-container">
+        <!-- Cards injected via JS -->
+    </div>
+
+    <!-- Fixed Bottom Bar (Order Button Only) -->
+    <div class="bottom-bar">
+        <button class="btn-order-main" onclick="openCartModal()">
+            <span id="btn-order-text">Заказать</span>
+            <span id="btn-order-badge" class="badge" style="display:none;">0</span>
+        </button>
+    </div>
+
+    <!-- Cart / Checkout Modal -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="cart-title">Ваш заказ</span>
+                <button class="close-btn" onclick="closeModal('cart-modal')">&times;</button>
+            </div>
+
+            <div id="cart-items-list">
+                <!-- Cart Items injected here -->
+            </div>
+
+            <div class="cart-total">
+                <span id="cart-total-label">Итого:</span> <span id="cart-total-price">0 ₸</span>
+            </div>
+
+            <button class="btn-action-full btn-primary" onclick="openConfirmModal()">
+                <span id="btn-checkout-text">Оформить</span>
+            </button>
+            <button class="btn-action-full btn-secondary" onclick="closeModal('cart-modal')">
+                <span id="btn-cancel-text">Отмена</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirm-modal">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header" style="justify-content: center;">
+                <span class="modal-title" id="confirm-title">Подтверждение</span>
+            </div>
+            <p id="confirm-message" style="margin-bottom: 24px; color: #555;">Позвонить на 600 и оформить заказ?</p>
+
+            <button class="btn-action-full btn-primary" onclick="processOrder()">
+                <span id="btn-confirm-yes">Да, позвонить</span>
+            </button>
+            <button class="btn-action-full btn-secondary" onclick="closeModal('confirm-modal')">
+                <span id="btn-confirm-no">Назад</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- Data ---
+        const rawCategories = [
+            { id: 'all', ru: 'Все', kz: 'Барлығы', en: 'All' },
+            { id: 'sides', ru: 'Гарниры', kz: 'Гарнирлер', en: 'Sides' },
+            { id: 'soups', ru: 'Супы', kz: 'Сорпалар', en: 'Soups' },
+            { id: 'mains', ru: 'Основные', kz: 'Негізгі', en: 'Main Dishes' },
+            { id: 'oriental', ru: 'Восточная', kz: 'Шығыс', en: 'Oriental' },
+            { id: 'pizza', ru: 'Пицца', kz: 'Пицца', en: 'Pizza' },
+            { id: 'salads', ru: 'Салаты', kz: 'Салаттар', en: 'Salads' },
+            { id: 'appetizers', ru: 'Закуски', kz: 'Тағамдар', en: 'Appetizers' },
+            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' }
+        ];
+
+        const menuItems = [
+            // Sides
+            { id: 1, cat: 'sides', ru: 'Рис', kz: 'Күріш', en: 'Rice', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1000, img: 'rice' },
+            { id: 2, cat: 'sides', ru: 'Картофель Фри', kz: 'Картоп фри', en: 'French Fries', desc: { ru: '120 gr', kz: '120 гр', en: '120 gr' }, price: 1000, img: 'fries' },
+            { id: 3, cat: 'sides', ru: 'Овощи гриль', kz: 'Гриль көкөністер', en: 'Grilled Veg', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 1600, img: 'grillveg' },
+
+            // Kids
+            { id: 4, cat: 'kids', ru: 'Суп с фрикадельками', kz: 'Тефтели сорпасы', en: 'Meatball Soup', desc: { ru: 'Куриный бульон', kz: 'Тауық сорпасы', en: 'Chicken broth' }, price: 1800, img: 'soupkids' },
+            { id: 5, cat: 'kids', ru: 'Котлетки куриные', kz: 'Тауық котлеттері', en: 'Chicken Cutlets', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 2200, img: 'nuggets' },
+
+            // Soups
+            { id: 6, cat: 'soups', ru: 'Рамен с курицей', kz: 'Рамен тауық еті', en: 'Ramen Chicken', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2900, img: 'ramen' },
+            { id: 7, cat: 'soups', ru: 'Том Ям', kz: 'Том Ям', en: 'Tom Yum', desc: { ru: 'Кисло-острый', kz: 'Ащы-қышқыл', en: 'Spicy & Sour' }, price: 3000, img: 'tomyam' },
+            { id: 8, cat: 'soups', ru: 'Уха', kz: 'Балық сорпасы', en: 'Fish Soup', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2600, img: 'fishsoup' },
+
+            // Mains
+            { id: 9, cat: 'mains', ru: 'Лосось гриль', kz: 'Гриль лосось', en: 'Grilled Salmon', desc: { ru: 'С диким рисом', kz: 'Жабайы күрішпен', en: 'With wild rice' }, price: 6700, img: 'salmon' },
+            { id: 10, cat: 'mains', ru: 'Рибай стейк', kz: 'Рибай стейк', en: 'Ribeye Steak', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 12500, img: 'steak' },
+            { id: 11, cat: 'mains', ru: 'Цыплёнок табака', kz: 'Тауық Табака', en: 'Chicken Tabaka', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 6000, img: 'chicken' },
+
+            // Oriental
+            { id: 12, cat: 'oriental', ru: 'Манты классические', kz: 'Классикалық манты', en: 'Manty Classic', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 4000, img: 'manti' },
+            { id: 13, cat: 'oriental', ru: 'Лагман Гуйру', kz: 'Лагман Гуйру', en: 'Laghman Guiru', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'lagman' },
+            { id: 14, cat: 'oriental', ru: 'Казан кебаб', kz: 'Казан кебабы', en: 'Kazan Kebab', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4800, img: 'kebab' },
+
+            // Pizza
+            { id: 15, cat: 'pizza', ru: 'Пепперони', kz: 'Пепперони', en: 'Pepperoni', desc: { ru: 'С колбасками', kz: 'Шұжықтармен', en: 'With sausages' }, price: 3700, img: 'pepperoni' },
+            { id: 16, cat: 'pizza', ru: 'Цезарь пицца', kz: 'Цезарь пицца', en: 'Pizza Caesar', desc: { ru: '500 gr', kz: '500 гр', en: '500 gr' }, price: 4200, img: 'caesar' },
+            { id: 17, cat: 'pizza', ru: 'Маргарита', kz: 'Маргарита', en: 'Margarita', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3300, img: 'margarita' },
+
+            // Salads
+            { id: 18, cat: 'salads', ru: 'Цезарь с курицей', kz: 'Цезарь тауықпен', en: 'Caesar Chicken', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3200, img: 'caesarsalad' },
+            { id: 19, cat: 'salads', ru: 'Греческий салат', kz: 'Грек салаты', en: 'Greek Salad', desc: { ru: 'Свежие овощи', kz: 'Жаңа көкәністер', en: 'Fresh veg' }, price: 3600, img: 'greek' },
+            { id: 20, cat: 'salads', ru: 'Тар-тар с Тунцом', kz: 'Тар-тар Тунец', en: 'Tartar Tuna', desc: { ru: '220 gr', kz: '220 гр', en: '220 gr' }, price: 4400, img: 'tartar' },
+
+            // Appetizers
+            { id: 21, cat: 'appetizers', ru: 'Сыр Моцарелла', kz: 'Моцарелла ірімшігі', en: 'Mozzarella', desc: { ru: 'В панировке', kz: 'Панировкада', en: 'Breaded' }, price: 2800, img: 'mozz' },
+            { id: 22, cat: 'appetizers', ru: 'Крылышки BBQ', kz: 'Барбекю қанаттары', en: 'Wings BBQ', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 2900, img: 'wings' }
+        ];
+
+        // --- State ---
+        let currentLang = 'ru';
+        let cart = {}; // { id: qty }
+        let currentFilter = 'all';
+
+        // --- Translations ---
+        const translations = {
+            ru: {
+                brandDesc: 'BOROVOE HOTEL',
+                searchPh: 'Поиск по меню...',
+                orderBtn: 'Заказать',
+                cartTitle: 'Ваш заказ',
+                totalLabel: 'Итого:',
+                checkoutBtn: 'Оформить',
+                cancelBtn: 'Отмена',
+                confirmTitle: 'Подтверждение',
+                confirmMsg: 'Позвонить на 600 и оформить заказ?',
+                confirmYes: 'Да, позвонить',
+                confirmNo: 'Назад',
+                addBtn: 'Добавить'
+            },
+            kz: {
+                brandDesc: 'BOROVOE HOTEL',
+                searchPh: 'Мәзірден іздеу...',
+                orderBtn: 'Тапсырыс беру',
+                cartTitle: 'Тапсырысыңыз',
+                totalLabel: 'Барлығы:',
+                checkoutBtn: 'Рәсімдеу',
+                cancelBtn: 'Болдырмау',
+                confirmTitle: 'Растау',
+                confirmMsg: '600 нөміріне хабарласып тапсырыс бересіз бе?',
+                confirmYes: 'Иә, қоңырау',
+                confirmNo: 'Артқа',
+                addBtn: 'Қосу'
+            },
+            en: {
+                brandDesc: 'BOROVOE HOTEL',
+                searchPh: 'Search menu...',
+                orderBtn: 'Order',
+                cartTitle: 'Your order',
+                totalLabel: 'Total:',
+                checkoutBtn: 'Checkout',
+                cancelBtn: 'Cancel',
+                confirmTitle: 'Confirmation',
+                confirmMsg: 'Call 600 to place order?',
+                confirmYes: 'Yes, Call',
+                confirmNo: 'Back',
+                addBtn: 'Add'
+            }
+        };
+
+        // --- Core Functions ---
+
+        function setLang(lang) {
+            currentLang = lang;
+            // Update UI buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+            });
+            renderAll();
+        }
+
+        function renderAll() {
+            renderFilters();
+            renderMenu();
+            updateUIStrings();
+            updateBottomBar();
+        }
+
+        function updateUIStrings() {
+            const t = translations[currentLang];
+            document.getElementById('brand-desc').innerText = t.brandDesc;
+            document.getElementById('search-input').placeholder = t.searchPh;
+            document.getElementById('btn-order-text').innerText = t.orderBtn;
+            document.getElementById('cart-title').innerText = t.cartTitle;
+            document.getElementById('cart-total-label').innerText = t.totalLabel;
+            document.getElementById('btn-checkout-text').innerText = t.checkoutBtn;
+            document.getElementById('btn-cancel-text').innerText = t.cancelBtn;
+            document.getElementById('confirm-title').innerText = t.confirmTitle;
+            document.getElementById('confirm-message').innerText = t.confirmMsg;
+            document.getElementById('btn-confirm-yes').innerText = t.confirmYes;
+            document.getElementById('btn-confirm-no').innerText = t.confirmNo;
+        }
+
+        function renderFilters() {
+            const container = document.getElementById('category-filters');
+            container.innerHTML = '';
+            rawCategories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `chip ${currentFilter === cat.id ? 'active' : ''}`;
+                btn.innerText = cat[currentLang];
+                btn.onclick = () => {
+                    currentFilter = cat.id;
+                    renderFilters(); // re-render to update active class
+                    renderMenu();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function renderMenu() {
+            const container = document.getElementById('menu-container');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            container.innerHTML = '';
+
+            menuItems.forEach(item => {
+                // Filter logic
+                if (currentFilter !== 'all' && item.cat !== currentFilter) return;
+
+                const name = item[currentLang].toLowerCase();
+                const desc = item.desc[currentLang].toLowerCase();
+                if (searchVal && !name.includes(searchVal) && !desc.includes(searchVal)) return;
+
+                const qty = cart[item.id] || 0;
+
+                // Image
+                const imgUrl = `https://picsum.photos/seed/${item.img}/200/200`;
+
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                let actionBtnHTML = '';
+                if (qty === 0) {
+                    actionBtnHTML = `
+                            <button class="btn-add" onclick="addToCart(${item.id})">+</button>
+                        `;
+                } else {
+                    actionBtnHTML = `
+                            <div class="counter-wrapper">
+                                <button class="counter-btn" onclick="updateQty(${item.id}, -1)">–</button>
+                                <span class="counter-val">${qty}</span>
+                                <button class="counter-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                            </div>
+                        `;
+                }
+
+                card.innerHTML = `
+                        <img src="${imgUrl}" class="card-img" alt="${item[currentLang]}" loading="lazy">
+                        <div class="card-content">
+                            <div>
+                                <div class="card-title">${item[currentLang]}</div>
+                                <div class="card-desc">${item.desc[currentLang]}</div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="card-price">${item.price.toLocaleString()} ₸</span>
+                                ${actionBtnHTML}
+                            </div>
+                        </div>
+                    `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterMenu() {
+            renderMenu();
+        }
+
+        // --- Cart Logic ---
+
+        function addToCart(id) {
+            if (!cart[id]) cart[id] = 0;
+            cart[id]++;
+            renderMenu(); // Update buttons
+            updateBottomBar();
+        }
+
+        function updateQty(id, delta) {
+            if (cart[id]) {
+                cart[id] += delta;
+                if (cart[id] <= 0) delete cart[id];
+                renderMenu();
+                updateBottomBar();
+            }
+        }
+
+        function getCartTotal() {
+            let total = 0;
+            let count = 0;
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(i => i.id == id);
+                if (item) {
+                    total += item.price * qty;
+                    count += qty;
+                }
+            }
+            return { total, count };
+        }
+
+        function updateBottomBar() {
+            const { total, count } = getCartTotal();
+            const badge = document.getElementById('btn-order-badge');
+            if (count > 0) {
+                badge.style.display = 'inline-block';
+                badge.innerText = count;
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        // --- Modals ---
+
+        function openCartModal() {
+            const { total, count } = getCartTotal();
+            if (count === 0) return; // Do nothing if empty
+
+            const list = document.getElementById('cart-items-list');
+            list.innerHTML = '';
+
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(i => i.id == id);
+                if (item) {
+                    const row = document.createElement('div');
+                    row.className = 'cart-item';
+                    row.innerHTML = `
+                            <div class="cart-item-info">
+                                <h4>${item[currentLang]}</h4>
+                                <p>${qty} x ${item.price.toLocaleString()} ₸</p>
+                            </div>
+                            <div style="font-weight:600;">${(item.price * qty).toLocaleString()} ₸</div>
+                        `;
+                    list.appendChild(row);
+                }
+            }
+
+            document.getElementById('cart-total-price').innerText = total.toLocaleString() + ' ₸';
+            document.getElementById('cart-modal').classList.add('open');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('open');
+        }
+
+        function openConfirmModal() {
+            closeModal('cart-modal');
+            document.getElementById('confirm-modal').classList.add('open');
+        }
+
+        function processOrder() {
+            const { total } = getCartTotal();
+            let textBody = `Order for Room/Table:\n`;
+
+            // Build message text
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(i => i.id == id);
+                // Prioritize Russian or English for the SMS message for clarity, or mixed
+                textBody += `- ${item.ru} (${qty} шт)\n`;
+            }
+            textBody += `\nTotal: ${total} ₸`;
+
+            // Try to trigger Call
+            // Since we can't guarantee SMS support, user requested Call mainly.
+            // We use tel:600
+            window.location.href = `tel:600`;
+
+            // Optionally, to handle the "Copy if SMS fails" logic is hard in a simple flow
+            // because `tel:` immediately switches apps.
+            // But as per requirement, the action is "Call 600".
+
+            // Clear cart after "sending"
+            cart = {};
+            renderAll();
+            closeModal('confirm-modal');
+        }
+
+        // Initialize
+        renderAll();
+
+    </script>
+</body>
+</html>
