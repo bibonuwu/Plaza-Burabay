@@ -62,7 +62,12 @@
   max-width: 60ch;
 }
 
-.hero__cta{ display:flex; gap:12px; flex-wrap:wrap; }
+.hero__cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 
 /* Feature grid */
 .feature-grid{
