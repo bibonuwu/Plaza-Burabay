@@ -23,7 +23,7 @@
       "cta.email": "Email",
       "cta.map": "2GIS",
       "cta.book": "Забронировать в WhatsApp",
-      "cta.availability": "Уточнить наличие",
+      "cta.availability": "Booking",
       "cta.ask": "Уточнить",
       "cta.openRooms": "Открыть номера",
       "cta.openSpa": "Открыть SPA",
@@ -188,7 +188,7 @@
       "cta.email": "Email",
       "cta.map": "2GIS",
       "cta.book": "WhatsApp арқылы брондау",
-      "cta.availability": "Бос орын сұрау",
+      "cta.availability": "Booking",
       "cta.ask": "Сұрау",
       "cta.openRooms": "Нөмірлер",
       "cta.openSpa": "SPA",
@@ -210,7 +210,7 @@
       "contacts.emailLabel": "Email",
 
       "hotel.hero.title": "Бурабайдағы премиум демалыс",
-      "hotel.hero.lead": "Бурабайда жайлы демалыс. Толық ақпарат — WhatsApp-та.",
+      "hotel.hero.lead": "Бурабайда жайлы демалыс.",
       "hotel.about.title": "Қонақ үй туралы",
       "hotel.about.p1": "Ыңғайлы минимализм, түсінікті шарттар және жылдам байланыс.",
       "hotel.about.p2": "Мейрамхана 13:00–00:00 (мәзір — сұрау бойынша: фото/PDF).",
@@ -274,7 +274,7 @@
       "spa.time": "09:00–22:00",
       "spa.extra.towels": "Сүлгілер",
       "spa.extra.changing": "Киім ауыстыру бөлмесі",
-      "spa.cta.price": "Прайсты WhatsApp-та сұрау",
+      "spa.cta.price": "Прайст",
       "spa.gallery.pool": "Бассейн",
       "spa.gallery.hammam": "Хаммам",
       "spa.gallery.massage": "Массаж",
@@ -292,7 +292,7 @@
       "conf.price.v": "18:00 дейін 50 000 тг",
       "conf.catering.k": "Кофе-брейк/кейтеринг",
       "conf.catering.v": "иә",
-      "conf.cta": "Залды брондау сұрау",
+      "conf.cta": "Залды брондау",
 
       "rules.title": "Ережелер",
       "rules.lead": "Қысқа әрі нақты.",
@@ -334,7 +334,7 @@
       "contacts.btn.map": "2GIS ашу",
       "contacts.btn.wa": "WhatsApp жазу",
       "contacts.btn.call": "Қоңырау шалу",
-      "contacts.map.caption": "Статикалық карта (API жоқ)"
+      "contacts.map.caption": "Статикалық карта"
     },
 
     en: {
@@ -353,7 +353,7 @@
       "cta.email": "Email",
       "cta.map": "2GIS",
       "cta.book": "Book via WhatsApp",
-      "cta.availability": "Check availability",
+      "cta.availability": "Booking",
       "cta.ask": "Ask",
       "cta.openRooms": "View rooms",
       "cta.openSpa": "View SPA",
