@@ -498,48 +498,106 @@
             { id: 'oriental', ru: 'Восточная', kz: 'Шығыс', en: 'Oriental' },
             { id: 'pizza', ru: 'Пицца', kz: 'Пицца', en: 'Pizza' },
             { id: 'salads', ru: 'Салаты', kz: 'Салаттар', en: 'Salads' },
+            { id: 'cold', ru: 'Холодные', kz: 'Суық', en: 'Cold' },
             { id: 'appetizers', ru: 'Закуски', kz: 'Тағамдар', en: 'Appetizers' },
             { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' }
         ];
 
         const menuItems = [
-            // Sides
+            // Sides & Sauces
             { id: 1, cat: 'sides', ru: 'Рис', kz: 'Күріш', en: 'Rice', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1000, img: 'rice' },
-            { id: 2, cat: 'sides', ru: 'Картофель Фри', kz: 'Картоп фри', en: 'French Fries', desc: { ru: '120 gr', kz: '120 гр', en: '120 gr' }, price: 1000, img: 'fries' },
-            { id: 3, cat: 'sides', ru: 'Овощи гриль', kz: 'Гриль көкөністер', en: 'Grilled Veg', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 1600, img: 'grillveg' },
+            { id: 2, cat: 'sides', ru: 'Фри', kz: 'Картоп фри', en: 'French Fries', desc: { ru: '120 gr', kz: '120 гр', en: '120 gr' }, price: 1000, img: 'french-fries' },
+            { id: 3, cat: 'sides', ru: 'Пюре', kz: 'Пюре', en: 'Puree', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1100, img: 'puree' },
+            { id: 4, cat: 'sides', ru: 'Картофельные дольки', kz: 'Картоп кесектері', en: 'Potato wedges', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1000, img: 'potato-wedges' },
+            { id: 5, cat: 'sides', ru: 'Овощи гриль', kz: 'Грильде пісірілген көкөністер', en: 'Grilled vegetables', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 1600, img: 'grilled-vegetables' },
+            { id: 6, cat: 'sides', ru: 'Овощи на пару', kz: 'Буға пісірілген көкөністер', en: 'Steamed vegetables', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 1600, img: 'steamed-vegetables' },
+            { id: 7, cat: 'sides', ru: 'Сальса', kz: 'Сальса', en: 'Salsa', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 500, img: 'salsa' },
+            { id: 8, cat: 'sides', ru: 'BBQ', kz: 'Барбекю', en: 'BBQ', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 500, img: 'bbq' },
+            { id: 9, cat: 'sides', ru: 'Тар-тар', kz: 'Тар-тар', en: 'Tar-tar', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 500, img: 'tar-tar' },
+            { id: 10, cat: 'sides', ru: 'Свит чили', kz: 'Тәтті чили', en: 'Sweet chili', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 500, img: 'sweet-chili' },
+            { id: 11, cat: 'sides', ru: 'Кетчуп', kz: 'Кетчуп', en: 'Ketchup', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 350, img: 'ketchup' },
+            { id: 12, cat: 'sides', ru: 'Майонез', kz: 'Майонез', en: 'Mayonnaise', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 350, img: 'mayonnaise' },
+            { id: 13, cat: 'sides', ru: 'Сырный соус', kz: 'Ірімшік соусы', en: 'Cheese sauce', desc: { ru: '50 gr', kz: '50 гр', en: '50 gr' }, price: 600, img: 'cheese-sauce' },
 
             // Kids
-            { id: 4, cat: 'kids', ru: 'Суп с фрикадельками', kz: 'Тефтели сорпасы', en: 'Meatball Soup', desc: { ru: 'Куриный бульон', kz: 'Тауық сорпасы', en: 'Chicken broth' }, price: 1800, img: 'soupkids' },
-            { id: 5, cat: 'kids', ru: 'Котлетки куриные', kz: 'Тауық котлеттері', en: 'Chicken Cutlets', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 2200, img: 'nuggets' },
+            { id: 14, cat: 'kids', ru: 'Суп с фрикадельками', kz: 'Тефтели сорпасы', en: 'Soup with meatballs', desc: { ru: '250 gr • куриный бульон, фрикадельки, картофель', kz: '250 гр • тауық сорпасы, фрикаделькалар, картоп', en: '250 gr • chicken broth, meatballs, potatoes' }, price: 1800, img: 'soup-with-meatballs' },
+            { id: 15, cat: 'kids', ru: 'Котлетки куриные', kz: 'Тауық котлеттері', en: 'Chicken cutlets', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 2200, img: 'chicken-cutlets' },
+            { id: 16, cat: 'kids', ru: 'Кесадилья', kz: 'Кесадилла', en: 'Quesadillas', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3500, img: 'quesadillas' },
+            { id: 17, cat: 'kids', ru: 'Картофельные крокеты', kz: 'Картоп крокеттері', en: 'Potato croquettes', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1200, img: 'potato-croquettes' },
+            { id: 18, cat: 'kids', ru: 'Фруктовый салат', kz: 'Жеміс салаты', en: 'Fruit salad', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 2500, img: 'fruit-salad' },
+            { id: 19, cat: 'kids', ru: 'Блинчики с джемом', kz: 'Кептелісі бар құймақ', en: 'Pancakes with jam', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1200, img: 'pancakes-with-jam' },
 
             // Soups
-            { id: 6, cat: 'soups', ru: 'Рамен с курицей', kz: 'Рамен тауық еті', en: 'Ramen Chicken', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2900, img: 'ramen' },
-            { id: 7, cat: 'soups', ru: 'Том Ям', kz: 'Том Ям', en: 'Tom Yum', desc: { ru: 'Кисло-острый', kz: 'Ащы-қышқыл', en: 'Spicy & Sour' }, price: 3000, img: 'tomyam' },
-            { id: 8, cat: 'soups', ru: 'Уха', kz: 'Балық сорпасы', en: 'Fish Soup', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2600, img: 'fishsoup' },
+            { id: 20, cat: 'soups', ru: 'Рамён с курицей', kz: 'Рамен тауык еті', en: 'Ramen with chicken', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2900, img: 'ramen-with-chicken' },
+            { id: 21, cat: 'soups', ru: 'Том ям', kz: 'Том ям', en: 'Tom Yam', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3000, img: 'tom-yam' },
+            { id: 22, cat: 'soups', ru: 'Лапша', kz: 'Кеспе', en: 'Noodles', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2500, img: 'noodles' },
+            { id: 23, cat: 'soups', ru: 'Пельмени', kz: 'Тушпара', en: 'Dumplings', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2500, img: 'dumplings' },
+            { id: 24, cat: 'soups', ru: 'Крем-суп из тыквы', kz: 'Асқабақ сорпасы', en: 'Cream of pumpkin soup', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2500, img: 'cream-of-pumpkin-soup' },
+            { id: 25, cat: 'soups', ru: 'Уха', kz: 'Балық сорпасы', en: 'Fish soup', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2600, img: 'fish-soup' },
 
             // Mains
-            { id: 9, cat: 'mains', ru: 'Лосось гриль', kz: 'Гриль лосось', en: 'Grilled Salmon', desc: { ru: 'С диким рисом', kz: 'Жабайы күрішпен', en: 'With wild rice' }, price: 6700, img: 'salmon' },
-            { id: 10, cat: 'mains', ru: 'Рибай стейк', kz: 'Рибай стейк', en: 'Ribeye Steak', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 12500, img: 'steak' },
-            { id: 11, cat: 'mains', ru: 'Цыплёнок табака', kz: 'Тауық Табака', en: 'Chicken Tabaka', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 6000, img: 'chicken' },
+            { id: 26, cat: 'mains', ru: 'Лосось гриль с диким рисом', kz: 'Жабайы күріш қосылған гриль лосось', en: 'Salmon with wild rice', desc: { ru: '280 gr', kz: '280 гр', en: '280 gr' }, price: 6700, img: 'salmon-with-wild-rice' },
+            { id: 27, cat: 'mains', ru: 'Дорадо гриль с овощами', kz: 'Дорадо көкөністермен грильде пісірілген', en: 'Dorado grill with vegetables', desc: { ru: '280 gr', kz: '280 гр', en: '280 gr' }, price: 7400, img: 'dorado-grill-with-vegetables' },
+            { id: 28, cat: 'mains', ru: 'Чипсы из судака', kz: 'Көксерке чипсы', en: 'Chips from sudak', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 5500, img: 'chips-from-sudak' },
+            { id: 29, cat: 'mains', ru: 'Тигровые креветки гриль (соус Чимучирри)', kz: 'Чимучирри соусы қосылған грильдегі жолбарыс асшаяндары', en: 'Tiger prawns grilled (chimichurri)', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 7200, img: 'tiger-prawns-grilled-chimichur' },
+            { id: 30, cat: 'mains', ru: 'Перепёлка запечённая', kz: 'Пісірілген бөдене', en: 'Quail baked', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 5300, img: 'quail-baked' },
+            { id: 31, cat: 'mains', ru: 'Цыплёнок табака', kz: 'Тауық Табака', en: 'Chicken Tabaka', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 6000, img: 'chicken-tabaka' },
+            { id: 32, cat: 'mains', ru: 'Гордон Блю', kz: 'Гордон Блю', en: 'Gordon Bleu', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4900, img: 'gordon-bleu' },
+            { id: 33, cat: 'mains', ru: 'Веллингтон из телятины', kz: 'Веллингтон бұзау еті', en: 'Wellington veal', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 5500, img: 'wellington-veal' },
+            { id: 34, cat: 'mains', ru: 'Рибай стейк', kz: 'Рибай стейк', en: 'Ribeye steak', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 12500, img: 'ribeye-steak' },
+            { id: 35, cat: 'mains', ru: 'Стриплойн стейк', kz: 'Стриплойн стейк', en: 'Striploin steak', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 7500, img: 'striploin-steak' },
+            { id: 36, cat: 'mains', ru: 'Говяжий Бургиньон', kz: 'Сиыр Бургиньон', en: 'Beef Bourguignon', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 5200, img: 'beef-bourguignon' },
+            { id: 37, cat: 'mains', ru: 'Телятина с картофелем по-домашнему', kz: 'Үй стиліндегі картоп қосылған бұзау еті', en: 'Veal with homemade potatoes', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 4000, img: 'veal-with-homemade-potatoes' },
 
             // Oriental
-            { id: 12, cat: 'oriental', ru: 'Манты классические', kz: 'Классикалық манты', en: 'Manty Classic', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 4000, img: 'manti' },
-            { id: 13, cat: 'oriental', ru: 'Лагман Гуйру', kz: 'Лагман Гуйру', en: 'Laghman Guiru', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'lagman' },
-            { id: 14, cat: 'oriental', ru: 'Казан кебаб', kz: 'Казан кебабы', en: 'Kazan Kebab', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4800, img: 'kebab' },
+            { id: 38, cat: 'oriental', ru: 'Шорпа из баранины', kz: 'Қозы шорпа', en: 'Lamb broth', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2500, img: 'lamb-broth' },
+            { id: 39, cat: 'oriental', ru: 'Манты классические', kz: 'Классикалық манты', en: 'Manty classic', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 4000, img: 'manty-classic' },
+            { id: 40, cat: 'oriental', ru: 'Манты с тыквой', kz: 'Асқабақ қосылған манты', en: 'Manty with pumpkin', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3900, img: 'manty-with-pumpkin' },
+            { id: 41, cat: 'oriental', ru: 'Лагман Гуйру', kz: 'Лагман Гуйру', en: 'Laghman Guiru', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'laghman-guiru' },
+            { id: 42, cat: 'oriental', ru: 'Лагман Суйру', kz: 'Лагман Суйру', en: 'Laghman Suirou', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'laghman-suirou' },
+            { id: 43, cat: 'oriental', ru: 'Лагман Цомян', kz: 'Лагман Цомян', en: 'Laghman Coman', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 2900, img: 'laghman-coman' },
+            { id: 44, cat: 'oriental', ru: 'Казан кебаб', kz: 'Казан кебабы', en: 'Kazan kebab', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4800, img: 'kazan-kebab' },
+            { id: 45, cat: 'oriental', ru: 'Фри с мясом', kz: 'Ет қосылған картоп', en: 'Fries with meat', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 3000, img: 'fries-with-meat' },
 
-            // Pizza
-            { id: 15, cat: 'pizza', ru: 'Пепперони', kz: 'Пепперони', en: 'Pepperoni', desc: { ru: 'С колбасками', kz: 'Шұжықтармен', en: 'With sausages' }, price: 3700, img: 'pepperoni' },
-            { id: 16, cat: 'pizza', ru: 'Цезарь пицца', kz: 'Цезарь пицца', en: 'Pizza Caesar', desc: { ru: '500 gr', kz: '500 гр', en: '500 gr' }, price: 4200, img: 'caesar' },
-            { id: 17, cat: 'pizza', ru: 'Маргарита', kz: 'Маргарита', en: 'Margarita', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3300, img: 'margarita' },
+            // Pizza & Pasta
+            { id: 46, cat: 'pizza', ru: 'Пепперони с охотничьими колбасками', kz: 'Пепперони шұжықтармен', en: 'Pepperoni with hunting sausages', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 3700, img: 'pepperoni-with-hunting-sausage' },
+            { id: 47, cat: 'pizza', ru: 'Цезарь пицца', kz: 'Цезарь пицца', en: 'Pizza Caesar', desc: { ru: '500 gr', kz: '500 гр', en: '500 gr' }, price: 4200, img: 'pizza-caesar' },
+            { id: 48, cat: 'pizza', ru: 'Филадельфия с сёмгой', kz: 'Лосось қосылған Филадельфия', en: 'Philadelphia with salmon', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 4100, img: 'philadelphia-with-salmon' },
+            { id: 49, cat: 'pizza', ru: 'Маргарита', kz: 'Маргарита', en: 'Margarita', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3300, img: 'margarita' },
+            { id: 50, cat: 'pizza', ru: 'Фокаччо', kz: 'Фокаччо', en: 'Focachho', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 2000, img: 'focachho' },
+            { id: 51, cat: 'pizza', ru: 'Равиоли с козьим сыром и шпинатом', kz: 'Ешкі ірімшігі мен шпинат қосылған равиоли', en: 'Ravioli with goat cheese and spinach', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3000, img: 'ravioli-with-goat-cheese-and-s' },
+            { id: 52, cat: 'pizza', ru: 'Фетучини Карбонара', kz: 'Феттучини Карбонара', en: 'Fettuccine Carbonara', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 3200, img: 'fettuccine-carbonara' },
+            { id: 53, cat: 'pizza', ru: 'Фетучини Альфредо', kz: 'Феттучини Альфредо', en: 'Fettuccine Alfredo', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 3200, img: 'fettuccine-alfredo' },
+            { id: 54, cat: 'pizza', ru: 'Бургер из телятины', kz: 'Бұзау етінен жасалған бургер', en: 'Veal burger', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 4500, img: 'veal-burger' },
 
             // Salads
-            { id: 18, cat: 'salads', ru: 'Цезарь с курицей', kz: 'Цезарь тауықпен', en: 'Caesar Chicken', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3200, img: 'caesarsalad' },
-            { id: 19, cat: 'salads', ru: 'Греческий салат', kz: 'Грек салаты', en: 'Greek Salad', desc: { ru: 'Свежие овощи', kz: 'Жаңа көкәністер', en: 'Fresh veg' }, price: 3600, img: 'greek' },
-            { id: 20, cat: 'salads', ru: 'Тар-тар с Тунцом', kz: 'Тар-тар Тунец', en: 'Tartar Tuna', desc: { ru: '220 gr', kz: '220 гр', en: '220 gr' }, price: 4400, img: 'tartar' },
+            { id: 55, cat: 'salads', ru: 'Тар-тар с тунцом', kz: 'Салат Тар-тар тунец балығымен', en: 'Tartar with tuna', desc: { ru: '220 gr', kz: '220 гр', en: '220 gr' }, price: 4400, img: 'tartar-with-tuna' },
+            { id: 56, cat: 'salads', ru: 'Салат Хориатики с фокаччо', kz: 'Фокачия қосылған Хориатики салаты', en: 'Salad Horiatiki with focaccia', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3900, img: 'salad-horiatiki-with-focaccia' },
+            { id: 57, cat: 'salads', ru: 'Восточный салат (телятина, пряная зелень)', kz: 'Бұзау еті және ащы жасы қосылған шығыс салаты', en: 'Eastern salad with beef and spicy greens', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3700, img: 'eastern-salad-with-beef-and-sp' },
+            { id: 58, cat: 'salads', ru: 'Салат Ротатуй с языком', kz: 'Тіл, баклажан, қызанақ, песто-тәтті таңғыш қосылған Ротатуй салаты', en: 'Ratatouille salad with tongue', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4300, img: 'ratatouille-salad-with-tongue' },
+            { id: 59, cat: 'salads', ru: 'Хрустящие баклажаны (черри, азиатский соус)', kz: 'Шие қызанақтары бар қытырлақ баклажан, Азия соусы', en: 'Crispy eggplant with cherry tomatoes', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4300, img: 'crispy-eggplant-with-cherry-to' },
+            { id: 60, cat: 'salads', ru: 'Цезарь с курицей', kz: 'Цезарь салат', en: 'Chicken Caesar', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3200, img: 'chicken-caesar' },
+            { id: 61, cat: 'salads', ru: 'Оливье де Море', kz: 'Оливье де Море', en: 'Olivier de Sea', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3900, img: 'olivier-de-sea' },
+            { id: 62, cat: 'salads', ru: 'Греческий New', kz: 'Жаңа грек', en: 'Greek New', desc: { ru: '320 gr', kz: '320 гр', en: '320 gr' }, price: 3600, img: 'greek-new' },
+            { id: 63, cat: 'salads', ru: 'Свежий сезонный салат', kz: 'Жаңа маусымдық салат', en: 'Fresh seasonal salad', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3100, img: 'fresh-seasonal-salad' },
+
+            // Cold Appetizers
+            { id: 64, cat: 'cold', ru: 'Филе утки Магре (апельсиновые чипсы)', kz: 'Апельсин чипсымен магре үйрек филесі', en: 'Duck magret with orange chips', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 3900, img: 'duck-magret-with-orange-chips' },
+            { id: 65, cat: 'cold', ru: 'Пате из сёмги (фисташковая мука)', kz: 'Pistе ұны қосылған лосось пастасы', en: 'Salmon pate with pistachio flour', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4600, img: 'salmon-pate-with-pistachio-flo' },
+            { id: 66, cat: 'cold', ru: 'Карпаччо из лосося и тигровых креветок', kz: 'Карпаччо жолбарыс асшаяндары бар лосось', en: 'Salmon carpaccio with tiger prawns', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4600, img: 'salmon-carpaccio-with-tiger-pr' },
+            { id: 67, cat: 'cold', ru: 'Сырное плато на камне (ягоды, гриссини)', kz: 'Жидектер мен гриссини қосылған ірімшік табағы', en: 'Cheese plate with berries and grissini', desc: { ru: '220 gr', kz: '220 гр', en: '220 gr' }, price: 5900, img: 'cheese-plate-with-berries-and-' },
+            { id: 68, cat: 'cold', ru: 'Свежие овощи с белым пикантным сыром', kz: 'Ақ ірімшік қосылған жаңа піскен көкөністер', en: 'Fresh vegetables with spicy white cheese', desc: { ru: '450 gr', kz: '450 гр', en: '450 gr' }, price: 4600, img: 'fresh-vegetables-with-spicy-wh' },
+            { id: 69, cat: 'cold', ru: 'Ассорти из конских деликатесов', kz: 'Түрлі жылқы тағамдары', en: 'Selection of horse delicacies', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 4900, img: 'selection-of-horse-delicacies' },
+            { id: 70, cat: 'cold', ru: 'Соления с пикулли', kz: 'Тұздалған көкөністер', en: 'Pickles', desc: { ru: '380 gr', kz: '380 гр', en: '380 gr' }, price: 4600, img: 'pickles' },
 
             // Appetizers
-            { id: 21, cat: 'appetizers', ru: 'Сыр Моцарелла', kz: 'Моцарелла ірімшігі', en: 'Mozzarella', desc: { ru: 'В панировке', kz: 'Панировкада', en: 'Breaded' }, price: 2800, img: 'mozz' },
-            { id: 22, cat: 'appetizers', ru: 'Крылышки BBQ', kz: 'Барбекю қанаттары', en: 'Wings BBQ', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 2900, img: 'wings' }
+            { id: 71, cat: 'appetizers', ru: 'Сыр Моцарелла в панировке', kz: 'Нан пісірілген моцарелла ірімшігі', en: 'Breaded mozzarella', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 2800, img: 'breaded-mozzarella' },
+            { id: 72, cat: 'appetizers', ru: 'Наггетсы', kz: 'Наггеттар', en: 'Nuggets', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 2100, img: 'nuggets' },
+            { id: 73, cat: 'appetizers', ru: 'Колбаски куриные-бараньи', kz: 'Тауық-қой етінен жасалған шұжықтар', en: 'Chicken-lamb sausage', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3000, img: 'chicken-lamb-sausage' },
+            { id: 74, cat: 'appetizers', ru: 'Спринг-роллы (козий сыр, копчёная говядина)', kz: 'Ешкі ірімшігі мен ысталған сиыр еті қосылған серіппелі роллдар', en: 'Spring rolls with goat cheese and smoked beef', desc: { ru: '6 шт', kz: '6 дана', en: '6 pcs' }, price: 2500, img: 'spring-rolls-with-goat-cheese-' },
+            { id: 75, cat: 'appetizers', ru: 'Крылышки BBQ', kz: 'Барбекю қанаттары', en: 'Wings BBQ', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 2900, img: 'wings-bbq' },
+            { id: 76, cat: 'appetizers', ru: 'Крылышки Темпура', kz: 'Темпура қанаттары', en: 'Wings Tempura', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 2900, img: 'wings-tempura' },
+            { id: 77, cat: 'appetizers', ru: 'Креветки Темпура', kz: 'Асшаяндар Темпура', en: 'Shrimps Tempura', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 4000, img: 'shrimps-tempura' },
         ];
 
         // --- State ---
