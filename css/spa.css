@@ -1,7 +1,7 @@
 /* spa.css — SPA page only */
 .page-hero--spa .page-hero__media{
   /* Replace with real photo: /assets/spa/pool.jpg */
-  background-image:url("../assets/spa/pool.jpg");
+  background-image:url("../assets/spa/pool1.jpg");
 }
 
 .info-grid{

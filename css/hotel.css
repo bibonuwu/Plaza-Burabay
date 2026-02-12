@@ -66,7 +66,8 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* Feature grid */
