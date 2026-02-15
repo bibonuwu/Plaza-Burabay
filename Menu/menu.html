@@ -191,7 +191,7 @@
             flex: 1;
             padding: 12px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: space-between;
         }
 
@@ -729,8 +729,7 @@
             { id: 'salads', ru: 'Салаты', kz: 'Салаттар', en: 'Salads' },
             { id: 'cold', ru: 'Холодные', kz: 'Суық', en: 'Cold' },
             { id: 'appetizers', ru: 'Закуски', kz: 'Тағамдар', en: 'Appetizers' },
-            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' },
-            { id: 'other', ru: 'Другое', kz: 'Басқа', en: 'Other' }
+            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' }
         ];
 
         const menuItems = [
@@ -1120,7 +1119,6 @@
                 }
 
                 card.innerHTML = `
-                            <img src="${imgUrl}" class="card-img" alt="${item[currentLang]}" loading="lazy">
                             <div class="card-content">
                                 <div>
                                     <div class="card-title">${item[currentLang]}</div>
