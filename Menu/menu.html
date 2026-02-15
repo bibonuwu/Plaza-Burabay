@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid rgba(0, 100, 95, 1);
             padding: 16px 16px 0px 16px;
         }
         .site-logo {
@@ -54,7 +54,6 @@
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            margin-bottom: 12px;
             flex-direction: column;
         }
 
@@ -73,6 +72,7 @@
 
         /* Segmented Control for Language */
         .lang-switch {
+            margin: 0px 30px 0px 30px;
             display: flex;
             background: rgba(0,0,0,0.05);
             padding: 3px;
@@ -103,6 +103,12 @@
             padding: 0px 16px 8px 16px;
         }
 
+        .menu-page #menu-controls-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
         .search-input {
             width: 100%;
             padding: 14px;
@@ -112,6 +118,10 @@
             font-size: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             margin-bottom: 12px;
+        }
+
+        .menu-page #menu-controls-panel .search-input {
+            margin-bottom: 0;
         }
 
         .categories {
@@ -140,6 +150,14 @@
                 background: var(--accent-color);
                 color: var(--white);
             }
+
+        @media (max-width: 768px) {
+            .menu-page #menu-controls-panel .categories {
+                flex-wrap: wrap;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
 
         /* --- Menu Grid --- */
         .menu-grid {
@@ -405,9 +423,204 @@
             background: #e0e0e0;
             color: #333;
         }
+
+        /* --- Menu UX Enhancements (scoped) --- */
+        .menu-page button,
+        .menu-page input[type="text"] {
+            min-height: 40px;
+        }
+
+        .menu-page .lang-btn {
+            min-height: 0px;
+            padding: 8px 10px;
+        }
+
+        .menu-page .chip {
+            min-height: 40px;
+            padding: 9px 16px;
+            cursor: pointer;
+        }
+
+        .menu-page .btn-add {
+            width: 40px;
+            height: 40px;
+        }
+
+        .menu-page .counter-wrapper {
+            min-height: 40px;
+            border-radius: 20px;
+            padding: 2px 4px;
+        }
+
+        .menu-page .counter-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .menu-page .counter-val {
+            min-width: 24px;
+        }
+
+        .menu-page .btn-order-main {
+            min-height: 48px;
+        }
+
+        .menu-page button:focus-visible,
+        .menu-page input:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        .menu-page .lang-btn:hover,
+        .menu-page .chip:hover {
+            border-color: rgba(0, 100, 95, 0.35);
+        }
+
+        .menu-page .card {
+            min-width: 0;
+        }
+
+        .menu-page .card-content {
+            min-width: 0;
+        }
+
+        .menu-page .card-footer {
+            gap: 8px;
+        }
+
+        .menu-page .card-title,
+        .menu-page .card-desc {
+            overflow-wrap: anywhere;
+        }
+
+        .menu-page .menu-toggle {
+            display: none;
+        }
+
+        .menu-page .menu-toggle-icon {
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            position: relative;
+            border-radius: 2px;
+        }
+
+        .menu-page .menu-toggle-icon::before,
+        .menu-page .menu-toggle-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+        }
+
+        .menu-page .menu-toggle-icon::before {
+            top: -6px;
+        }
+
+        .menu-page .menu-toggle-icon::after {
+            top: 6px;
+        }
+
+        .menu-page .menu-backdrop {
+            display: none;
+        }
+
+        @media (min-width: 769px) {
+            .menu-page .logo-area,
+            .menu-page .search-container,
+            .menu-page .menu-grid {
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .menu-page .menu-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                align-items: start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-page.mobile-menu-ready .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                margin: 8px 16px 10px;
+                padding: 0 14px;
+                width: calc(100% - 32px);
+                border: 1px solid var(--glass-border);
+                border-radius: var(--btn-radius);
+                background: var(--white);
+                color: var(--text-color);
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+                cursor: pointer;
+                position: relative;
+                z-index: 220;
+            }
+
+            .menu-page.mobile-menu-ready #menu-controls-panel {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 320;
+                margin: 0;
+                padding: calc(14px + env(safe-area-inset-top, 0px)) 16px 12px 16px;
+                background: rgba(240, 235, 223, 0.98);
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+                box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+                max-height: 75vh;
+                overflow-y: auto;
+                transform: translateY(-105%);
+                transition: transform 0.24s ease;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            .menu-page.mobile-menu-ready.mobile-menu-open #menu-controls-panel {
+                transform: translateY(0);
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .menu-page.mobile-menu-ready #menu-controls-panel .search-input {
+                margin-bottom: 10px;
+            }
+
+            .menu-page.mobile-menu-ready #menu-controls-panel .categories {
+                flex-wrap: wrap;
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-height: calc(75vh - 72px);
+                padding-bottom: 8px;
+            }
+
+            .menu-page.mobile-menu-ready .menu-backdrop {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 310;
+                background: rgba(0, 0, 0, 0.4);
+            }
+
+            .menu-page.mobile-menu-ready .menu-backdrop[hidden] {
+                display: none;
+            }
+
+            .menu-page.mobile-menu-open {
+                overflow: hidden;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="menu-page">
 
     <!-- Header -->
     <header>
@@ -415,19 +628,27 @@
             <img src="logo.png" alt="Sultan Plaza logo" class="site-logo" />
 
 
-           
-            <!-- Language Switcher -->
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('ru')">RU</button>
-                <button class="lang-btn" onclick="setLang('kz')">KZ</button>
-                <button class="lang-btn" onclick="setLang('en')">EN</button>
-            </div>
+
+
+
+            <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="menu-controls-panel" aria-label="Открыть фильтры меню">
+                <span class="menu-toggle-icon" aria-hidden="true"></span>
+                <span>Фильтры</span>
+            </button>
         </div>
     </header>
 
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('kz')">KZ</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="menu-backdrop" id="menu-backdrop" hidden aria-hidden="true"></div>
+
     <!-- Search & Filter -->
-    <div class="search-container">
-        <input type="text" id="search-input" class="search-input" placeholder="Поиск по меню..." oninput="filterMenu()">
+    <div class="search-container" id="menu-controls-panel" role="region" aria-label="Поиск и фильтры меню">
+        <input type="text" id="search-input" class="search-input" placeholder="Поиск по меню..." aria-label="Поиск по названию блюда" autocomplete="off" oninput="filterMenu()">
         <div class="categories" id="category-filters">
             <!-- Injected via JS -->
         </div>
@@ -500,7 +721,8 @@
             { id: 'salads', ru: 'Салаты', kz: 'Салаттар', en: 'Salads' },
             { id: 'cold', ru: 'Холодные', kz: 'Суық', en: 'Cold' },
             { id: 'appetizers', ru: 'Закуски', kz: 'Тағамдар', en: 'Appetizers' },
-            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' }
+            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' },
+            { id: 'other', ru: 'Другое', kz: 'Басқа', en: 'Other' }
         ];
 
         const menuItems = [
@@ -604,6 +826,138 @@
         let currentLang = 'ru';
         let cart = {}; // { id: qty }
         let currentFilter = 'all';
+        const categoryTaxonomy = Object.freeze({
+            sides: { synonyms: ['side', 'garnish', 'sauce', 'соус', 'гарнир', 'fries', 'rice', 'puree', 'vegetable'] },
+            soups: { synonyms: ['soup', 'broth', 'суп', 'сорпа'] },
+            mains: { synonyms: ['main', 'entree', 'steak', 'cutlet', 'котлет', 'стейк', 'горяч'] },
+            oriental: { synonyms: ['oriental', 'asian', 'wok', 'noodle', 'лапша', 'восточ'] },
+            pizza: { synonyms: ['pizza', 'пицц'] },
+            salads: { synonyms: ['salad', 'салат', 'caesar', 'оливье'] },
+            cold: { synonyms: ['carpaccio', 'pate', 'pickles', 'plate', 'холод', 'карпаччо', 'паштет', 'солень'] },
+            appetizers: { synonyms: ['appetizer', 'starter', 'snack', 'темпура', 'tempura', 'roll', 'закуск', 'наггет'] },
+            kids: { synonyms: ['kids', 'children', 'детск', 'бала'] },
+            other: { synonyms: [] }
+        });
+        const categoryAliasByLegacy = Object.freeze({
+            sides: 'sides',
+            soups: 'soups',
+            mains: 'mains',
+            oriental: 'oriental',
+            pizza: 'pizza',
+            salads: 'salads',
+            cold: 'cold',
+            appetizers: 'appetizers',
+            kids: 'kids'
+        });
+
+        function resolveCategoryByName(item) {
+            const legacyCategory = categoryAliasByLegacy[item.cat];
+            if (legacyCategory) return legacyCategory;
+
+            const title = `${item.ru} ${item.kz} ${item.en}`.toLowerCase();
+            for (const [categoryId, meta] of Object.entries(categoryTaxonomy)) {
+                if (categoryId === 'other') continue;
+                if (meta.synonyms.some(term => title.includes(term))) return categoryId;
+            }
+            return 'other';
+        }
+
+        menuItems.forEach(item => {
+            item.filterCategory = resolveCategoryByName(item);
+            item.filterName = `${item.ru} ${item.kz} ${item.en}`.toLowerCase();
+        });
+
+        const menuItemById = new Map(menuItems.map(item => [item.id, item]));
+        const searchIndexById = new Map(
+            menuItems.map(item => [
+                item.id,
+                item.filterName
+            ])
+        );
+        const priceFormatter = new Intl.NumberFormat();
+        const langButtons = Array.from(document.querySelectorAll('.lang-btn'));
+        const ui = {
+            searchInput: document.getElementById('search-input'),
+            menuContainer: document.getElementById('menu-container'),
+            filtersContainer: document.getElementById('category-filters'),
+            orderBadge: document.getElementById('btn-order-badge'),
+            cartItemsList: document.getElementById('cart-items-list'),
+            cartTotalPrice: document.getElementById('cart-total-price'),
+            cartModal: document.getElementById('cart-modal'),
+            confirmModal: document.getElementById('confirm-modal')
+        };
+        const mobileMenuUi = {
+            body: document.body,
+            toggleBtn: document.getElementById('menu-toggle-btn'),
+            panel: document.getElementById('menu-controls-panel'),
+            backdrop: document.getElementById('menu-backdrop')
+        };
+
+        function isCompactMenuViewport() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        function setCompactMenuOpen(isOpen, options = {}) {
+            const { restoreFocus = true } = options;
+            const { body, toggleBtn, panel, backdrop } = mobileMenuUi;
+            if (!body || !toggleBtn || !panel || !backdrop) return;
+
+            const inCompactMode = body.classList.contains('mobile-menu-ready') && isCompactMenuViewport();
+            const nextState = inCompactMode && isOpen;
+
+            body.classList.toggle('mobile-menu-open', nextState);
+            toggleBtn.setAttribute('aria-expanded', String(nextState));
+            panel.setAttribute('aria-hidden', inCompactMode ? String(!nextState) : 'false');
+            backdrop.hidden = !nextState;
+            backdrop.setAttribute('aria-hidden', String(!nextState));
+            if ('inert' in panel) panel.inert = inCompactMode ? !nextState : false;
+
+            if (nextState) {
+                if (ui.searchInput) ui.searchInput.focus();
+            } else if (restoreFocus && inCompactMode) {
+                toggleBtn.focus();
+            }
+        }
+
+        function initCompactMenu() {
+            const { body, toggleBtn, backdrop } = mobileMenuUi;
+            if (!body || !toggleBtn || !backdrop) return;
+
+            body.classList.add('mobile-menu-ready');
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = body.classList.contains('mobile-menu-open');
+                setCompactMenuOpen(!isOpen, { restoreFocus: false });
+            });
+
+            backdrop.addEventListener('click', () => {
+                setCompactMenuOpen(false);
+            });
+
+            if (ui.filtersContainer) {
+                ui.filtersContainer.addEventListener('click', event => {
+                    if (!isCompactMenuViewport()) return;
+                    if (!(event.target instanceof Element)) return;
+                    if (event.target.closest('.chip')) {
+                        setCompactMenuOpen(false, { restoreFocus: false });
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && body.classList.contains('mobile-menu-open')) {
+                    event.preventDefault();
+                    setCompactMenuOpen(false);
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (!isCompactMenuViewport()) {
+                    setCompactMenuOpen(false, { restoreFocus: false });
+                }
+            });
+
+            setCompactMenuOpen(false, { restoreFocus: false });
+        }
 
         // --- Translations ---
         const translations = {
@@ -653,10 +1007,19 @@
 
         // --- Core Functions ---
 
+        function formatPrice(value) {
+            return `${priceFormatter.format(value)} ₸`;
+        }
+
+        function setTextIfPresent(id, value) {
+            const element = document.getElementById(id);
+            if (element) element.innerText = value;
+        }
+
         function setLang(lang) {
             currentLang = lang;
             // Update UI buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            langButtons.forEach(btn => {
                 btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
             });
             renderAll();
@@ -671,26 +1034,30 @@
 
         function updateUIStrings() {
             const t = translations[currentLang];
-            document.getElementById('brand-desc').innerText = t.brandDesc;
-            document.getElementById('search-input').placeholder = t.searchPh;
-            document.getElementById('btn-order-text').innerText = t.orderBtn;
-            document.getElementById('cart-title').innerText = t.cartTitle;
-            document.getElementById('cart-total-label').innerText = t.totalLabel;
-            document.getElementById('btn-checkout-text').innerText = t.checkoutBtn;
-            document.getElementById('btn-cancel-text').innerText = t.cancelBtn;
-            document.getElementById('confirm-title').innerText = t.confirmTitle;
-            document.getElementById('confirm-message').innerText = t.confirmMsg;
-            document.getElementById('btn-confirm-yes').innerText = t.confirmYes;
-            document.getElementById('btn-confirm-no').innerText = t.confirmNo;
+            setTextIfPresent('brand-desc', t.brandDesc);
+            if (ui.searchInput) ui.searchInput.placeholder = t.searchPh;
+            setTextIfPresent('btn-order-text', t.orderBtn);
+            setTextIfPresent('cart-title', t.cartTitle);
+            setTextIfPresent('cart-total-label', t.totalLabel);
+            setTextIfPresent('btn-checkout-text', t.checkoutBtn);
+            setTextIfPresent('btn-cancel-text', t.cancelBtn);
+            setTextIfPresent('confirm-title', t.confirmTitle);
+            setTextIfPresent('confirm-message', t.confirmMsg);
+            setTextIfPresent('btn-confirm-yes', t.confirmYes);
+            setTextIfPresent('btn-confirm-no', t.confirmNo);
         }
 
         function renderFilters() {
-            const container = document.getElementById('category-filters');
+            const container = ui.filtersContainer;
+            if (!container) return;
             container.innerHTML = '';
             rawCategories.forEach(cat => {
                 const btn = document.createElement('button');
+                btn.type = 'button';
                 btn.className = `chip ${currentFilter === cat.id ? 'active' : ''}`;
                 btn.innerText = cat[currentLang];
+                btn.setAttribute('data-category', cat.id);
+                btn.setAttribute('aria-pressed', String(currentFilter === cat.id));
                 btn.onclick = () => {
                     currentFilter = cat.id;
                     renderFilters(); // re-render to update active class
@@ -701,17 +1068,23 @@
         }
 
         function renderMenu() {
-            const container = document.getElementById('menu-container');
-            const searchVal = document.getElementById('search-input').value.toLowerCase();
-            container.innerHTML = '';
+            const container = ui.menuContainer;
+            if (!container || !ui.searchInput) return;
+
+            const searchVal = ui.searchInput.value.trim().toLowerCase();
+            const fragment = document.createDocumentFragment();
 
             menuItems.forEach(item => {
-                // Filter logic
-                if (currentFilter !== 'all' && item.cat !== currentFilter) return;
+                const itemCategory = item.filterCategory || resolveCategoryByName(item);
 
-                const name = item[currentLang].toLowerCase();
-                const desc = item.desc[currentLang].toLowerCase();
-                if (searchVal && !name.includes(searchVal) && !desc.includes(searchVal)) return;
+                // Filter logic
+                if (currentFilter !== 'all' && itemCategory !== currentFilter) return;
+
+                if (searchVal) {
+                    const indexed = searchIndexById.get(item.id);
+                    const haystack = indexed || `${item.ru} ${item.kz} ${item.en}`.toLowerCase();
+                    if (!haystack.includes(searchVal)) return;
+                }
 
                 const qty = cart[item.id] || 0;
 
@@ -720,37 +1093,41 @@
 
                 const card = document.createElement('div');
                 card.className = 'card';
+                card.setAttribute('data-category', itemCategory);
+                card.setAttribute('data-name', item.filterName || `${item.ru} ${item.kz} ${item.en}`.toLowerCase());
 
                 let actionBtnHTML = '';
                 if (qty === 0) {
                     actionBtnHTML = `
-                            <button class="btn-add" onclick="addToCart(${item.id})">+</button>
-                        `;
+                                <button class="btn-add" onclick="addToCart(${item.id})">+</button>
+                            `;
                 } else {
                     actionBtnHTML = `
-                            <div class="counter-wrapper">
-                                <button class="counter-btn" onclick="updateQty(${item.id}, -1)">–</button>
-                                <span class="counter-val">${qty}</span>
-                                <button class="counter-btn" onclick="updateQty(${item.id}, 1)">+</button>
-                            </div>
-                        `;
+                                <div class="counter-wrapper">
+                                    <button class="counter-btn" onclick="updateQty(${item.id}, -1)">–</button>
+                                    <span class="counter-val">${qty}</span>
+                                    <button class="counter-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                                </div>
+                            `;
                 }
 
                 card.innerHTML = `
-                        <img src="${imgUrl}" class="card-img" alt="${item[currentLang]}" loading="lazy">
-                        <div class="card-content">
-                            <div>
-                                <div class="card-title">${item[currentLang]}</div>
-                                <div class="card-desc">${item.desc[currentLang]}</div>
+                            <img src="${imgUrl}" class="card-img" alt="${item[currentLang]}" loading="lazy">
+                            <div class="card-content">
+                                <div>
+                                    <div class="card-title">${item[currentLang]}</div>
+                                    <div class="card-desc">${item.desc[currentLang]}</div>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="card-price">${formatPrice(item.price)}</span>
+                                    ${actionBtnHTML}
+                                </div>
                             </div>
-                            <div class="card-footer">
-                                <span class="card-price">${item.price.toLocaleString()} ₸</span>
-                                ${actionBtnHTML}
-                            </div>
-                        </div>
-                    `;
-                container.appendChild(card);
+                        `;
+                fragment.appendChild(card);
             });
+
+            container.replaceChildren(fragment);
         }
 
         function filterMenu() {
@@ -779,7 +1156,7 @@
             let total = 0;
             let count = 0;
             for (const [id, qty] of Object.entries(cart)) {
-                const item = menuItems.find(i => i.id == id);
+                const item = menuItemById.get(Number(id));
                 if (item) {
                     total += item.price * qty;
                     count += qty;
@@ -789,8 +1166,9 @@
         }
 
         function updateBottomBar() {
-            const { total, count } = getCartTotal();
-            const badge = document.getElementById('btn-order-badge');
+            const { count } = getCartTotal();
+            const badge = ui.orderBadge;
+            if (!badge) return;
             if (count > 0) {
                 badge.style.display = 'inline-block';
                 badge.innerText = count;
@@ -805,50 +1183,43 @@
             const { total, count } = getCartTotal();
             if (count === 0) return; // Do nothing if empty
 
-            const list = document.getElementById('cart-items-list');
-            list.innerHTML = '';
+            const list = ui.cartItemsList;
+            if (!list) return;
+            const fragment = document.createDocumentFragment();
+            list.replaceChildren();
 
             for (const [id, qty] of Object.entries(cart)) {
-                const item = menuItems.find(i => i.id == id);
+                const item = menuItemById.get(Number(id));
                 if (item) {
                     const row = document.createElement('div');
                     row.className = 'cart-item';
                     row.innerHTML = `
-                            <div class="cart-item-info">
-                                <h4>${item[currentLang]}</h4>
-                                <p>${qty} x ${item.price.toLocaleString()} ₸</p>
-                            </div>
-                            <div style="font-weight:600;">${(item.price * qty).toLocaleString()} ₸</div>
-                        `;
-                    list.appendChild(row);
+                                <div class="cart-item-info">
+                                    <h4>${item[currentLang]}</h4>
+                                    <p>${qty} x ${formatPrice(item.price)}</p>
+                                </div>
+                                <div style="font-weight:600;">${formatPrice(item.price * qty)}</div>
+                            `;
+                    fragment.appendChild(row);
                 }
             }
 
-            document.getElementById('cart-total-price').innerText = total.toLocaleString() + ' ₸';
-            document.getElementById('cart-modal').classList.add('open');
+            if (ui.cartTotalPrice) ui.cartTotalPrice.innerText = formatPrice(total);
+            list.appendChild(fragment);
+            if (ui.cartModal) ui.cartModal.classList.add('open');
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('open');
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.remove('open');
         }
 
         function openConfirmModal() {
             closeModal('cart-modal');
-            document.getElementById('confirm-modal').classList.add('open');
+            if (ui.confirmModal) ui.confirmModal.classList.add('open');
         }
 
         function processOrder() {
-            const { total } = getCartTotal();
-            let textBody = `Order for Room/Table:\n`;
-
-            // Build message text
-            for (const [id, qty] of Object.entries(cart)) {
-                const item = menuItems.find(i => i.id == id);
-                // Prioritize Russian or English for the SMS message for clarity, or mixed
-                textBody += `- ${item.ru} (${qty} шт)\n`;
-            }
-            textBody += `\nTotal: ${total} ₸`;
-
             // Try to trigger Call
             // Since we can't guarantee SMS support, user requested Call mainly.
             // We use tel:600
@@ -865,8 +1236,13 @@
         }
 
         // Initialize
+        initCompactMenu();
         renderAll();
 
     </script>
 </body>
 </html>
+
+
+
+
