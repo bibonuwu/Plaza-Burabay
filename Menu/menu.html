@@ -37,10 +37,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: var(--glass-bg);
+            background: rgb(240 235 223 / 67%);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 100, 95, 1);
+            
             padding: 16px 16px 0px 16px;
         }
         .site-logo {
@@ -269,34 +269,41 @@
         /* --- Bottom Bar --- */
         .bottom-bar {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--glass-bg);
+            left: 50%;
+            bottom: calc(12px + var(--safe-area-bottom));
+            transform: translateX(-50%);
+            width: min(720px, calc(100% - 24px)); /* не на всю ширину */
+            background: rgb(213 205 187 / 23%);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-top: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border);
             padding: 12px 16px;
-            padding-bottom: calc(12px + var(--safe-area-bottom));
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 9999px; /* вот это делает "овальным" */
             z-index: 200;
+            /* опционально для красивого эффекта "плавающей" капсулы */
+            box-shadow: 0 12px 30px rgba(0,0,0,.18);
         }
 
+
         .btn-order-main {
-            width: 100%;
+            width: auto; /* вместо 100% */
+            min-width: -webkit-fill-available; /* чтобы не была слишком маленькой */
+            max-width: 100%;
+            padding: 16px 28px; /* чуть шире по бокам */
             background: var(--accent-color);
             color: white;
             border: none;
-            padding: 16px;
-            border-radius: var(--btn-radius);
+            border-radius: 9999px; /* pill */
             font-size: 16px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0, 100, 95, 0.3);
+            box-shadow: 0 10px 22px rgba(0, 100, 95, 0.28);
             cursor: pointer;
-            transition: transform 0.1s;
-            display: flex;
+            transition: transform 0.1s, filter 0.15s;
+            display: inline-flex; /* для pill лучше inline-flex */
+            align-items: center;
             justify-content: center;
             gap: 10px;
         }
@@ -304,6 +311,7 @@
             .btn-order-main:active {
                 transform: scale(0.98);
             }
+
 
         .badge {
             background: rgba(255,255,255,0.2);
