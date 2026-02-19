@@ -2,7 +2,7 @@
 
 /* HERO */
 .page-hero--contacts .page-hero__media {
-    background-image: url("../assets/hero.jpg");
+    background-image: url("../assets/hero.avif");
     background-size: cover;
     background-position: center;
 }

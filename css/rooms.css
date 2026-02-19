@@ -5,9 +5,9 @@
 
 .page-hero--rooms .page-hero__media{
   /* Replace with real photo:
-     /assets/rooms/standard.jpg
+     /assets/rooms/standard.avif
   */
-  background-image:url("../assets/rooms/standard1.jpg");
+  background-image:url("../assets/rooms/standard.avif");
 }
 
 /* Pricing toggle */

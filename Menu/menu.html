@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -427,10 +427,50 @@
             color: white;
         }
 
+
         .btn-secondary {
             background: #e0e0e0;
             color: #333;
         }
+
+        /* --- Call note (after order total) --- */
+        .call-note {
+            margin-top: 10px;
+            padding: 14px;
+            border-radius: var(--btn-radius);
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .call-title {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .call-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .call-pill {
+            flex: 1;
+            min-width: 140px;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 14px;
+            border-radius: 9999px;
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 10px 22px rgba(0, 100, 95, 0.18);
+        }
+
+        .call-pill:active {
+            transform: scale(0.98);
+        }
+
 
         /* --- Menu UX Enhancements (scoped) --- */
         .menu-page button,
@@ -633,7 +673,7 @@
     <!-- Header -->
     <header>
         <div class="logo-area">
-            <img src="logo.png" alt="Sultan Plaza logo" class="site-logo" />
+            <img src="logo.avif" alt="Sultan Plaza logo" class="site-logo" />
 
 
 
@@ -691,12 +731,14 @@
                 <span id="cart-total-label">Итого:</span> <span id="cart-total-price">0 ₸</span>
             </div>
 
-            <button class="btn-action-full btn-primary" onclick="openConfirmModal()">
-                <span id="btn-checkout-text">Оформить</span>
-            </button>
-            <button class="btn-action-full btn-secondary" onclick="closeModal('cart-modal')">
-                <span id="btn-cancel-text">Отмена</span>
-            </button>
+            <div class="call-note" id="call-note">
+                <p class="call-title" id="call-note-title">Позвоните по внутренним номерам:</p>
+                <div class="call-actions">
+                    <a class="call-pill" id="call-reception">Ресепшн: 100</a>
+                    <a class="call-pill" id="call-restaurant">Ресторан: 600</a>
+                </div>
+            </div>
+          
         </div>
     </div>
 
@@ -980,7 +1022,10 @@
                 confirmMsg: 'Позвонить на 600 и оформить заказ?',
                 confirmYes: 'Да, позвонить',
                 confirmNo: 'Назад',
-                addBtn: 'Добавить'
+                addBtn: 'Добавить',
+                callNoteTitle: 'Позвоните по внутренним номерам:',
+                callReception: 'Ресепшн: 100',
+                callRestaurant: 'Ресторан: 600'
             },
             kz: {
                 brandDesc: 'BOROVOE HOTEL',
@@ -994,7 +1039,10 @@
                 confirmMsg: '600 нөміріне хабарласып тапсырыс бересіз бе?',
                 confirmYes: 'Иә, қоңырау',
                 confirmNo: 'Артқа',
-                addBtn: 'Қосу'
+                addBtn: 'Қосу',
+                callNoteTitle: 'Ішкі нөмірлерге қоңырау шалыңыз:',
+                callReception: 'Ресепшн: 100',
+                callRestaurant: 'Мейрамхана: 600'
             },
             en: {
                 brandDesc: 'BOROVOE HOTEL',
@@ -1008,7 +1056,10 @@
                 confirmMsg: 'Call 600 to place order?',
                 confirmYes: 'Yes, Call',
                 confirmNo: 'Back',
-                addBtn: 'Add'
+                addBtn: 'Add',
+                callNoteTitle: 'Please call internal numbers:',
+                callReception: 'Reception: 100',
+                callRestaurant: 'Restaurant: 600'
             }
         };
 
@@ -1045,14 +1096,16 @@
             if (ui.searchInput) ui.searchInput.placeholder = t.searchPh;
             setTextIfPresent('btn-order-text', t.orderBtn);
             setTextIfPresent('cart-title', t.cartTitle);
-            setTextIfPresent('cart-total-label', t.totalLabel);
-            setTextIfPresent('btn-checkout-text', t.checkoutBtn);
-            setTextIfPresent('btn-cancel-text', t.cancelBtn);
+            setTextIfPresent('cart-total-label', t.totalLabel);            setTextIfPresent('btn-cancel-text', t.cancelBtn);
             setTextIfPresent('confirm-title', t.confirmTitle);
             setTextIfPresent('confirm-message', t.confirmMsg);
             setTextIfPresent('btn-confirm-yes', t.confirmYes);
             setTextIfPresent('btn-confirm-no', t.confirmNo);
-        }
+        
+            setTextIfPresent('call-note-title', t.callNoteTitle);
+            setTextIfPresent('call-reception', t.callReception);
+            setTextIfPresent('call-restaurant', t.callRestaurant);
+}
 
         function renderFilters() {
             const container = ui.filtersContainer;

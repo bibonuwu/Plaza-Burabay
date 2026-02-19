@@ -299,7 +299,7 @@ strong{ font-weight:600; }
   width:34px; height:34px; border-radius:999px;
   border:1px solid rgba(var(--primary-rgb), .55);
   background-color: rgba(var(--primary-rgb), .08);
-  background-image: url("../assets/logo.png");
+  background-image: url("../assets/logo.avif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

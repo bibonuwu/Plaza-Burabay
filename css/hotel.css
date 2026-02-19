@@ -14,11 +14,11 @@
   overflow:hidden;
 }
 
-/* Background photo (replace: /assets/hero.jpg) */
+/* Background photo (replace: /assets/hero.avif) */
 .hero__media{
   position:absolute;
   inset:0;
-  background-image:url("../assets/hero.jpg");
+  background-image:url("../assets/hero.avif");
   background-size:cover;
   background-position:center;
   transform: scale(1.04);

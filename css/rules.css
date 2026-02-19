@@ -1,7 +1,7 @@
 /* rules.css — Rules page only */
 .page-hero--rules .page-hero__media{
   /* Optional photo placeholder */
-  background-image:url("../assets/hero.jpg");
+  background-image:url("../assets/hero.avif");
 }
 
 .rules-grid{
