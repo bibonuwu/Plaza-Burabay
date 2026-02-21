@@ -156,7 +156,7 @@
       "rules.r12.t": "Прачечная",
       "rules.r12.v": "через ресепшен (цены фото)",
       "rules.r13.t": "Трансфер",
-      "rules.r13.v": "нет",
+          "rules.r13.v": "при предварительной заявке организуем",
 
       "contacts.title": "Контакты",
       "contacts.lead": "Свяжитесь удобным способом.",
@@ -321,7 +321,7 @@
       "rules.r12.t": "Кір жуу",
       "rules.r12.v": "ресепшн арқылы (бағасы фото)",
       "rules.r13.t": "Трансфер",
-      "rules.r13.v": "жоқ",
+        "rules.r13.v": "алдын ала өтінім бойынша ұйымдастырамыз.",
 
       "contacts.title": "Байланыс",
       "contacts.lead": "Ыңғайлы тәсілмен хабарласыңыз.",
@@ -486,7 +486,7 @@
       "rules.r12.t": "Laundry",
       "rules.r12.v": "via reception (prices photo)",
       "rules.r13.t": "Transfer",
-      "rules.r13.v": "no",
+        "rules.r13.v": "we can arrange it upon prior request.",
 
       "contacts.title": "Contacts",
       "contacts.lead": "Reach us your way.",

@@ -771,7 +771,11 @@
             { id: 'salads', ru: 'Салаты', kz: 'Салаттар', en: 'Salads' },
             { id: 'cold', ru: 'Холодные', kz: 'Суық', en: 'Cold' },
             { id: 'appetizers', ru: 'Закуски', kz: 'Тағамдар', en: 'Appetizers' },
-            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' }
+            { id: 'kids', ru: 'Детское', kz: 'Балалар', en: 'Kids' },
+            { id: 'Bread', ru: 'Выпечка', kz: 'Наубайхана', en: 'Pastries' },
+            { id: 'Desserts', ru: 'Десерты', kz: 'Десерттер', en: 'Desserts' }
+
+
         ];
 
         const menuItems = [
@@ -824,9 +828,9 @@
             { id: 38, cat: 'oriental', ru: 'Шорпа из баранины', kz: 'Қозы шорпа', en: 'Lamb broth', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 2500, img: 'lamb-broth' },
             { id: 39, cat: 'oriental', ru: 'Манты классические', kz: 'Классикалық манты', en: 'Manty classic', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 4000, img: 'manty-classic' },
             { id: 40, cat: 'oriental', ru: 'Манты с тыквой', kz: 'Асқабақ қосылған манты', en: 'Manty with pumpkin', desc: { ru: '300 gr', kz: '300 гр', en: '300 gr' }, price: 3900, img: 'manty-with-pumpkin' },
-            { id: 41, cat: 'oriental', ru: 'Лагман Гуйру', kz: 'Лагман Гуйру', en: 'Laghman Guiru', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'laghman-guiru' },
-            { id: 42, cat: 'oriental', ru: 'Лагман Суйру', kz: 'Лагман Суйру', en: 'Laghman Suirou', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 3200, img: 'laghman-suirou' },
-            { id: 43, cat: 'oriental', ru: 'Лагман Цомян', kz: 'Лагман Цомян', en: 'Laghman Coman', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 2900, img: 'laghman-coman' },
+            { id: 41, cat: 'oriental', ru: 'Лагман Гуйру', kz: 'Лагман Гуйру', en: 'Laghman Guiru', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4100, img: 'laghman-guiru' },
+            { id: 42, cat: 'oriental', ru: 'Лагман Суйру', kz: 'Лагман Суйру', en: 'Laghman Suirou', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4100, img: 'laghman-suirou' },
+            { id: 43, cat: 'oriental', ru: 'Лагман Цомян', kz: 'Лагман Цомян', en: 'Laghman Coman', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 4100, img: 'laghman-coman' },
             { id: 44, cat: 'oriental', ru: 'Казан кебаб', kz: 'Казан кебабы', en: 'Kazan kebab', desc: { ru: '400 gr', kz: '400 гр', en: '400 gr' }, price: 4800, img: 'kazan-kebab' },
             { id: 45, cat: 'oriental', ru: 'Фри с мясом', kz: 'Ет қосылған картоп', en: 'Fries with meat', desc: { ru: '350 gr', kz: '350 гр', en: '350 gr' }, price: 3000, img: 'fries-with-meat' },
 
@@ -869,6 +873,29 @@
             { id: 75, cat: 'appetizers', ru: 'Крылышки BBQ', kz: 'Барбекю қанаттары', en: 'Wings BBQ', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 2900, img: 'wings-bbq' },
             { id: 76, cat: 'appetizers', ru: 'Крылышки Темпура', kz: 'Темпура қанаттары', en: 'Wings Tempura', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 2900, img: 'wings-tempura' },
             { id: 77, cat: 'appetizers', ru: 'Креветки Темпура', kz: 'Асшаяндар Темпура', en: 'Shrimps Tempura', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 4000, img: 'shrimps-tempura' },
+
+            // Bread
+            { id: 78, cat: 'Bread', ru: 'Хлеб', kz: 'Нан', en: 'Bread', desc: { ru: '200 gr', kz: '200 гр', en: '200 gr' }, price: 750, img: 'breaded-mozzarella' },
+            { id: 79, cat: 'Bread', ru: 'Самса с говядиной', kz: 'Сиыр еті қосылған самса', en: 'Samsa with beef', desc: { ru: '5 шт', kz: '5 дана', en: '5 pcs' }, price: 1600, img: 'nuggets' },
+            { id: 80, cat: 'Bread', ru: 'Самса с бараниной', kz: 'Қой еті қосылған самса', en: 'Samsa with lamb', desc: { ru: '5 шт', kz: '5 дана', en: '5 pcs' }, price: 1300, img: 'chicken-lamb-sausage' },
+            { id: 81, cat: 'Bread', ru: 'Мини чебуреки', kz: 'Шағын чебуреки', en: 'Mini chebureks', desc: { ru: '5 шт', kz: '5 дана', en: '5 pcs' }, price: 1600, img: 'spring-rolls-with-goat-cheese-' },
+            { id: 82, cat: 'Bread', ru: 'Бауырсаки', kz: 'Бауырсақтар', en: 'Bauyrsaks', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 1100, img: 'wings-bbq' },
+
+            // Desserts
+            { id: 83, cat: 'Desserts', ru: 'Пирожное "Любимое"', kz: 'Тәтті тоқаш "Махабатым"', en: 'The "Beloved" cake', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 2200, img: 'breaded-mozzarella' },
+            { id: 84, cat: 'Desserts', ru: 'Пирожное "Себастьян"', kz: 'Тәтті тоқаш "Себастьян"', en: 'The "Sebastian" cake', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 2450, img: 'nuggets' },
+            { id: 85, cat: 'Desserts', ru: 'Пирожное с малиной', kz: 'Тәтті тоқаш таңқурай', en: 'The cake with Raspberry', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 2000, img: 'chicken-lamb-sausage' },
+            { id: 86, cat: 'Desserts', ru: 'Эклер с кремом', kz: 'Кремі бар эклер', en: 'Eclair with cream', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 1300, img: 'spring-rolls-with-goat-cheese-' },
+            { id: 87, cat: 'Desserts', ru: 'Пирожное "Киевский"', kz: 'Тәтті тоқаш "Киевский"', en: 'The "Kievsky" cake', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 2200, img: 'wings-bbq' },
+            { id: 88, cat: 'Desserts', ru: 'Пирожное "Три молока"', kz: 'Тәтті тоқаш "Үш сүті"', en: 'The "Three milks" cake', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 1600, img: 'breaded-mozzarella' },
+            { id: 89, cat: 'Desserts', ru: 'Пирожное "Вуппи пай"', kz: 'Тәтті тоқаш "Вуппи пай"', en: 'The "Whuppie pie" cake', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 1400, img: 'nuggets' },
+            { id: 90, cat: 'Desserts', ru: 'Пирожное "Черный бархат"', kz: 'Пирожное "Қара барқыт"', en: 'The "Black velvet" cake', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 1800, img: 'chicken-lamb-sausage' },
+            { id: 91, cat: 'Desserts', ru: 'Сарбет', kz: 'Сарбет', en: 'Sarbet', desc: { ru: '1 шт', kz: '1 дана', en: '1 pcs' }, price: 900, img: 'spring-rolls-with-goat-cheese-' },
+            { id: 92, cat: 'Desserts', ru: 'Мороженное', kz: 'Балмұздақ', en: 'Ice cream', desc: { ru: '150 gr', kz: '150 гр', en: '150 gr' }, price: 900, img: 'wings-bbq' },
+            { id: 93, cat: 'Desserts', ru: 'Восточные сладости', kz: 'Шығыс тәттілері', en: 'Oriental sweets', desc: { ru: '250 gr', kz: '250 гр', en: '250 gr' }, price: 3500, img: 'chicken-lamb-sausage' },
+            { id: 94, cat: 'Desserts', ru: 'Фруктовые ассорти', kz: 'Жеміс ассортименті', en: 'Assorted fruits', desc: { ru: '1200 gr', kz: '1200 гр', en: '1200 gr' }, price: 3500, img: 'spring-rolls-with-goat-cheese-' },
+            { id: 95, cat: 'Desserts', ru: 'Фруктовая ваза', kz: 'Жеміс вазасы', en: 'Fruit bowl', desc: { ru: '3500 gr', kz: '3500 гр', en: '3500 gr' }, price: 8500, img: 'wings-bbq' },
+
         ];
 
         // --- State ---
@@ -896,7 +923,10 @@
             salads: 'salads',
             cold: 'cold',
             appetizers: 'appetizers',
-            kids: 'kids'
+            kids: 'kids',
+            Bread: 'Bread',
+            Desserts: 'Desserts'
+
         });
 
         function resolveCategoryByName(item) {
